@@ -12,6 +12,7 @@ import EditPage from '../Admin/EditPage'
 import UserDetails from '../Admin/UserDetails'
 import OrderDetails from '../Admin/OrderDetails'
 import CartDetail from '../Admin/CartDetail'
+import ContactUs from '../Pages/ContactUs'
 
 const AllRoutes = () => {
   return (
@@ -19,7 +20,8 @@ const AllRoutes = () => {
       <Route path="/" element={<Homepage/>}/>
       <Route path="/login" element={<Loginpage/>}/>
       <Route path="/signup" element={<Signup/>}/>
-      <Route path="/Product" element={<ProductPage/>}/>
+      <Route path="/product" element={<ProductPage/>}/>
+      <Route path='/contact' element={<ContactUs/>}/>
       <Route path="/product/:id" element={<SingleProductPage/>}/>
       <Route path="/cart" element={<AddToCard/>}/>
       <Route path="/a/dashboard" element={<Dashboard/>}/>

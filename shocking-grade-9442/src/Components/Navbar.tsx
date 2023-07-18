@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
 import logo from "../image/logo-white.png"
 import styled from "styled-components"
+import { Link } from 'react-router-dom';
 
 
 interface CustomNavLinkProps {
@@ -49,30 +50,32 @@ const Navbar: React.FC = () => {
       </div>
 
       <ul className={`navbar__menu ${isMobileMenuOpen ? 'active' : ''}`}>
-        <CustomNavLink to="/" onClick={closeMobileMenu}>
+        <CustomNavLink to="/product" onClick={closeMobileMenu}>
           Jwellery
         </CustomNavLink>
-        <CustomNavLink to="/watches" onClick={closeMobileMenu}>
+        <CustomNavLink to="/product" onClick={closeMobileMenu}>
           Watches
         </CustomNavLink>
-        <CustomNavLink to="/gifts" onClick={closeMobileMenu}>
+        <CustomNavLink to="/product" onClick={closeMobileMenu}>
           Gifts
         </CustomNavLink>
 
-        <div className="navbar__logo">
+        <Link to='/'>
+          <div className="navbar__logo">
             <img src={logo} alt=""  />
-
-        </div>
+          </div>
+        </Link>
+        
 
 
       
         <CustomNavLink to="/contact" onClick={closeMobileMenu}>
           Contact Us
         </CustomNavLink>
-        <CustomNavLink to="/account" onClick={closeMobileMenu}>
+        <CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account
         </CustomNavLink>
-        <CustomNavLink to="/bag" onClick={closeMobileMenu}>
+        <CustomNavLink to="/cart" onClick={closeMobileMenu}>
           Bag
         </CustomNavLink>
       </ul>
