@@ -10,9 +10,10 @@ function App() {
   return (
 
     <div className="App">
-   <AllRoutes/>
+   
       <Navbar/>
-  <Homepage/>
+      <AllRoutes/>
+  
     </div>
   );
 }
