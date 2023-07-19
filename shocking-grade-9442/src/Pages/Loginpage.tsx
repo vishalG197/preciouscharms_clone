@@ -8,7 +8,7 @@ const Div = styled.div`
   background-position: center;
   width: 100vw;
   height: 100vh;
-  margin-top:0;
+  margin-top:0; 
   border:1px solid black;
   color: black;
   div {
