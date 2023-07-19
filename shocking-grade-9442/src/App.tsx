@@ -5,14 +5,16 @@ import Navbar from './Components/Navbar';
 import Homepage from './Pages/Homepage';
 
 import AllRoutes from './Routes/AllRoutes';
+import Footer from './Components/Footer';
 
 function App() {
   return (
 
-    <div className="App">
+    <div className="">
    
       <Navbar/>
       <AllRoutes/>
+      <Footer/>
   
     </div>
   );
