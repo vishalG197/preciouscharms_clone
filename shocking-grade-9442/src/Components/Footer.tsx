@@ -1,12 +1,122 @@
 import React from 'react'
+import styled from 'styled-components';
+import logo from "../home-image/logo-white.png"
+import { FaFacebookF ,FaInstagram,FaPinterest,FaTelegramPlane} from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div>
+    <DIV>
       
-    </div>
+<div className="footerSec">
+      <div className="logosec">
+
+        <img src={logo} alt="" />
+        <br /><br /><br />  <br /><br /><br />
+      <ul className='socialUl'>
+        <li><FaFacebookF/></li>
+        <li> <FaInstagram/></li>
+        <li><FaPinterest/></li>
+        <li><FaTelegramPlane/>  </li>
+      </ul>
+        
+      </div>
+
+
+
+      <div className="link">
+          <div className="first">
+                <ul>
+                  <li>Contact Us</li>
+                  <li>Service</li>
+                  <li>Return</li>
+                  <li>Terms of Use</li>
+                  <li>How to Order</li>
+                </ul>
+          </div>
+            <div className="second">
+            <ul>
+                  <li>Rings</li>
+                  <li>Bracelets</li>
+                  <li>Earrings</li>
+                  <li>Necklace & Pendants</li>
+                  <li>Watches</li>
+                </ul>
+
+
+            </div>
+      </div>
+
+
+
+
+      <div className="last">
+
+        <h1>Discover The latest Collection , news and exclusive launches</h1>
+        <br /><br /><br /><br /><br />
+        <p>@ 2023 by Precious Charms</p>
+      </div>
+
+</div>
+
+
+    </DIV>
   )
 }
 
 export default Footer
+
+const DIV = styled.section`
+background-color:#242424;
+padding: 30px 0;
+  .footerSec{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .logosec,.link,.last{
+    width:33%
+  }
+.logosec img{
+  width:200px
+}
+.socialUl{
+  color: #e1e1e1;
+    list-style: none;
+   font-size: 21px;
+}
+
+.socialUl li{
+  display: inline;
+    padding: 10px 17px;
+}
+
+
+.link{
+  display: flex;
+  justify-content: space-between;
+}
+.first,.second{
+width:50%
+}
+
+.link ul{
+  list-style-type: none;
+    color: #c1c1c1;
+    font-size: 18px;
+}
+
+.link ul li{
+padding: 12px 0;
+}
+.last h1,.last p{
+  color:#c1c1c1;
+}
+@media screen and (min-device-width: 310px) and (max-device-width: 480px) { 
+  .footerSec{
+    flex-direction: column;
+  }
+}
+`
 

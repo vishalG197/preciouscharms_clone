@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
-import logo from "../image/logo-white.png"
+import logo from "../home-image/logo-white.png"
+import blackLogo from "../home-image/logo-black.png"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
 
@@ -34,9 +35,22 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(false);
   };
 
+
+
+  const [colorChange, setColorchange] = useState(false);
+  const changeNavbarColor = () => {
+      if (window.scrollY >= 200) {
+          setColorchange(true);
+      }
+      else {
+          setColorchange(false);
+      }
+  };
+  window.addEventListener('scroll', changeNavbarColor);
+
   return (
     <DIV>
-    <nav className="navbar">
+    <nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
       {/* <div className="navbar__logo">
             <img src={logo} alt="" width="200px" />
 
@@ -62,7 +76,7 @@ const Navbar: React.FC = () => {
 
         <Link to='/'>
           <div className="navbar__logo">
-            <img src={logo} alt=""  />
+            <img src={colorChange ? blackLogo : logo} alt=""  />
           </div>
         </Link>
         
@@ -90,7 +104,7 @@ export default Navbar;
 
 const DIV = styled.section`
  .navbar__logo img{
-  width:150px
+  width:140px
  }
  
 
@@ -101,6 +115,16 @@ const DIV = styled.section`
   padding: 20px;
   width: 100%;
   position: fixed;
+  z-index: 9999;
+}
+.colorChange{
+  background-color:#fff;
+  color:#2e2d2d;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.colorChange a {
+    color: #2e2d2d!important;
 }
 
 .navbar__logo {
@@ -131,6 +155,7 @@ const DIV = styled.section`
   text-decoration: none;
   color: #f3f2f2;
 }
+
 
 .navbar__item a.active {
   border: 1px solid #8b80806b;
@@ -167,7 +192,8 @@ const DIV = styled.section`
     display: block;
   }
 }
+@media screen and (min-device-width: 310px) and (max-device-width: 480px) { 
 
 
- 
+}
 `;

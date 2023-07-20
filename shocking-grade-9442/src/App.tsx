@@ -5,19 +5,24 @@ import Navbar from './Components/Navbar';
 import Homepage from './Pages/Homepage';
 
 import AllRoutes from './Routes/AllRoutes';
+
 import AdminNavbar from './Admin/AdminNavbar';
 import Dashboard from './Admin/Dashboard';
+
+import Footer from './Components/Footer';
+
 
 function App() {
   return (
 
-    <div className="App">
+    <div className="">
    
-      {/* <Navbar/> */}
-      <AdminNavbar/>
-      <AllRoutes/> 
-      {/* <Dashboard/> */}
-    {/* <Homepage/> */}
+
+      <Navbar/>
+      <AllRoutes/>
+      <Footer/>
+  
+
     </div>
   );
 }

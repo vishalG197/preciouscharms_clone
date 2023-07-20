@@ -3,18 +3,20 @@ import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
 import { Link } from "react-router-dom"
 const Div = styled.div`
+padding-top:80px;
  background-image: url(${B1});
   background-size: cover;
   background-position: center;
   width: 100vw;
   height: 100vh;
-  margin-top:0;
+  margin-top:0; 
   border:1px solid black;
   color: black;
   div {
-   position:fixed;
-   top:30%;
-   left:30%;
+   margin:auto;
+   /* margin-left:30%; */
+   position:static;
+   
    width:500px;
    height:300px;
    h2 {
