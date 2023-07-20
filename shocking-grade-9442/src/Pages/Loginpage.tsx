@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 const Div = styled.div`
 padding-top:80px;
  background-image: url(${B1});
@@ -72,27 +72,27 @@ margin-bottom:20px;
 const Loginpage = () => {
    const [showPassword, setShowPassword] = useState(false);
 
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
-  };
-  return (
-    <Div>
-      <h1>PRECIOUS CHARMS</h1>
-      <h2>JWELLARY SHOP</h2>
-<div>
-<h2>LOGIN PAGE</h2>
-<input type="text" placeholder='UserID'/>
-<br />
-<input type="text" placeholder='Password'/>
-<br />
-<input type="submit" value="LOGIN"/>
-<br />
-<br />
-<span><Link to="/signup">create an account</Link> </span>
-</div>
+   const handleTogglePassword = () => {
+      setShowPassword(!showPassword);
+   };
+   return (
+      <Div>
+         <h1>PRECIOUS CHARMS</h1>
+         <h2>JWELLARY SHOP</h2>
+         <div>
+            <h2>LOGIN PAGE</h2>
+            <input type="text" placeholder='UserID' />
+            <br />
+            <input type="text" placeholder='Password' />
+            <br />
+            <input type="submit" value="LOGIN" />
+            <br />
+            <br />
+            <span><Link to="/signup">create an account</Link> </span>
+         </div>
 
-    </Div>
-  )
+      </Div>
+   )
 }
 
 export default Loginpage

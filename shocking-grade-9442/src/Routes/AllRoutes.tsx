@@ -13,6 +13,7 @@ import UserDetails from '../Admin/UserDetails'
 import OrderDetails from '../Admin/OrderDetails'
 import CartDetail from '../Admin/CartDetail'
 import ContactUs from '../Pages/ContactUs'
+import Setting from '../Admin/Setting'
 
 const AllRoutes = () => {
   return (
@@ -30,6 +31,8 @@ const AllRoutes = () => {
       <Route path="/a/users" element={<UserDetails/>}/>
       <Route path="/a/users/order/:id" element={<OrderDetails/>}/>
       <Route path="/a/users/cart/:id" element={<CartDetail/>}/>
+      <Route path="/a/setting" element={<Setting/>}/>
+
       <Route path="*" element={<h1>Page not found</h1>}/>
     </Routes>
   )

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const EditPage = () => {
+const Setting = () => {
   return (
     <div>
-      edit page
+      Setting
     </div>
   )
 }
 
-export default EditPage
+export default Setting
