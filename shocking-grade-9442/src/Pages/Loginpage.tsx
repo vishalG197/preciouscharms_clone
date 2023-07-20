@@ -2,6 +2,63 @@ import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
 import {Link} from "react-router-dom"
+import { useSelector } from 'react-redux'
+
+const Loginpage = () => {
+   const [credentials,setCredentials] = useState({email:"",password:""});
+
+
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+const {name,value} =e.target;
+let newCredentials ={...credentials,[name]:value}
+setCredentials(newCredentials);
+  };
+//   const AllUser =useSelector((store)=>{
+//    return store.authReducer.User
+//   })
+   const handleSubmit = ()=>{
+console.log("credential",credentials)
+//  if(user.email=""|| user.password=""){
+//    alert("Please enter valid data");
+//  }
+// else {
+//    let isprasent = AllUser.find((el)=>{return el.email==user.email && el.password==user.password});
+//    if(isprasent){
+//       dispatch(login(isprasent))
+//    }else{
+
+//       alert("Please enter valid credentials for login")
+//    }
+// }
+
+
+   }
+  return (
+    <Div>
+      <h1>PRECIOUS CHARMS</h1>
+      <h2>JWELLARY SHOP</h2>
+<div>
+<h2>LOGIN PAGE</h2>
+<input type="email" name="email" placeholder='email'
+onChange={handleChange} 
+/>
+<br />
+<input type="password" name="password" placeholder='Password'  onChange={handleChange} />
+<br />
+<input type="submit" value="LOGIN" onClick={handleSubmit}/>
+<br />
+<br />
+<span><Link to="/signup">create an account</Link> </span>
+</div>
+
+    </Div>
+  )
+}
+
+export default Loginpage
+
+
+
 const Div = styled.div`
 padding-top:80px;
  background-image: url(${B1});
@@ -12,6 +69,7 @@ padding-top:80px;
   margin-top:0; 
   border:1px solid black;
   color: black;
+  text-align: center;
   div {
    margin:auto;
    /* margin-left:30%; */
@@ -22,7 +80,7 @@ padding-top:80px;
    h2 {
       margin-left:10px;
    }
-   input[type="text"]{
+   input[type="email"],[type="password"]{
    width:80%;
    height :40px;
   
@@ -30,7 +88,7 @@ margin:auto;
 margin-bottom:20px;
    box-shadow: rgb(246, 248, 250) 0px 20px 30px -10px;
   }
-  input[type="text"]::placeholder {
+  input[type="email"],[type="password"]::placeholder {
    padding-left:20px;
   color: #999999; /* Placeholder text color */
   font-style: italic; /* Placeholder text style */
@@ -69,30 +127,3 @@ margin-bottom:20px;
    box-shadow: rgba(255, 253, 253, 0.966) 0px 54px 55px, rgba(250, 249, 249, 0.966) 0px -12px 30px, rgba(251, 250, 250, 0.943) 0px 4px 6px, rgba(253, 252, 252, 0.916) 0px 12px 13px, rgba(249, 248, 248, 0.961) 0px -3px 5px;
    }
 `;
-const Loginpage = () => {
-   const [showPassword, setShowPassword] = useState(false);
-
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
-  };
-  return (
-    <Div>
-      <h1>PRECIOUS CHARMS</h1>
-      <h2>JWELLARY SHOP</h2>
-<div>
-<h2>LOGIN PAGE</h2>
-<input type="text" placeholder='UserID'/>
-<br />
-<input type="text" placeholder='Password'/>
-<br />
-<input type="submit" value="LOGIN"/>
-<br />
-<br />
-<span><Link to="/signup">create an account</Link> </span>
-</div>
-
-    </Div>
-  )
-}
-
-export default Loginpage

@@ -1,10 +1,77 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { styled } from 'styled-components';
 import B1 from "../Images/B2.jpg";
 import { Link } from "react-router-dom";
+import { UserObject } from '../constrain';
+import {useDispatch,useSelector} from "react-redux"
+
+
+const Signup = () => {
+ const [user,setUser] = useState<UserObject>({ name:"",
+email: "",password: "",addToCart:[],
+orderPlaced:[]
+
+});
+const dispatch =useDispatch();
+// const AllUser =useSelector((store)=>store.authReducer.User)
+
+useEffect(() => {
+
+// dispatch(getUser())
+
+},[])
+  const handleChange =(e:React.ChangeEvent<HTMLInputElement>)=>{
+const {name,value}=e.target;
+const newUser = {...user,[name]:value};
+setUser(newUser);
+  }
+const handleSubmit =()=>{
+    console.log("Submit",user)
+    // if(user.email="" || user.password="" ){
+    //   alert("Please enter valid data");
+    // }
+// let userPrasent = AllUser.find((el)=>{
+//   return el.email==user.email;
+// })
+    //  if(userPrasent){
+    //   alert("You already have a account with this email address")
+    //  }else{
+    //   dispatch(login(user))
+    //  }
+
+
+  }
+  return (
+    <Div>
+      <h1>PRECIOUS CHARMS</h1>
+      <h2>JEWELRY SHOP</h2>
+      <div>
+        <h2>SIGNUP PAGE</h2>
+       
+        <input type="text" name="name" placeholder='Full Name' onChange={handleChange} />
+        <br />
+        <input type="email" name="email" placeholder='Email' onChange={handleChange} />
+        <br />
+        
+        <input type="password" name="password" placeholder='Password' onChange={handleChange} />
+        <br />
+       
+       
+        <input type="submit" value="SIGNUP" onClick={handleSubmit}/>
+        <br />
+        <br />
+        <span><Link to="/login">Login</Link></span>
+      </div>
+    </Div>
+  );
+}
+
+export default Signup;
+
 
 const Div = styled.div`
 padding-top:70px;
+text-align: center;
   background-image: url(${B1});
   background-size: cover;
   background-position: center;
@@ -15,6 +82,7 @@ padding-top:70px;
   color: black;
 
   div {
+   
     margin :auto;
     width: 500px;
     height: 400px;
@@ -23,7 +91,7 @@ padding-top:70px;
       margin-left: 10px;
     }
 
-    input[type="text"] {
+    input[type="text"],[type="email"],[type="password"] {
       width: 80%;
       height: 40px;
       margin: auto;
@@ -74,37 +142,3 @@ padding-top:70px;
    box-shadow: rgba(255, 253, 253, 0.966) 0px 54px 55px, rgba(250, 249, 249, 0.966) 0px -12px 30px, rgba(251, 250, 250, 0.943) 0px 4px 6px, rgba(253, 252, 252, 0.916) 0px 12px 13px, rgba(249, 248, 248, 0.961) 0px -3px 5px;
    }
 `;
-
-const Signup = () => {
-  const [showPassword, setShowPassword] = useState(false);
-
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
-  };
-
-  return (
-    <Div>
-      <h1>PRECIOUS CHARMS</h1>
-      <h2>JEWELRY SHOP</h2>
-      <div>
-        <h2>SIGNUP PAGE</h2>
-        <input type="text" placeholder='UserID' />
-        <br />
-        <input type="text" placeholder='Full Name' />
-        <br />
-        <input type="text" placeholder='Email' />
-        <br />
-        <input type="text" placeholder='Password' />
-        <br />
-        <input type="text" placeholder='Confirm Password' />
-        <br />
-        <input type="submit" value="SIGNUP" />
-        <br />
-        <br />
-        <span><Link to="/login">Login</Link></span>
-      </div>
-    </Div>
-  );
-}
-
-export default Signup;
