@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
+
 import {Link} from "react-router-dom"
 import { useSelector } from 'react-redux'
 
@@ -56,6 +57,7 @@ onChange={handleChange}
 }
 
 export default Loginpage
+
 
 
 
@@ -126,4 +128,4 @@ margin-bottom:20px;
   :hover{
    box-shadow: rgba(255, 253, 253, 0.966) 0px 54px 55px, rgba(250, 249, 249, 0.966) 0px -12px 30px, rgba(251, 250, 250, 0.943) 0px 4px 6px, rgba(253, 252, 252, 0.916) 0px 12px 13px, rgba(249, 248, 248, 0.961) 0px -3px 5px;
    }
-`;
+ `
