@@ -1,8 +1,13 @@
 import axios from "axios";
-import { DELETE_DATA_FAILURE, DELETE_DATA_SUCCESS, FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS } from "./actionType";
+
+import { DELETE_DATA_FAILURE, DELETE_DATA_SUCCESS, FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS ,GET_USER_SUCCESS, USER_REQ } from "./actionType";
 import { AnyAction, Dispatch } from "redux";
 import { ThunkAction } from 'redux-thunk'; 
 import { RootState } from ".";
+
+
+
+
 
 export const fetchData:any = () => {
     return async (dispatch: Dispatch) => {
@@ -20,6 +25,7 @@ export const fetchData:any = () => {
       }
     };
   };
+
 
   type ThunkResult<R> = ThunkAction<R, RootState, undefined, AnyAction>;
   
@@ -39,3 +45,14 @@ export const fetchData:any = () => {
       }
     };
   };
+
+ export const fetchUserData:any=(dispatch: Dispatch)=>{
+  dispatch({type:USER_REQ})
+
+  axios.get(`http://localhost:8080/users`)
+.then((res)=>{
+
+  dispatch({type:GET_USER_SUCCESS,payload:res.data})
+  })
+ }
+

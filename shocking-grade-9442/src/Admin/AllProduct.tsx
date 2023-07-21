@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteData, fetchData } from '../Redux/AdminReducer/action';
 import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading, Image, Text, Link } from '@chakra-ui/react'
 import { repeat } from 'lodash';
+import Navbar from './AdminNavbar';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -25,7 +26,14 @@ const App: React.FC = () => {
   }
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px", paddingTop: "100px", }}>
+
+<div>
+
+  <Navbar/>
+
+
+    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"100px" ,}}>
+
       {data.map((item: any) => (
         <div key={item.id}>
           <Card maxW='sm' >
@@ -63,6 +71,8 @@ const App: React.FC = () => {
           </Card>
         </div>
       ))}
+    </div>
+
     </div>
   );
 };

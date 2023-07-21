@@ -1069,7 +1069,9 @@
           "avatar": "https://www.cleanorigin.com/engagement/solitaire-engagement-rings/"
         }
       ],
-      "orderPlaced": []
+      "orderPlaced": [
+       
+      ]
     },
     {
       "name": "ABC",
@@ -1078,6 +1080,41 @@
       "id": 2,
       "addToCart": [],
       "orderPlaced": []
+<<<<<<< HEAD
+=======
+    },
+    {
+      "name": "Vishal Giri",
+      "email": "vishalgiri197@gmail.com",
+      "password": "vish",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 3
+    },
+    {
+      "name": "AS u wish",
+      "email": "vemail@gmail.com",
+      "password": "asuwish",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 4
+    },
+    {
+      "name": "xml",
+      "email": "xml@gmail.com",
+      "password": "xml",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 5
+    },
+    {
+      "name": "Vishal Vilas Giri",
+      "email": "vishalgiri197@gmail",
+      "password": "1234",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 6
+>>>>>>> main
     }
   ]
 }
