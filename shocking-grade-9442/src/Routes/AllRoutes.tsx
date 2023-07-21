@@ -14,6 +14,8 @@ import OrderDetails from '../Admin/OrderDetails'
 import CartDetail from '../Admin/CartDetail'
 import ContactUs from '../Pages/ContactUs'
 import Setting from '../Admin/Setting'
+import { Payment } from '../Pages/Payment'
+import { Address } from '../Pages/Address'
 
 const AllRoutes = () => {
   return (
@@ -32,6 +34,8 @@ const AllRoutes = () => {
       <Route path="/a/users/order/:id" element={<OrderDetails/>}/>
       <Route path="/a/users/cart/:id" element={<CartDetail/>}/>
       <Route path="/a/setting" element={<Setting/>}/>
+      <Route path="/payment" element={<Payment/>}/>
+      <Route path="/address" element={<Address/>}/>
 
       <Route path="*" element={<h1>Page not found</h1>}/>
     </Routes>
