@@ -5,7 +5,7 @@ import { Dispatch } from "redux";
 export const fetchData:any = () => {
     return async (dispatch: Dispatch) => {
       try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts'); // Replace with your API endpoint
+        const response = await axios.get('http://localhost:8080/products'); // Replace with your API endpoint
         dispatch({
           type: FETCH_DATA_SUCCESS,
           payload: response.data,
