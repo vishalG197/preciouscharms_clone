@@ -1175,7 +1175,53 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
         }
       ],
+
       "id": 1
+
+      "orderPlaced": [
+       
+      ]
+    },
+    {
+      "name": "ABC",
+      "email": "email@gmail.com",
+      "password": "123",
+      "id": 2,
+      "addToCart": [],
+      "orderPlaced": []
+    },
+    {
+      "name": "Vishal Giri",
+      "email": "vishalgiri197@gmail.com",
+      "password": "vish",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 3
+    },
+    {
+      "name": "AS u wish",
+      "email": "vemail@gmail.com",
+      "password": "asuwish",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 4
+    },
+    {
+      "name": "xml",
+      "email": "xml@gmail.com",
+      "password": "xml",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 5
+    },
+    {
+      "name": "Vishal Vilas Giri",
+      "email": "vishalgiri197@gmail",
+      "password": "1234",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 6
+
     }
   ]
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import banner from '../home-image/banner11.jpg';
+import banner from '../home-image/bannerv1.jpg';
 import best1 from '../home-image/best1.jpg';
 import best2 from '../home-image/best2.jpg';
 import best3 from '../home-image/best3.jpg';
@@ -10,11 +10,15 @@ import categoryimg from "../home-image/category.jpg"
 import abtImg from "../home-image/home-about.png"
 import meetImg from "../home-image/meet.jpeg"
 import { Link } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
+
 
 
 const Homepage = () => {
   return (
-    <DIV>
+ <DIV>
+<Navbar/>
       <div className="banner">
         <img src={banner} alt="" />
       </div>
@@ -192,7 +196,7 @@ const Homepage = () => {
 </div>
 {/********************* * arrange-meeting-section-end ***************/}
 
-
+<Footer/>
 
     </DIV>
   );
@@ -202,23 +206,24 @@ export default Homepage;
 
 const DIV = styled.section`
   @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
-
+background-color:#f8f8f8;
   .banner img {
     width: 100%;
   }
 .collectSection{
   padding: 100px 0;
 }
-  .newCollection {
+ 
+
+  .newCollection{
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-  }
+ display:grid ;
+ grid-template-columns: repeat(4,1fr);
+ gap: 20px;
+}
 
-  .newCollection div {
-    width: 23%;
-  }
+ 
 
   .newCollection div img {
     width: 100%;
@@ -244,8 +249,9 @@ const DIV = styled.section`
     color: #6a6a6a;
   }
   .newCollection div h4{
-    color:#000;
+    color:#1a1919;
     margin:15px 0 0 0;
+    font-weight: 500;
   }
   .newCollection div p{
     font-size: 14px;
@@ -338,12 +344,15 @@ const DIV = styled.section`
 .abtText{
 text-align: justify;
 padding-top: 60px;
+width:50%;
 }
 .abtp{
 font-size: 18px;
 color:#282828;
 }
-
+.abtImg{
+  width:50%
+}
 /********************* meeting  **********/
 .arrange{
   background-color:#fff;
@@ -366,11 +375,17 @@ color:#282828;
 }
 
 @media screen and (min-device-width: 310px) and (max-device-width: 480px) { 
-  .newCollection,.catMainSec,.abtMSec,.arrangeSec {
+ .catMainSec,.abtMSec,.arrangeSec {
    
     display: flex;
     flex-direction: column;
    
+}
+
+.newCollection{
+ display:grid ;
+ grid-template-columns: repeat(2,1fr);
+ gap: 20px;
 }
 .abtImg img{
   width:100%;
@@ -379,6 +394,38 @@ color:#282828;
  {
   display: none;
  }
+ .newCollection div {
+    width: 100%;
+}
+ .collectSection {
+    padding: 70px 0;
+}
+
+ .newHead-Capt {
+    font-family: 'Pathway Gothic One',sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: #0a0a0a;
+    margin: 0;
+}
+
+ .abtText {
+    padding-top: 30px;
+    width: 100%;
+}
+ .abtp {
+    font-size: 14px;
+    }
+  .abtImg {
+    width: 100%;
+}
+.arrimg {
+    width: 100%;
+}
+.catImg {
+    width: 100%;
+}
+
 }
 
 

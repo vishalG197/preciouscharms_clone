@@ -31,11 +31,18 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+
+
+     "start": "react-scripts start",
+
+
     "server": "json-server --watch db.json --port 8080",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+
+    "eject": "react-scripts eject",
+    
+
   },
   "eslintConfig": {
     "extends": [

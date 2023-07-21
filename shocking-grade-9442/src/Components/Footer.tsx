@@ -11,13 +11,13 @@ const Footer = () => {
       <div className="logosec">
 
         <img src={logo} alt="" />
-        <br /><br /><br />  <br /><br /><br />
-      <ul className='socialUl'>
-        <li><FaFacebookF/></li>
-        <li> <FaInstagram/></li>
-        <li><FaPinterest/></li>
-        <li><FaTelegramPlane/>  </li>
-      </ul>
+        <br /><br /><br />  <br /><br />
+      <div className='socialUl'>
+            <FaFacebookF/>
+          <FaInstagram/>
+          <FaPinterest/>
+          <FaTelegramPlane/> 
+      </div>
         
       </div>
 
@@ -81,10 +81,13 @@ padding: 30px 0;
 .logosec img{
   width:200px
 }
-.socialUl{
-  color: #e1e1e1;
+.socialUl {
+    color: #e1e1e1;
     list-style: none;
-   font-size: 21px;
+    font-size: 21px;
+    display: flex;
+    justify-content: space-between;
+    width: 57%;
 }
 
 .socialUl li{
@@ -116,6 +119,9 @@ padding: 12px 0;
 @media screen and (min-device-width: 310px) and (max-device-width: 480px) { 
   .footerSec{
     flex-direction: column;
+  }
+  .logosec,.link,.last{
+    width:90%
   }
 }
 `

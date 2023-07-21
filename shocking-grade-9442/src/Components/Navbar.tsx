@@ -56,12 +56,21 @@ const Navbar: React.FC = () => {
 
       </div> */}
 
+
+<div className="mobileNav">
       <div
         className={`navbar__mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
-        onClick={handleMobileMenuToggle}
-      >
-        {isMobileMenuOpen ? <MdClose /> : <MdMenu />}
+        onClick={handleMobileMenuToggle}>
+         {isMobileMenuOpen ? <MdClose color="#adacac"/> : <MdMenu color="#adacac" />}
       </div>
+
+
+      <div className="mobile-logo">
+            <img src={colorChange ? blackLogo : logo} alt=""  />
+          </div>
+
+</div>
+    
 
       <ul className={`navbar__menu ${isMobileMenuOpen ? 'active' : ''}`}>
         <CustomNavLink to="/product/Jewelry" onClick={closeMobileMenu}>
@@ -103,11 +112,13 @@ export default Navbar;
 
 
 const DIV = styled.section`
- .navbar__logo img{
-  width:140px
+ .navbar__logo img,.mobile-logo img{
+  width:120px
  }
  
-
+.mobile-logo{
+  width:60%;
+}
  .navbar {
   display: flex;
   justify-content: space-between;
@@ -133,6 +144,7 @@ const DIV = styled.section`
 }
 
 .navbar__mobile-toggle {
+  width:40%;
   font-size: 24px;
   cursor: pointer;
   display: none; /* Hide by default */
@@ -162,6 +174,7 @@ const DIV = styled.section`
   padding: 4px 7px 4px 7px;
 }
 
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
@@ -171,16 +184,17 @@ const DIV = styled.section`
   .navbar__menu {
     display: flex;
     flex-direction: column;
-    background-color: #f1f1f1;
+    background-color: #2a2929;
     padding: 10px;
     transition: transform 0.3s ease-in-out;
-    transform: translateY(-50%);
+    /* transform: translateY(-50%); */
     opacity: 0;
     position: absolute;
-    top: 80%;
+    top: 70px;
     left: 0;
     width: 100%;
     z-index: 1;
+    color:#fff;
   }
 
   .navbar__menu.active {
@@ -193,7 +207,43 @@ const DIV = styled.section`
   }
 }
 @media screen and (min-device-width: 310px) and (max-device-width: 480px) { 
+ .navbar__logo
+ {
+  display: none;
+ }
+ .navbar__item {
+    margin-left: 20px;
+    text-align: center;
+    border-bottom: 1px solid #3c3a3a52;
+    padding: 5px 0;
+}
 
+.mobileNav{
+  width:100%;
+  display: flex;
+}
+}
+@media screen and (min-device-width: 481px) and (max-device-width:768px) { 
+ .navbar__logo
+ {
+  display: none;
+ }
+ .navbar__item {
+    margin-left: 20px;
+    text-align: center;
+    border-bottom: 1px solid #3c3a3a52;
+    padding: 5px 0;
+}
+.mobileNav{
+  width:100%;
+  display: flex;
+}
+}
+@media screen and (min-device-width: 769px)  { 
+  .mobile-logo{
+    display: none;
+  }
 
 }
+
 `;

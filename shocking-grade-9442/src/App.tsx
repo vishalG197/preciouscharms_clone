@@ -18,9 +18,11 @@ function App() {
     <div className="">
    
 
-      <Navbar/>
+      {/* <Navbar/> */}
+      {/* <Homepage/> */}
+     
       <AllRoutes/>
-      <Footer/>
+      {/* <Footer/> */}
   
 
     </div>

@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../Redux/ProductReducer/action';
@@ -41,6 +42,7 @@ const ProductPage = () => {
     dispatch(getProducts(paramsObj))
       },[searchParams])
   // console.log(products)
+
 
   return (
     <div>

@@ -80,7 +80,11 @@ export default Navbar;
 
 
 const DIV = styled.section`
-margin-left: 10px;
+
+*{
+  box-sizing: border-box;
+}
+
  .navbar__logo img{
   width:150px
  }
@@ -92,7 +96,7 @@ margin-left: 10px;
   align-items: center;
   padding: 20px;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   background-color:rgb(54, 69, 79)
 
 }

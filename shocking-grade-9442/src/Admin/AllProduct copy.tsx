@@ -1,32 +1,68 @@
 // src/App.tsx
 
-import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchData } from '../Redux/AdminReducer/action';
-import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading ,Image,Text} from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading ,Image,Text, useStatStyles} from '@chakra-ui/react'
 import { repeat } from 'lodash';
 import Navbar from './AdminNavbar';
+import styled from "styled-components";
+
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state: any) => state.data.data);
+  const data = useSelector((state: any) => state.data.data.data);
   const error = useSelector((state: any) => state.data.error);
+  const total = useSelector((state: any) => state.data.totalPages)
+
+  console.log(total);
+  
+  const [page,setpage]=useState(1)
+
+  console.log(total);
+
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+    dispatch(fetchData(page));
+  }, [dispatch,page]);
+
+
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
+const handlePageChange=(value:number)=>{
+  setpage(page+value)
+}
+
+
+
+
   return (
 <div>
 
-  <Navbar/>
+
+<Navbar/>
 
 
-    <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"100px" ,}}>
+{/**************** pagination ************/}
+<br /><br />
+<div style={{width:"90%",margin:"0 auto",display:"flex"}}>
+<Button colorScheme='teal' size='sm' isDisabled={page==1} onClick={()=>handlePageChange(-1)}>
+    prev
+  </Button>
+    <h3>{page}</h3>
+    <Button colorScheme='teal' size='sm' isDisabled={page==1} onClick={()=>handlePageChange(1)}>
+    next
+  </Button>
+</div>
+
+
+{/***************  pagination-end *****************/}
+
+
+ <div style={{width:"90%",margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"100px" ,}}>
       {data.map((item: any) => (
         <div key={item.id}>
       <Card maxW='sm' >
@@ -68,9 +104,10 @@ const App: React.FC = () => {
         </div>
       ))}
     </div>
-
     </div>
   );
 };
 
 export default App;
+
+
