@@ -1,36 +1,78 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect} from 'react'
 import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
 
 import {Link} from "react-router-dom"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RootauthState } from '../constrain'
+import {  getUsers } from '../Redux/AuthReducer/action'
+import { Dispatch } from 'redux'
+import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType'
+import { useToast } from '@chakra-ui/react'
 
 const Loginpage = () => {
+   const toast = useToast();
    const [credentials,setCredentials] = useState({email:"",password:""});
-
-
+   const dispatch: Dispatch<any> =useDispatch();
+   const AllUser =useSelector((store:any)=>store.authReducer.Users)
+   
+   useEffect(() => {
+   
+   dispatch(getUsers())
+   // getUsers(dispatch)
+   
+   },[])
+   const store =useSelector((store)=>store)
+   console.log(store)
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
 const {name,value} =e.target;
 let newCredentials ={...credentials,[name]:value}
 setCredentials(newCredentials);
   };
-//   const AllUser =useSelector((store)=>{
-//    return store.authReducer.User
-//   })
+
    const handleSubmit = ()=>{
 console.log("credential",credentials)
-//  if(user.email=""|| user.password=""){
-//    alert("Please enter valid data");
-//  }
-// else {
-//    let isprasent = AllUser.find((el)=>{return el.email==user.email && el.password==user.password});
-//    if(isprasent){
-//       dispatch(login(isprasent))
-//    }else{
-
-//       alert("Please enter valid credentials for login")
-//    }
-// }
+ if(credentials.email===""|| credentials.password===""){
+   // alert("Please enter valid data");
+   toast({
+      title: 'valid credentials',
+      description: 'Please enter valid data.',
+      status: 'warning', 
+      duration: 2000,  
+      isClosable: true, 
+    });
+ }
+else {
+   if (Array.isArray(AllUser)) {
+   let isprasent = AllUser.find((el)=>{return el.email===credentials
+   .email && el.password===credentials.password});
+   if(isprasent){
+   //   dispatch(Login({...isprasent}))
+dispatch({type:LOGIN_SUCCESS,payload:{...isprasent}});
+// alert("Login successfull")
+toast({
+   title: 'Login Success',
+   description: ' successfully loged In.',
+   status: 'success', 
+   duration: 2000,  
+   isClosable: true, 
+ });
+setCredentials({email:"",password:""})
+   }
+   else{
+      toast({
+         title: 'Wrong credentials',
+         description: 'You already have a account with this email address.',
+         status: 'error', 
+         duration: 2000,  
+         isClosable: true, 
+       });
+       setCredentials({email:"",password:""})
+      // alert("Please enter valid credentials for login")
+   }
+}
+   
+}
 
 
    }
@@ -72,6 +114,18 @@ padding-top:80px;
   border:1px solid black;
   color: black;
   text-align: center;
+  h1{
+   margin-top:20px;
+   margin-bottom:20px;
+   font-size:30px;
+   font-weight:bold;
+  }
+  h2{
+   margin-top:20px;
+   margin-bottom:20px;
+   font-size:20px;
+   font-weight:bold;
+  }
   div {
    margin:auto;
    /* margin-left:30%; */

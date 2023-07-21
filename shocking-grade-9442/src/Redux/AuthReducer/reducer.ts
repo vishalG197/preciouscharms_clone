@@ -1,11 +1,11 @@
 import { UserObject } from "../../constrain";
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
 
 const initialState: {
    isLoading: boolean;
    isError: boolean;
    isAuth: boolean;
-   Users: never[];
+   Users: UserObject[];
    ActiveUser: {};
 } ={
 isLoading:false,
@@ -15,7 +15,7 @@ Users:[],
 ActiveUser:{},
 
 }
-export function reducer (state=initialState,{type,payload}:{type:string,payload:UserObject[] | UserObject}){
+export function authReducer (state=initialState,{type,payload}:{type:string,payload:UserObject[] | UserObject}){
 switch(type){
 
 case LOGIN_REQUEST :{
@@ -23,6 +23,9 @@ case LOGIN_REQUEST :{
 }
 case LOGIN_SUCCESS :{
    return {...state,isLoading:false,isAuth:true,ActiveUser:payload}
+}
+case SIGNUP_SUCCESS :{
+return {...state, isLoading:false}
 }
 case LOGIN_FAILURE :{
    return {...state,isLoading:false,isError:true}

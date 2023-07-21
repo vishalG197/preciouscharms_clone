@@ -1,3 +1,5 @@
+import {  authReducer } from "./Redux/AuthReducer/reducer";
+import store from "./Redux/store"
 export type ProductObject = {
    id:number;
    name:string;
@@ -20,7 +22,7 @@ addToCart:ProductObject[];
 orderPlaced:ProductObject[];
 }
 
-
+export type RootauthState = ReturnType<typeof authReducer  >;
 
 
 
