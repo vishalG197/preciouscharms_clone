@@ -1,106 +1,6 @@
 {
   "products": [
     {
-      "id": 1,
-      "name": "Jewelry",
-      "price": 4599,
-      "about": "solitaire",
-      "category": "Rings",
-      "brand": "Messica",
-      "rating": 4.3,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/5/0/50657-e.side_2_1.jpg"
-    },
-    {
-      "id": 2,
-      "name": "Jewelry",
-      "price": 3599,
-      "about": "Nova Ring",
-      "category": "Rings",
-      "brand": "Cartier",
-      "rating": 4.1,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Jewelry",
-      "price": 9091,
-      "about": "Sylvie Ring",
-      "category": "Rings",
-      "brand": "Grrard",
-      "rating": 3.2,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
-    },
-    {
-      "id": 4,
-      "name": "Jewelry",
-      "price": 6099,
-      "about": "Deanna Ring",
-      "category": "Rings",
-      "brand": "David Yurman",
-      "rating": 6.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/e/r/ersl0318-ov_yg_1.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Jewelry",
-      "price": 2099,
-      "about": "Unique",
-      "category": "Rings",
-      "brand": "John Hardy",
-      "rating": 5.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84376-e-14ky-em.jpeg"
-    },
-    {
-      "id": 6,
-      "name": "Jewelry",
-      "price": 5099,
-      "about": "Classica Ring",
-      "category": "Rings",
-      "brand": "Graff",
-      "rating": 4.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
-    },
-    {
-      "id": 7,
-      "name": "Jewelry",
-      "price": 3099,
-      "about": "Basia Ring",
-      "category": "Rings",
-      "brand": "Reborto Coin",
-      "rating": 1.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/r/1/r1089r150_wg_1_ubfly4ce3asvmqin.jpg"
-    },
-    {
-      "id": 8,
-      "name": "Jewelry",
-      "price": 3000,
-      "about": "Savannah Ring",
-      "category": "Rings",
-      "brand": "Mikimoto",
-      "rating": 4.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/a/h/ahe042-e-14ky-rd2-front.jpeg"
-    },
-    {
-      "id": 9,
-      "name": "Jewelry",
-      "price": 1099,
-      "about": "Solon ring",
-      "category": "Rings",
-      "brand": "Tiffani",
-      "rating": 4.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/r/1/r1241-e-w_1.jpg"
-    },
-    {
-      "id": 10,
-      "name": "Jewelry",
-      "price": 1999,
-      "about": "3 ct. tw. Classic Tennis Bracelet",
-      "category": "Brecelets",
-      "brand": "Messica",
-      "rating": 4.3,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/l/m/lmb1078_yg_1.jpg"
-    },
-    {
       "id": 11,
       "name": "Jewelry",
       "price": 4599,
@@ -249,16 +149,6 @@
       "brand": "Reborto Coin",
       "rating": 1.4,
       "avatar": "https://www.cleanorigin.com/media/catalog/product/e/c/ecojwl300-14kw.jpg"
-    },
-    {
-      "id": 26,
-      "name": "Jewelry",
-      "price": 3000,
-      "about": " 1/2 ct. tw. Certified Round 4-Prong Studs in 14K Gold",
-      "category": "Earrning",
-      "brand": "Mikimoto",
-      "rating": 2.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/p/d/pdp-hover-erb-s-certified-round-brilliant-4-prong-diamond-stud-earrings-in-14k-gold-with-text_5__11.jpg"
     },
     {
       "id": 27,
@@ -861,16 +751,6 @@
       "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/l/o/louis-moinet-memoris-lm-79-50-25.jpg"
     },
     {
-      "id": 87,
-      "name": "Watches",
-      "price": 2708000,
-      "about": "MECHANICAL WONDERS",
-      "category": "Men's jewelry",
-      "brand": "LOUIS MOINET",
-      "info": "Time to Race Grade 5 Titanium",
-      "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/l/o/louis-moinet-memoris-lm-79-20-15.jpg"
-    },
-    {
       "id": 88,
       "name": "Watches",
       "price": 5393000,
@@ -1000,7 +880,6 @@
       "info": "Classics Art Déco Round",
       "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/f/r/frederique-constant-classics-fc-270sw4p6_1_1.jpg"
     },
-    
     {
       "id": 101,
       "name": "Watches",
@@ -1199,5 +1078,6 @@
       "id": 2,
       "addToCart": [],
       "orderPlaced": []
-    }]
+    }
+  ]
 }
