@@ -10,9 +10,15 @@ export const Payment = () => {
   };
 
   return (
-    <DIV>
+    <DIV  className="background-image" style={{ backgroundImage: `url("https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg")`,
+    backgroundRepeat:"no-repeat",
+    backgroundSize:"cover",
+    height:"800px",
+     border:"1px solid black",
+ }}>
     <div className="container">
       <h1>Payment Details</h1>
+      
       <div className="payment-options">
         <button
           className={paymentOption === 'cash' ? 'active' : ''}
@@ -52,11 +58,11 @@ export const Payment = () => {
               <label >Card Number</label>
               <input type="text" id="cardNumber" placeholder="#### #### #### ####" />
             </div>
-            <div >
+            <div className="form-group" >
               <label >Expiry Date</label>
               <input type="text" id="expiryDate" placeholder="MM/YY" />
             </div>
-            <div >
+            <div className="form-group">
               <label >CVV</label>
               <input type="text" id="cvv" placeholder="123" />
             </div>
@@ -98,6 +104,8 @@ h1 {
   text-align: center;
   margin-bottom: 20px;
   color: #333;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .payment-options {
@@ -116,8 +124,8 @@ h1 {
 }
 
 .payment-options button.active {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #0c0c0c;
+  color: #fcfafa;
 }
 
 .payment-content {
@@ -149,6 +157,7 @@ input {
   height: 35px;
   width: 200px;
   border-radius: 2%;
+  margin-top: 20px;
 }
 
 
