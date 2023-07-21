@@ -10,11 +10,15 @@ import categoryimg from "../home-image/category.jpg"
 import abtImg from "../home-image/home-about.png"
 import meetImg from "../home-image/meet.jpeg"
 import { Link } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
+
 
 
 const Homepage = () => {
   return (
-    <DIV>
+ <DIV>
+<Navbar/>
       <div className="banner">
         <img src={banner} alt="" />
       </div>
@@ -192,7 +196,7 @@ const Homepage = () => {
 </div>
 {/********************* * arrange-meeting-section-end ***************/}
 
-
+<Footer/>
 
     </DIV>
   );

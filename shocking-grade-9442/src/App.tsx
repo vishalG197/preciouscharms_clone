@@ -20,7 +20,7 @@ function App() {
 
       {/* <Navbar/> */}
       {/* <Homepage/> */}
-      <AdminNavbar/>
+     
       <AllRoutes/>
       {/* <Footer/> */}
   
