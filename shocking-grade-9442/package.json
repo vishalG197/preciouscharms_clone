@@ -35,6 +35,7 @@
 
      "start": "react-scripts start",
 
+
     "server": "json-server --watch db.json --port 8080",
     "build": "react-scripts build",
     "test": "react-scripts test",
