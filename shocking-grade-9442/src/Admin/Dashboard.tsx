@@ -11,11 +11,15 @@ import img6 from "../AdminImges/img6.png"
 import img7 from "../AdminImges/img7.png"
 import img8 from "../AdminImges/img8.png"
 import img9 from "../AdminImges/img9.png"
+import Navbar from "./AdminNavbar"
 const Dashboard = () => {
   return (
 
     // /Dashboard Componet 
+<div>
 
+
+<Navbar/>
     <DIV style={{backgroundColor:"rgb(157, 159, 159)"}}>
       <div>
         <div className='dashboard' style={{ paddingLeft: "100px", width: "100%" }}>
@@ -39,6 +43,7 @@ const Dashboard = () => {
         </div>
       </div>
     </DIV>
+    </div>
   )
 }
 
