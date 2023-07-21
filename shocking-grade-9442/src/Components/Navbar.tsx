@@ -64,10 +64,10 @@ const Navbar: React.FC = () => {
       </div>
 
       <ul className={`navbar__menu ${isMobileMenuOpen ? 'active' : ''}`}>
-        <CustomNavLink to="/product" onClick={closeMobileMenu}>
+        <CustomNavLink to="/product/Jewelry" onClick={closeMobileMenu}>
           Jwellery
         </CustomNavLink>
-        <CustomNavLink to="/product" onClick={closeMobileMenu}>
+        <CustomNavLink to="/product/Watches" onClick={closeMobileMenu}>
           Watches
         </CustomNavLink>
         <CustomNavLink to="/product" onClick={closeMobileMenu}>
