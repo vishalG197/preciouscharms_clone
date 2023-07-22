@@ -19,6 +19,7 @@ import { SingleUser } from '../Admin/SingleUser'
 
 import { Payment } from '../Pages/Payment'
 import { Address } from '../Pages/Address'
+import About from '../Pages/About'
 
 
 const AllRoutes = () => {
@@ -40,6 +41,7 @@ const AllRoutes = () => {
       <Route path="/a/setting" element={<Setting/>}/>
       <Route path="/payment" element={<Payment/>}/>
       <Route path="/address" element={<Address/>}/>
+      <Route path="/about" element={<About/>}/>
 
       <Route path="/a/users/details/:id" element={<SingleUser/>}/>
 

@@ -10,7 +10,7 @@ export const  Address =()=>{
     return (
         <DIV>
      
-        <div  className="background-image" style={{ backgroundImage: `url("https://rare-gallery.com/uploads/posts/585771-black-and-white.jpg")`,
+        <div  className="background-image" style={{ backgroundImage: `url("https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg")`,
                  backgroundRepeat:"no-repeat",
                  backgroundSize:"cover",
                  height:"800px",
