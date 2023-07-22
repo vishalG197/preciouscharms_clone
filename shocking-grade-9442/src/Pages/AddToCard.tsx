@@ -10,6 +10,8 @@ import Navbar from '../Components/Navbar';
 import { DELETE_ITEM, LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType';
 import { ActionToDelete, getUsers } from '../Redux/AuthReducer/action';
 import axios from 'axios';
+import { Navigate } from 'react-router';
+import { Link } from 'react-router-dom';
 const AddToCard = () => {
   const toast = useToast();
   const dispatch:any = useDispatch();
@@ -124,9 +126,11 @@ setTax (taxcut)
       <div>TOTAL</div><div>₹ {total + tax}</div>
      </div>
      <div>
+      <Link to={"/address"}>
       <button>
         CHECKOUT
       </button>
+      </Link>
      </div>
      </div>
     </Div>

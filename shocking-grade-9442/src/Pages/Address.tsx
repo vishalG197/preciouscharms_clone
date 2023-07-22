@@ -1,5 +1,6 @@
 import React from "react";
 import  { useState } from 'react';
+import { Link } from "react-router-dom";
 
 import { styled } from 'styled-components';
 
@@ -45,7 +46,8 @@ export const  Address =()=>{
                  <label htmlFor="country">Town/City</label>
                  <input type="text" id="country" required />
                </div>
-               <button type="submit">Proceed to Payment</button>
+              <Link to={"/payment"}> <button type="submit">Proceed to Payment</button></Link> 
+              
              </form>
            </div>
          </div>
