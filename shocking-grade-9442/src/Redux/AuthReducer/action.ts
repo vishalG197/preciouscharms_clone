@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
 import { UserObject } from "../../constrain";
-import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType"
+import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType"
 import axios from "axios";
 const url = "/users"
 export const getUsers =()=>{
@@ -24,7 +24,12 @@ export const SignUp= (newUser:UserObject)=>(dispatch:Dispatch<{type:string}|{typ
    });
 }
 
-
+export const ActionToDelete = (payload:any)=>{
+   return {type:DELETE_ITEM,payload:payload}
+}
+export const ActionToAddItem = (payload:any)=>{
+   return {type:ADD_ITEM,payload:payload}
+}
 // export const Login= (newUser:UserObject)=>(dispatch:Dispatch<{type:string}|{type:string,payload:UserObject[]}>)=>{
 //    dispatch({type:LOGIN_REQUEST});
 //    axios.post(`http://localhost:8080/users`,newUser).

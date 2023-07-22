@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 // import rootReducer from './AdminReducer';
 import { reducer as productReducer } from './ProductReducer/reducer';
 import dataReducer from './AdminReducer/reducer';
-import rootReducer from './AdminReducer';
+// import rootReducer from './AdminReducer';
 import { authReducer } from "./AuthReducer/reducer"
 const rootReducer=combineReducers({
     productReducer,
@@ -12,6 +12,6 @@ const rootReducer=combineReducers({
 })
 
 
-const store = legacy_createStore(RootReducer, applyMiddleware(thunk));
+const store = legacy_createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
