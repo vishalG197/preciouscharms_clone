@@ -51,16 +51,6 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
     },
     {
-      "id": 7,
-      "name": "Jewelry",
-      "price": 3099,
-      "about": "Basia Ring",
-      "category": "Rings",
-      "brand": "Reborto Coin",
-      "rating": 1.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/r/1/r1089r150_wg_1_ubfly4ce3asvmqin.jpg"
-    },
-    {
       "id": 8,
       "name": "Jewelry",
       "price": 3000,
@@ -701,16 +691,6 @@
       "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/o/m/omega-de-ville-424-20-37-20-02-002.jpg"
     },
     {
-      "id": 72,
-      "name": "Watches",
-      "price": 339900,
-      "about": "DE VILLE",
-      "category": "Men's jewelry",
-      "brand": "OMEGA",
-      "info": "Prestige Co‑Axial Chronometer 39.5 mm",
-      "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/o/m/omega-de-ville-424-10-27-60-53-001_1.jpg"
-    },
-    {
       "id": 73,
       "name": "Watches",
       "price": 339900,
@@ -1155,7 +1135,8 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
         }
       ],
-      "id": 1
+      "id": 1,
+      "orderPlaced": []
     },
     {
       "name": "ABC",
@@ -1169,7 +1150,28 @@
       "name": "Vishal Giri",
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
-      "addToCart": [],
+      "addToCart": [
+        {
+          "id": 6,
+          "name": "Jewelry",
+          "price": 5099,
+          "about": "Classica Ring",
+          "category": "Rings",
+          "brand": "Graff",
+          "rating": 4.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
+        },
+        {
+          "id": 56,
+          "name": "Watches",
+          "price": 1275500,
+          "about": "Submariner Date",
+          "category": "Men's jewelry",
+          "brand": "Rolex",
+          "info": "Oyster, 41mm, Oystersteel and yellow gold",
+          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
+        }
+      ],
       "orderPlaced": [],
       "id": 3
     },
@@ -1182,11 +1184,18 @@
       "id": 4
     },
     {
-      "name": "xml",
-      "email": "xml@gmail.com",
-      "password": "xml",
-      "addToCart": [],
-      "orderPlaced": [],
+      "addToCart": [
+        {
+          "id": 56,
+          "name": "Watches",
+          "price": 1275500,
+          "about": "Submariner Date",
+          "category": "Men's jewelry",
+          "brand": "Rolex",
+          "info": "Oyster, 41mm, Oystersteel and yellow gold",
+          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
+        }
+      ],
       "id": 5
     },
     {
@@ -1196,6 +1205,22 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 6
+    },
+    {
+      "name": "MOUMITA SARKAR",
+      "email": "moumita@mail.com",
+      "password": "1234",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 7
+    },
+    {
+      "name": "Hemant Yadav",
+      "email": "yemail@gmail.com",
+      "password": "123",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 8
     }
   ]
 }

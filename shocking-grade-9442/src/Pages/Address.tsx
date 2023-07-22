@@ -1,5 +1,6 @@
 import React from "react";
 import  { useState } from 'react';
+import { Link } from "react-router-dom";
 
 import { styled } from 'styled-components';
 
@@ -10,7 +11,7 @@ export const  Address =()=>{
     return (
         <DIV>
      
-        <div  className="background-image" style={{ backgroundImage: `url("https://rare-gallery.com/uploads/posts/585771-black-and-white.jpg")`,
+        <div  className="background-image" style={{ backgroundImage: `url("https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg")`,
                  backgroundRepeat:"no-repeat",
                  backgroundSize:"cover",
                  height:"800px",
@@ -45,7 +46,8 @@ export const  Address =()=>{
                  <label htmlFor="country">Town/City</label>
                  <input type="text" id="country" required />
                </div>
-               <button type="submit">Proceed to Payment</button>
+              <Link to={"/payment"}> <button type="submit">Proceed to Payment</button></Link> 
+              
              </form>
            </div>
          </div>

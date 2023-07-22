@@ -2,19 +2,19 @@ import React, { useEffect } from 'react'
 import { fetchUserData } from '../Redux/AdminReducer/action'
 import { useDispatch, useSelector } from 'react-redux'
 import UserCard from './UserCard'
-import { ProductObject, UserObject } from '../constrain'
+import { ProductObject, UserObject, UserObjectNew } from '../constrain'
 import styled from "styled-components"
 import Navbar from './AdminNavbar'
 
-interface UserObjectNew {
-  name:string;
-  email:string;
+// interface UserObjectNew {
+//   name:string;
+//   email:string;
   
-  password:string;
-  id?:number;
-  addToCart:ProductObject[];
-  orderPlaced:ProductObject[];
-  }
+//   password:string;
+//   id?:number;
+//   addToCart:ProductObject[];
+//   orderPlaced:ProductObject[];
+//   }
 
 const UserDetails = () => {
 
