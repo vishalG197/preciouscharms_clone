@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/react'
+import { Avatar, Button, Wrap, WrapItem } from '@chakra-ui/react'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from "styled-components"
@@ -17,6 +17,13 @@ interface userObj{
 export default function UserCard({id,name,email}:userObj) {
   return (
     <DIV>
+
+              <Wrap>
+                <WrapItem>
+                  <Avatar name={name} src="https://bit.ly/broken-link" />
+                </WrapItem>
+              </Wrap>
+
       <h4><b>User Name :</b>{name}</h4>
       <p><b>Email :</b>{email}</p>
 
