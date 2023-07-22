@@ -3,9 +3,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteData, fetchData } from '../Redux/AdminReducer/action';
-import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading, Image, Text, Link } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading, Image, Text,  } from '@chakra-ui/react'
 import { repeat } from 'lodash';
 import Navbar from './AdminNavbar';
+import { Navigate ,Link} from 'react-router-dom';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -62,10 +63,11 @@ const App: React.FC = () => {
               <Divider />
               <CardFooter>
                 <ButtonGroup spacing='2'>
-                  <Link href='http://localhost:3000/a/Edit/:id' style={{ marginLeft: "30px" }}>
+                 
+                     <Link to={`/a/Edit/:id${item.id}`}><Button   style={{ marginLeft: "80px" }}>
                     Edit
-                  </Link>
-                  
+                  </Button></Link>
+                 
                   <Button onClick={() => handleDelete(item.id)}  style={{ marginLeft: "80px" }}>
                     Delete
                   </Button>
