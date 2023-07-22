@@ -2,13 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteData, fetchData, fetchPage } from '../Redux/AdminReducer/action';
-import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading, Image, Text, Link } from '@chakra-ui/react'
+
+import { deleteData, fetchData,fetchPage } from '../Redux/AdminReducer/action';
+import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading, Image, Text,  } from '@chakra-ui/react'
 import { repeat } from 'lodash';
 import Navbar from './AdminNavbar';
+import { Navigate ,Link} from 'react-router-dom';
+import { GrPrevious,GrNext } from "react-icons/gr";
 import axios from 'axios';
 import { log } from 'console';
-import { GrPrevious,GrNext } from "react-icons/gr";
+
 
 
 const App: React.FC = () => {
@@ -116,10 +119,11 @@ const handlePagechange=(value:number)=>{
               <Divider />
               <CardFooter>
                 <ButtonGroup spacing='2'>
-                  <Link href='http://localhost:3000/a/Edit/:id' style={{ marginLeft: "30px" }}>
+                 
+                     <Link to={`/a/Edit/:id${item.id}`}><Button   style={{ marginLeft: "80px" }}>
                     Edit
-                  </Link>
-                  
+                  </Button></Link>
+                 
                   <Button onClick={() => handleDelete(item.id)}  style={{ marginLeft: "80px" }}>
                     Delete
                   </Button>
