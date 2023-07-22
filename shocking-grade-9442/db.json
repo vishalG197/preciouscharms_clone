@@ -1175,10 +1175,7 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
         }
       ],
-
       "id": 1
-
-     
     },
     {
       "name": "ABC",
@@ -1219,7 +1216,14 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 6
-
+    },
+    {
+      "name": "MOUMITA SARKAR",
+      "email": "moumita@mail.com",
+      "password": "1234",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 7
     }
   ]
 }

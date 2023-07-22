@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS, GET_USER_SUCCESS, USER_REQ } from "./actionType";
+import { FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS, GET_USER_SUCCESS, SINGLE_USER_REQ, SINGLE_USER_SUCCESS, USER_REQ } from "./actionType";
 import { Dispatch } from "redux";
 
 export const fetchData:any = () => {
@@ -28,3 +28,14 @@ export const fetchData:any = () => {
   dispatch({type:GET_USER_SUCCESS,payload:res.data})
   })
  }
+
+ export const SingleUserFetch:any=(id:number)=>(dispatch: Dispatch)=>{
+  dispatch({type:SINGLE_USER_REQ})
+  axios.get(`http://localhost:8080/users/${id}`)
+  .then((res)=>{
+console.log(res.data);
+
+    dispatch({type:SINGLE_USER_SUCCESS,payload:res.data})
+    })
+ }
+
