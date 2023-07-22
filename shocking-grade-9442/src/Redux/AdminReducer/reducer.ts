@@ -1,11 +1,7 @@
 // src/store/reducers.ts
 
 
-import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, USER_REQ, GET_USER_SUCCESS, SINGLE_USER_REQ, SINGLE_USER_SUCCESS,DELETE_DATA_SUCCESS, DELETE_DATA_FAILURE } from './actionType';
-
-
-
-
+import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, USER_REQ, GET_USER_SUCCESS, SINGLE_USER_REQ, SINGLE_USER_SUCCESS,DELETE_DATA_SUCCESS, DELETE_DATA_FAILURE, GET_TOTAL_PAGE, POST_PRODUCT_SUCCESS } from './actionType';
 
 
 
@@ -20,9 +16,10 @@ export interface Product {
   error: string | null;
   user:any[];
   isloading:boolean,
-  singleuserLoad:boolean
-
-  singleUser:any
+  singleuserLoad:boolean,
+ 
+  singleUser:any,
+  totalP:any[]
 }
 
   const initialState: DataState = {
@@ -31,7 +28,8 @@ export interface Product {
   user:[],  //userdata 
   isloading:false, //userdata loading
   singleuserLoad:false,
-  singleUser:""
+  singleUser:"",
+  totalP:[]
 };
 
 const dataReducer = (state = initialState, action: any) => {
@@ -92,6 +90,20 @@ const dataReducer = (state = initialState, action: any) => {
       }
     }
 
+    case GET_TOTAL_PAGE:{
+      return {
+        ...state,
+        totalP:action.payload
+      }
+    }
+
+
+    case POST_PRODUCT_SUCCESS:{
+      return {
+        ...state
+      
+      }
+    }
 
 
     default:

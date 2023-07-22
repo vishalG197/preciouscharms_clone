@@ -64,10 +64,11 @@ const Navbar: React.FC = () => {
          {isMobileMenuOpen ? <MdClose color="#adacac"/> : <MdMenu color="#adacac" />}
       </div>
 
-
+      <Link to='/'>
       <div className="mobile-logo">
             <img src={colorChange ? blackLogo : logo} alt=""  />
           </div>
+          </Link>
 
 </div>
     
@@ -222,6 +223,9 @@ const DIV = styled.section`
   width:100%;
   display: flex;
 }
+.colorChange a {
+    color: #ddd9d9!important;
+}
 }
 @media screen and (min-device-width: 481px) and (max-device-width:768px) { 
  .navbar__logo
@@ -237,6 +241,9 @@ const DIV = styled.section`
 .mobileNav{
   width:100%;
   display: flex;
+}
+.colorChange a {
+    color: #ddd9d9!important;
 }
 }
 @media screen and (min-device-width: 769px)  { 

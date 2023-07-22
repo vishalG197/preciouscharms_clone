@@ -49,6 +49,10 @@ const ProductPage = () => {
   return (
     <div>
       <Navbar/>
+
+
+
+      
       <img src={ProductImg} alt="" style={{height:"400px", width:"100%"}}/>
       <DIV>
         {name=="Watches"?  <div className="sidebar">
@@ -77,6 +81,7 @@ const ProductPage = () => {
 const DIV=styled.div`
 display: flex;
 gap: 10px;
+background-color:#f9f9f9;
 .sidebar{
   margin-top: 30px;
   margin-bottom: 60px;
@@ -94,12 +99,28 @@ grid-gap: 40px;
 margin: 10px;
 margin-top: 30px;
   margin-bottom: 60px; 
-  /* margin-left: 20%; */
+
 }
 
-.product{
-  /* border: 1px solid black; */
+@media screen and (min-device-width: 320px) and (max-device-width: 567px) { 
+
+  display: flex;
+  flex-direction: column;
+  .sidebar{
+ width: 100%;
+ }
+
+  .product-list{
+ 
+  grid-template-columns: repeat(2,1fr);
+
+  /* margin-left: 20%; */
 }
+}
+
+
+
+
 
 `
 

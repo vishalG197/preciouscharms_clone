@@ -51,16 +51,6 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
     },
     {
-      "id": 7,
-      "name": "Jewelry",
-      "price": 3099,
-      "about": "Basia Ring",
-      "category": "Rings",
-      "brand": "Reborto Coin",
-      "rating": 1.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/r/1/r1089r150_wg_1_ubfly4ce3asvmqin.jpg"
-    },
-    {
       "id": 8,
       "name": "Jewelry",
       "price": 3000,
@@ -701,16 +691,6 @@
       "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/o/m/omega-de-ville-424-20-37-20-02-002.jpg"
     },
     {
-      "id": 72,
-      "name": "Watches",
-      "price": 339900,
-      "about": "DE VILLE",
-      "category": "Men's jewelry",
-      "brand": "OMEGA",
-      "info": "Prestige Co‑Axial Chronometer 39.5 mm",
-      "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/o/m/omega-de-ville-424-10-27-60-53-001_1.jpg"
-    },
-    {
       "id": 73,
       "name": "Watches",
       "price": 339900,
@@ -1170,16 +1150,18 @@
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
       "addToCart": [],
-      "orderPlaced": [ {
-        "id": 1,
-        "name": "Jewelry",
-        "price": 4599,
-        "about": "Bramosia Ring",
-        "category": "Rings",
-        "brand": "Messica",
-        "rating": 4.3,
-        "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84638-e-w-rd_1_2.jpg"
-      }],
+      "orderPlaced": [
+        {
+          "id": 1,
+          "name": "Jewelry",
+          "price": 4599,
+          "about": "Bramosia Ring",
+          "category": "Rings",
+          "brand": "Messica",
+          "rating": 4.3,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84638-e-w-rd_1_2.jpg"
+        }
+      ],
       "id": 3
     },
     {
@@ -1205,7 +1187,6 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 6
-
     },
     {
       "name": "MOUMITA SARKAR",
@@ -1214,7 +1195,6 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 7
-
     }
   ]
 }

@@ -1,20 +1,37 @@
 // src/App.tsx
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteData, fetchData } from '../Redux/AdminReducer/action';
+import { deleteData, fetchData, fetchPage } from '../Redux/AdminReducer/action';
 import { Card, CardHeader, CardBody, CardFooter, ButtonGroup, Button, Divider, Stack, Heading, Image, Text, Link } from '@chakra-ui/react'
 import { repeat } from 'lodash';
 import Navbar from './AdminNavbar';
+import axios from 'axios';
+import { log } from 'console';
+import { GrPrevious,GrNext } from "react-icons/gr";
+
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
   const data = useSelector((state: any) => state.data.data);
   const error = useSelector((state: any) => state.data.error);
+const totalP=useSelector((state: any) => state.data.totalP);
+
+
+
+
+///******************* */ totalPage******************* */
+
+const [page,setPage]=useState(1)
+let totalPage=Math.ceil(totalP.length/20)
+useEffect(()=>{
+dispatch(fetchPage())
+},[])
+///******************* */ totalPage******************* */
 
   useEffect(() => {
-    dispatch(fetchData());
-  }, [dispatch]);
+    dispatch(fetchData(page));
+  }, [dispatch,page]);
 
   const handleDelete = (id: number): void => {
     // Dispatch the deleteData action with the item ID to delete the data
@@ -25,14 +42,51 @@ const App: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
+
+const handlePagechange=(value:number)=>{
+  setPage(prev=>prev+value)
+}
+
+
   return (
+
+
+<div style={{backgroundColor:"#f5f5f5"}}>
 
     <div>
 
+
       <Navbar />
 
+<div>  
+  
+  {/******************  pagination *****************/}
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "20px", paddingTop: "100px", }}>
+<div style={{display:"flex",gap:"10px",width:"90%",margin:"0 auto",marginTop:"20px",justifyContent:"end"}}>
+ 
+    <Button colorScheme='teal' size='sm' onClick={()=>handlePagechange(-1)} isDisabled={page==1}>
+     <GrPrevious/>
+   </Button>
+
+    <b><h1>{page}</h1></b>
+
+  <Button colorScheme='teal' size='sm' onClick={()=>handlePagechange(1)} isDisabled={page==totalPage}>
+    <GrNext/>
+  </Button>
+
+</div>
+{/******************  pagination-end *****************/}
+
+
+
+
+  </div>
+
+
+
+    <div style={{width:"90%",margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"50px" ,}}>
+
+
 
         {data.map((item: any) => (
           <div key={item.id}>
