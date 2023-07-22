@@ -1,6 +1,8 @@
 {
   "products": [
     {
+
+
       "id": 1,
       "name": "Jewelry",
       "price": 4599,
@@ -101,6 +103,7 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/l/m/lmb1078_yg_1.jpg"
     },
     {
+
       "id": 11,
       "name": "Jewelry",
       "price": 4599,
@@ -251,6 +254,8 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/e/c/ecojwl300-14kw.jpg"
     },
     {
+
+
       "id": 26,
       "name": "Jewelry",
       "price": 3000,
@@ -261,6 +266,7 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/l/m/lme1318pkrg_rg_1.jpg"
     },
     {
+
       "id": 27,
       "name": "Jewelry",
       "price": 1099,
@@ -861,16 +867,6 @@
       "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/l/o/louis-moinet-memoris-lm-79-50-25.jpg"
     },
     {
-      "id": 87,
-      "name": "Watches",
-      "price": 2708000,
-      "about": "MECHANICAL WONDERS",
-      "category": "Men's jewelry",
-      "brand": "LOUIS MOINET",
-      "info": "Time to Race Grade 5 Titanium",
-      "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/l/o/louis-moinet-memoris-lm-79-20-15.jpg"
-    },
-    {
       "id": 88,
       "name": "Watches",
       "price": 5393000,
@@ -1187,6 +1183,7 @@
       "id": 2,
       "addToCart": [],
       "orderPlaced": []
+
     },
     {
       "name": "Vishal Giri",

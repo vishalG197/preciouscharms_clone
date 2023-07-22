@@ -15,7 +15,10 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@types/react-router-dom": "^5.3.3",
+<<<<<<< HEAD
+=======
     "@types/redux-thunk": "^2.1.0",
+>>>>>>> main
     "axios": "^1.4.0",
     "framer-motion": "^10.12.22",
     "react": "^18.2.0",
@@ -31,6 +34,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+<<<<<<< HEAD
+    "start": "react-scripts start",
+    "server": "json-server --watch db.json --port 8080",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+=======
 
 
      "start": "react-scripts start",
@@ -43,6 +53,7 @@
     "eject": "react-scripts eject"
     
 
+>>>>>>> main
   },
   "eslintConfig": {
     "extends": [
@@ -61,5 +72,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/redux-thunk": "^2.1.0"
   }
 }
