@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS, GET_USER_SUCCESS, SINGLE_USER_REQ, SINGLE_USER_SUCCESS, USER_REQ ,DELETE_DATA_FAILURE, DELETE_DATA_SUCCESS} from "./actionType";
-import { Dispatch } from "redux";
+
 
 import { AnyAction, Dispatch } from "redux";
 import { ThunkAction } from 'redux-thunk'; 
