@@ -69,14 +69,15 @@ export const SideBarJewelry = () => {
   return (
     <SidebarContainer>
 
-<InputGroup>
-      <Input
+
+      <input
+        style={{marginBottom:"15px",backgroundColor:"lightgray",padding:"3px 3px"}}
         type="text"
         placeholder="Search"
         value={search}
         onChange={handleSearch}
       />
-    </InputGroup>
+  
 
       <Section>
         <h3>Filter by Category</h3>
@@ -243,23 +244,28 @@ export const SideBarJewelry = () => {
         <h3>Sort By Discount</h3>
         <RadioGroup onChange={handleOrder}>
           <div className="radio">
+          
           <RadioButton>
+          <RadioLabel>
             <input  type="radio"
             name="sort"
             value={"asc"}
             checked={order === "asc"}/>
+              Ascending</RadioLabel>
           </RadioButton>
-          <RadioLabel>Ascending</RadioLabel>
+        
           </div>
 
           <div className="radio">
             <RadioButton>
+            <RadioLabel>
             <input type="radio"
             name="sort"
             value={"desc"}
             checked={order === "desc"} />
+             Descending</RadioLabel>
             </RadioButton>
-          <RadioLabel>Descending</RadioLabel>
+        
           </div>
         </RadioGroup>
       </Section>
@@ -270,64 +276,75 @@ export const SideBarJewelry = () => {
 };
 
 const SidebarContainer = styled.div`
-  padding: 0 10px;
+  /* padding: 0 10px;
   border-right: 1px solid gray;
-  /* height: 100vh; */
+   height: 100vh; 
   width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-start; */
+  
 
   .radio{
     display: flex;
-    gap: 10px;
+   
   }
 `;
 
 const Section = styled.div`
   margin-bottom: 10px;
+  h3{
+    font-weight:bold;
+    margin-bottom:5px
+  }
+
 `;
 
 const CheckboxGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
 `;
 
 const CheckboxLabel = styled.label`
   display: flex;
   align-items: center;
-  gap: 2px;
+  font-size:13px;
+  gap:5px
 `;
 
 const RadioGroup = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8px;
 `;
 
 const RadioLabel =styled.div`
 display: flex;
-flex-direction: column;
-gap: 8px;
+flex-direction:row;
+gap:5px
 `;
 
 const RadioButton =styled.div`
 display: flex;
 flex-direction: column;
-gap: 8px;
+
 `;
 
 
 const Button = styled.button`
-  background-color: #f44336;
+  background-color:black;
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 5px;
+  width: 170px;
   font-weight: bold;
   cursor: pointer;
+  border-radius:5px;
+  margin-top:10px;
+
 
   &:hover {
-    background-color: #d32f2f;
+    background-color:white;
+    color:black;
+    border: 2px;
   }
 `;

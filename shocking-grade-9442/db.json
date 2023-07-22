@@ -1170,7 +1170,16 @@
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
       "addToCart": [],
-      "orderPlaced": [],
+      "orderPlaced": [ {
+        "id": 1,
+        "name": "Jewelry",
+        "price": 4599,
+        "about": "Bramosia Ring",
+        "category": "Rings",
+        "brand": "Messica",
+        "rating": 4.3,
+        "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84638-e-w-rd_1_2.jpg"
+      }],
       "id": 3
     },
     {
