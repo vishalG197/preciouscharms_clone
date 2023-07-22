@@ -1,9 +1,22 @@
 // src/store/reducers.ts
 
-import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, USER_REQ, GET_USER_SUCCESS, SINGLE_USER_REQ, SINGLE_USER_SUCCESS } from './actionType';
 
-interface State {
-  data: any[]; // Change 'any[]' to the actual data type you expect from the API
+import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, USER_REQ, GET_USER_SUCCESS, SINGLE_USER_REQ, SINGLE_USER_SUCCESS,DELETE_DATA_SUCCESS, DELETE_DATA_FAILURE } from './actionType';
+
+
+
+
+
+
+
+export interface Product {
+  id: number;
+  name: string;
+  // Add other properties if available from the API response
+}
+
+ export interface DataState  {
+  data: Product[]; // Change 'any[]' to the actual data type you expect from the API
   error: string | null;
   user:any[];
   isloading:boolean,
@@ -12,7 +25,7 @@ interface State {
   singleUser:any
 }
 
-const initialState: State = {
+  const initialState: DataState = {
   data: [],
   error: null,
   user:[],  //userdata 
@@ -35,6 +48,20 @@ const dataReducer = (state = initialState, action: any) => {
         data: [],
         error: action.payload,
       };
+
+      case DELETE_DATA_SUCCESS:
+      
+      return {
+        ...state,
+        data: state.data.filter((item) => item.id !== action.payload),
+        error: null,
+      };
+    case DELETE_DATA_FAILURE:
+      return {
+        ...state,
+        error: action.payload,
+      };
+
 
     case USER_REQ:{
       return {
@@ -64,6 +91,7 @@ const dataReducer = (state = initialState, action: any) => {
         singleUser:action.payload
       }
     }
+
 
 
     default:
