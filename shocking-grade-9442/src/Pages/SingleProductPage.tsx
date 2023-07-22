@@ -23,10 +23,11 @@ useEffect(()=>{
 },[])
 
 const handleAddToCart = async (product:ProductObject) => {
-  let isPrasent =cartItem.filter((item:ProductObject)=>item===product)
-
+  console.log(product)
+  let isPrasent =cartItem.filter((item:ProductObject)=>item==product)
+console.log(isPrasent,"ISPresent")
   try {
-    if(isPrasent) {
+    if(!isPrasent) {
       toast({
         title: `Product Is Already In The Cart.`,
         description: 'Same Product you cant add two time.',

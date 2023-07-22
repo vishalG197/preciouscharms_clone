@@ -131,6 +131,7 @@ const handlePagechange=(value:number)=>{
       </div>
 
     </div>
+    </div>
   );
 };
 
