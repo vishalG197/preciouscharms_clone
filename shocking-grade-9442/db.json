@@ -1,18 +1,6 @@
 {
   "products": [
     {
-
-
-      "id": 1,
-      "name": "Jewelry",
-      "price": 4599,
-      "about": "Bramosia Ring",
-      "category": "Rings",
-      "brand": "Messica",
-      "rating": 4.3,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84638-e-w-rd_1_2.jpg"
-    },
-    {
       "id": 2,
       "name": "Jewelry",
       "price": 3599,
@@ -103,7 +91,6 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/l/m/lmb1078_yg_1.jpg"
     },
     {
-
       "id": 11,
       "name": "Jewelry",
       "price": 4599,
@@ -254,8 +241,6 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/e/c/ecojwl300-14kw.jpg"
     },
     {
-
-
       "id": 26,
       "name": "Jewelry",
       "price": 3000,
@@ -266,7 +251,6 @@
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/l/m/lme1318pkrg_rg_1.jpg"
     },
     {
-
       "id": 27,
       "name": "Jewelry",
       "price": 1099,
@@ -1171,10 +1155,7 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
         }
       ],
-
       "id": 1
-
-     
     },
     {
       "name": "ABC",
@@ -1183,7 +1164,6 @@
       "id": 2,
       "addToCart": [],
       "orderPlaced": []
-
     },
     {
       "name": "Vishal Giri",
@@ -1216,7 +1196,6 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 6
-
     }
   ]
 }
