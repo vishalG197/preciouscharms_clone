@@ -16,10 +16,12 @@ import ProductImg from '../product-image/ProductImg.png'
 const ProductPage = () => {
   const dispatch=useDispatch();
  const{name}=useParams()
-//  console.log(name)
+//  console.log(name,"NAme")
 
   const [searchParams,setSearchParams]=useSearchParams()
-  console.log("order", searchParams.getAll("category"))
+  // console.log("order", searchParams.getAll("category"))
+
+  
   let paramsObj={
     params:{
      
@@ -38,8 +40,13 @@ const ProductPage = () => {
       isError:store.productReducer.isError
     }
   },shallowEqual);
-
+if(name=="Jewelry"||"Watches"){
   products=products.filter((ele:any)=>ele.name==name)
+}else{
+  products=products.filter((ele:any)=>ele.category==name)
+}
+  
+
   useEffect(()=>{
     dispatch(getProducts(paramsObj))
       },[searchParams])
