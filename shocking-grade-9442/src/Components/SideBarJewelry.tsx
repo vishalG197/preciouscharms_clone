@@ -1,8 +1,9 @@
 // import { Search2Icon } from "@chakra-ui/icons";
 import { Checkbox, Input, InputGroup, InputLeftElement } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
+import { string } from "yargs";
 
 export const SideBarJewelry = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -15,8 +16,12 @@ export const SideBarJewelry = () => {
   const [order, setOrder] = useState(initalOrder || "");
   const [category,setCategory]=useState(initalCategory || []);
   const [search,setSearch]=useState("")
+  const{name}:any=useParams()
+ console.log(name,"NAme")
+
 // console.log(order,"Category")
   useEffect(() => {
+   
     const params:any = {
       category,
       brand,
@@ -31,14 +36,21 @@ export const SideBarJewelry = () => {
   }, [category, brand, order,search]);
 
   const handleCategory = (e:any):void => {
-    const { value } = e.target;
+    let { value } = e.target;
+    // value=name
+    
+
     let newCategory = [...category];
     if (newCategory.includes(value)) {
       newCategory = newCategory.filter((el) => el !== value);
     } else {
       newCategory.push(value);
     }
-    setCategory(newCategory);
+   setCategory(name)
+      setCategory(newCategory);
+   
+   
+    
   };
 
   const handleBrand = (e:any):void => {

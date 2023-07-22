@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import logo from "../home-image/logo-white.png"
 import { FaFacebookF ,FaInstagram,FaPinterest,FaTelegramPlane} from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -35,12 +36,12 @@ const Footer = () => {
           </div>
             <div className="second">
             <ul>
-                  <li>Rings</li>
-                  <li>Bracelets</li>
-                  <li>Earrings</li>
-                  <li>Necklace & Pendants</li>
-                  <li>Watches</li>
-                </ul>
+                 <Link to="/product/Jewelry?category=Rings"><li>Rings</li></Link> 
+                 <Link to="/product/Jewelry?category=Brecelets"><li>Bracelets</li></Link> 
+                 <Link to={"/product/Jewelry?category=Earrning"}><li>Earrings</li></Link> 
+                 <Link to="/product/Jewelry?category=Necklaces+%26+Pendants"><li>Necklace & Pendants</li></Link> 
+                 <Link to="/product/Watches"><li>Watches</li></Link> 
+           </ul>
 
 
             </div>

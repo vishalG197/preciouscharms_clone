@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import banner from '../home-image/bannerv1.jpg';
 import best1 from '../home-image/best1.jpg';
@@ -9,13 +9,31 @@ import gift from "../home-image/gift-wrap.jpeg"
 import categoryimg from "../home-image/category.jpg"
 import abtImg from "../home-image/home-about.png"
 import meetImg from "../home-image/meet.jpeg"
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import { NavLink } from 'react-router-dom';
 
 
+interface CustomNavLinkProps {
+  to: string;
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
+
+  return (
+    <li className={`navbar__item ${isActive ? 'active' : ''}`} onClick={onClick}>
+      <NavLink to={to}>{children}</NavLink>
+    </li>
+  );
+};
 
 const Homepage = () => {
+ 
+
   return (
  <DIV>
 <Navbar/>
@@ -70,13 +88,13 @@ const Homepage = () => {
     <div className="allcat">
       <ul>
 
-        <li><Link to="/product">Rings</Link></li>
-        <li><Link to="/product">Braceles</Link></li>
-        <li><Link to="/product">Earrings</Link></li>
-        <li><Link to="/product">Necklaces  &  Pendants</Link></li>
+        <li><CustomNavLink to="/product/Jewelry?category=Rings">Rings</CustomNavLink></li>
+        <li><CustomNavLink to="/product/Jewelry?category=Brecelets">Brecelets</CustomNavLink></li>
+        <li><CustomNavLink to="/product/Jewelry?category=Earrning">Earrings</CustomNavLink></li>
+        <li><CustomNavLink to="/product/Jewelry?category=Necklaces+%26+Pendants">Necklaces & Pendants</CustomNavLink></li>
 
-        <li><Link to="/product">Watches</Link></li>
-        <li><Link to="/product">Men's Jewellery</Link></li>
+        <li><Link to="/product/Watches">Watches</Link></li>
+        <li><Link to="/product/Jewelry?category=Men's jewelry">Men's Jewellery</Link></li>
 
       </ul>
       
