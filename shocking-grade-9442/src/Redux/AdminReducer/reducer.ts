@@ -1,10 +1,9 @@
 // src/store/reducers.ts
 
-<<<<<<< HEAD
-import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, DELETE_DATA_SUCCESS, DELETE_DATA_FAILURE } from './actionType';
-=======
-import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, USER_REQ, GET_USER_SUCCESS } from './actionType';
->>>>>>> main
+import { FETCH_DATA_SUCCESS, FETCH_DATA_FAILURE, DELETE_DATA_SUCCESS, DELETE_DATA_FAILURE ,USER_REQ, GET_USER_SUCCESS} from './actionType';
+
+
+
 
 
 export interface Product {
@@ -43,7 +42,7 @@ const dataReducer = (state = initialState, action: any) => {
         data: [],
         error: action.payload,
       };
-<<<<<<< HEAD
+
       case DELETE_DATA_SUCCESS:
       
       return {
@@ -56,7 +55,7 @@ const dataReducer = (state = initialState, action: any) => {
         ...state,
         error: action.payload,
       };
-=======
+
 
     case USER_REQ:{
       return {
@@ -73,7 +72,7 @@ const dataReducer = (state = initialState, action: any) => {
     }
 
 
->>>>>>> main
+
     default:
       return state;
   }
