@@ -19,6 +19,7 @@ import { SingleUser } from '../Admin/SingleUser'
 
 import { Payment } from '../Pages/Payment'
 import { Address } from '../Pages/Address'
+import { AddProduct } from '../Admin/AddProduct'
 
 
 const AllRoutes = () => {
@@ -35,8 +36,8 @@ const AllRoutes = () => {
       <Route path="/a/AllProduct" element={<AllProduct/>}/>
       <Route path="/a/Edit/:id" element={<EditPage/>}/>
       <Route path="/a/users" element={<UserDetails/>}/>
-      {/* <Route path="/a/users/order/:id" element={<OrderDetails/>}/>
-      <Route path="/a/users/cart/:id" element={<CartDetail/>}/> */}
+      <Route path="/a/add-product" element={<AddProduct/>}/>
+    
       <Route path="/a/setting" element={<Setting/>}/>
       <Route path="/payment" element={<Payment/>}/>
       <Route path="/address" element={<Address/>}/>

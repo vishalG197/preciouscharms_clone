@@ -22,7 +22,7 @@ export default function ProductCard({id,price,about,brand,avatar,name}:any) {
 }
 
 const Div=styled.div`
-  /* background-color: #dedddd; */
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   padding-left: 15px;
