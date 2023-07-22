@@ -22,6 +22,16 @@ addToCart:ProductObject[];
 orderPlaced:ProductObject[];
 }
 
+export interface UserObjectNew {
+   name:string;
+   email:string;
+   
+   password:string;
+   id?:number;
+   addToCart:ProductObject[];
+   orderPlaced:ProductObject[];
+   }
+
 export type RootauthState = ReturnType<typeof authReducer  >;
 
 

@@ -1196,6 +1196,16 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 6
+
+    },
+    {
+      "name": "MOUMITA SARKAR",
+      "email": "moumita@mail.com",
+      "password": "1234",
+      "addToCart": [],
+      "orderPlaced": [],
+      "id": 7
+
     }
   ]
 }
