@@ -33,7 +33,7 @@ dispatch(fetchPage())
     dispatch(fetchData(page));
   }, [dispatch,page]);
 
-  const handleDelete = (id: number):void=> {
+  const handleDelete = (id: number): void => {
     // Dispatch the deleteData action with the item ID to delete the data
     dispatch(deleteData(id));
   };
@@ -50,9 +50,13 @@ const handlePagechange=(value:number)=>{
 
   return (
 
+
 <div style={{backgroundColor:"#f5f5f5"}}>
 
-  <Navbar/>
+    <div>
+
+
+      <Navbar />
 
 <div>  
   
@@ -79,46 +83,52 @@ const handlePagechange=(value:number)=>{
   </div>
 
 
+
     <div style={{width:"90%",margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"50px" ,}}>
 
-      {data.map((item: any) => (
-        <div key={item.id}>
-          <Card maxW='sm' >
-            <CardBody>
-              <Image style={{ width: "300px", height: "200px", paddingLeft: "80px" }}
-                src={item.avatar}
-                alt='Green double couch with wooden legs'
-                borderRadius='sm'
-              />
-              <Stack mt='6' spacing='3'>
-                <Heading style={{ textAlign: "center" }} size='md'>Name: {item.name}</Heading>
-                <Heading style={{ textAlign: "center" }} size='sm'> Category:  {item.category}</Heading>
-                <Heading style={{ textAlign: "center" }} size='sm'>Brand:   {item.brand}</Heading>
 
-                <Text style={{ textAlign: "center" }}>
-                  About: {item.about}
-                </Text>
-                <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
-                  Price:  ${item.price}
-                </Text>
-                <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
-                  Rating :{item.rating}
-                </Text>
-              </Stack>
-            </CardBody>
-            <Divider />
-            <CardFooter>
-              <ButtonGroup spacing='2'>
-             <Button variant='ghost' colorScheme='blue' style={{ marginLeft: "30px" }}>Edit</Button>
-                <Button   onClick={() => handleDelete(item.id)} >
-                  Delete
-                </Button>
-              </ButtonGroup>
-            </CardFooter>
-          </Card>
-        </div>
-      ))}
-    </div>
+
+        {data.map((item: any) => (
+          <div key={item.id}>
+            <Card maxW='sm' >
+              <CardBody>
+                <Image style={{ width: "300px", height: "200px", paddingLeft: "80px" }}
+                  src={item.avatar}
+                  alt='Green double couch with wooden legs'
+                  borderRadius='sm'
+                />
+                <Stack mt='6' spacing='3'>
+                  <Heading style={{ textAlign: "center" }} size='md'>Name: {item.name}</Heading>
+                  <Heading style={{ textAlign: "center" }} size='sm'> Category:  {item.category}</Heading>
+                  <Heading style={{ textAlign: "center" }} size='sm'>Brand:   {item.brand}</Heading>
+
+                  <Text style={{ textAlign: "center" }}>
+                    About: {item.about}
+                  </Text>
+                  <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
+                    Price:  ${item.price}
+                  </Text>
+                  <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
+                    Rating :{item.rating}
+                  </Text>
+                </Stack>
+              </CardBody>
+              <Divider />
+              <CardFooter>
+                <ButtonGroup spacing='2'>
+                  <Link href='http://localhost:3000/a/Edit/:id' style={{ marginLeft: "30px" }}>
+                    Edit
+                  </Link>
+                  
+                  <Button onClick={() => handleDelete(item.id)}  style={{ marginLeft: "80px" }}>
+                    Delete
+                  </Button>
+                </ButtonGroup>
+              </CardFooter>
+            </Card>
+          </div>
+        ))}
+      </div>
 
     </div>
   );
