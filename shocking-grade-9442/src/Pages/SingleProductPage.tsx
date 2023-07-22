@@ -15,6 +15,7 @@ useEffect(()=>{
 },[])
 
   return (
+
     <Div>
      <div>
    <img src={product.avatar} alt="" />
@@ -30,6 +31,7 @@ useEffect(()=>{
 <Button bg="white" color="black" padding="30px" mr={5} w="200px">BUY NOW</Button>
      </div>
     </Div>
+
   )
 }
 
