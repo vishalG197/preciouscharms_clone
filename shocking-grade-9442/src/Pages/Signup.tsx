@@ -6,6 +6,7 @@ import { RootauthState, UserObject } from '../constrain';
 import {useDispatch,useSelector} from "react-redux"
 import { getUsers, SignUp } from '../Redux/AuthReducer/action';
 import {  useToast } from '@chakra-ui/react';
+import Navbar from '../Components/Navbar';
 
 const Signup = () => {
   const toast = useToast();
@@ -17,7 +18,7 @@ orderPlaced:[]
 
 const dispatch: Dispatch<any> =useDispatch();
 const AllUser =useSelector((store:any)=>store.authReducer.Users)
-console.log(AllUser)
+// console.log(AllUser)
 useEffect(() => {
 
 dispatch(getUsers())
@@ -31,7 +32,7 @@ setUser(newUser);
   }
   
 const handleSubmit =()=>{
-    console.log("Submit",user)
+    // console.log("Submit",user)
     if(user.email === "" || user.password === "" ){
       // alert("Please enter valid data");
       toast({
@@ -49,7 +50,7 @@ const handleSubmit =()=>{
 let userPrasent = AllUser.find((el:UserObject)=>{
   return el.email==user.email;
 })
-console.log(userPrasent,"user")
+// console.log(userPrasent,"user")
      if(userPrasent){
       // alert("You already have a account with this email address")
       toast({
@@ -84,7 +85,10 @@ console.log(userPrasent,"user")
     }
     
   }
-  return (
+  return (<>  
+  <div>
+    <Navbar/>
+  </div> 
     <Div>
       <h1>PRECIOUS CHARMS</h1>
       <h2>JEWELRY SHOP</h2>
@@ -106,6 +110,7 @@ console.log(userPrasent,"user")
         <span><Link to="/login">Login</Link></span>
       </div>
     </Div>
+    </>
   );
 }
 

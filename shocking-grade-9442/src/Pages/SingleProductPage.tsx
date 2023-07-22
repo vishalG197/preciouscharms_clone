@@ -3,10 +3,18 @@ import React, {useEffect,useState}from 'react'
 import { useParams } from 'react-router-dom'
 import { ProductObject } from '../constrain';
 import { styled } from 'styled-components';
-import { Button } from '@chakra-ui/react';
+import { Button, useToast } from '@chakra-ui/react';
+import Navbar from '../Components/Navbar';
+import { useDispatch, useSelector } from 'react-redux';
+import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType';
 
 const SingleProductPage = () => {
   const {id} =useParams();
+  const toast = useToast();
+  const dispatch:any = useDispatch();
+  const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
+  const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id);
+  const cartItem =useSelector((store:any)=>store.authReducer.ActiveUser.addToCart);
   const [product,setProduct]=useState<ProductObject>({id:0,name:"",price:0,about:"",category:"",brand:"",rating:0,avatar:""})
 useEffect(()=>{
   axios.get(`http://localhost:8080/products/${id}`).then((res)=>{
@@ -14,11 +22,48 @@ useEffect(()=>{
   setProduct(res.data)}).catch((err)=>{console.log(err)})
 },[])
 
-  return (
+const handleAddToCart = async (product:ProductObject) => {
+  let isPrasent =cartItem.filter((item:ProductObject)=>item===product)
+
+  try {
+    if(isPrasent) {
+      toast({
+        title: `Product Is Already In The Cart.`,
+        description: 'Same Product you cant add two time.',
+        status: 'warning',
+        duration: 2000,
+        isClosable: true,
+      });
+
+    }else{ 
+   const updatedUser={...ActiveUser,addToCart: [...ActiveUser.addToCart, product]}
+   
+   let res= await axios.put(`http://localhost:8080/users/${userId}`, updatedUser);
+   dispatch({type:LOGIN_SUCCESS,payload:res.data});
+   toast({
+    title: `Product added to cart.`,
+    status: 'success',
+    duration: 2000,
+    isClosable: true,
+  });
+    }
+  } catch (error) {
+    console.error("Failed to add product to cart", error);
+  }
+
+};
+
+
+
+
+  return (<> 
+    <div>
+    <Navbar/>
+  </div>
 
     <Div>
      <div>
-   <img src={product.avatar} alt="" />
+   <img src={product.avatar} alt="ring" />
      </div>
      <div>
 <h1>Precious Charms Love Collection</h1>
@@ -27,11 +72,11 @@ useEffect(()=>{
 <p>{product.brand}</p>
 <p>₹{product.price}</p>
 <p>{product.rating}★</p>
-<Button bg="black" color="white" padding="30px" mr={6} w="200px">ADD TO BAG</Button>
+<Button bg="black" color="white" padding="30px" mr={6} w="200px" onClick={()=>handleAddToCart(product)}>ADD TO BAG</Button>
 <Button bg="white" color="black" padding="30px" mr={5} w="200px">BUY NOW</Button>
      </div>
     </Div>
-
+    </>
   )
 }
 
