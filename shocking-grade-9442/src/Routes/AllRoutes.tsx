@@ -24,6 +24,7 @@ import PrivateRoutes from './PrivateRoutes'
 import { AddProduct } from '../Admin/AddProduct'
 
 import About from '../Pages/About'
+import Gift from '../Pages/Gift'
 
 
 
@@ -100,6 +101,7 @@ const AllRoutes = () => {
       <SingleUser/>
       </PrivateRoutes>
       }/>
+      <Route path="/gift" element={<Gift/>}/>
 
       <Route path="*" element={<h1>Page not found</h1>}/>
     </Routes>
