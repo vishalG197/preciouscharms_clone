@@ -50,7 +50,7 @@ if(name=="Jewelry"||"Watches"){
   useEffect(()=>{
     dispatch(getProducts(paramsObj))
       },[searchParams])
-  // console.log(products)
+  console.log(products)
 
 
   return (

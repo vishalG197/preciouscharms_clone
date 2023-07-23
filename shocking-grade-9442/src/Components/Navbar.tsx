@@ -93,8 +93,8 @@ const Navbar: React.FC = () => {
 
 
       
-        <CustomNavLink to="/contact" onClick={closeMobileMenu}>
-          Contact Us
+        <CustomNavLink to="/about" onClick={closeMobileMenu}>
+          About Us
         </CustomNavLink>
         <CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account

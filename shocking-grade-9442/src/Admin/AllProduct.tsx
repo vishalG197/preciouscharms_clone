@@ -120,7 +120,7 @@ const handlePagechange=(value:number)=>{
               <CardFooter>
                 <ButtonGroup spacing='2'>
                  
-                     <Link to={`/a/Edit/:id${item.id}`}><Button   style={{ marginLeft: "80px" }}>
+                     <Link to={`/a/Edit/${item.id}`}><Button   style={{ marginLeft: "80px" }}>
                     Edit
                   </Button></Link>
                  
