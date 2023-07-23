@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionType"
+import { ADDRESS_FAILURE, ADDRESS_REQUEST, ADDRESS_SUCCESS, GET_PRODUCT_SUCCESS, PRODUCT_FAILURE, PRODUCT_REQUEST } from "./actionType"
 import { useParams } from "react-router-dom";
 
 /////Get Products
@@ -29,5 +29,24 @@ export const requestAction=()=>{
     })
   
   };
+
+
+
+
+  //////Post Address
+
+  export const postProduct=()=>(dispatch:any)=>{
+    dispatch({type:ADDRESS_REQUEST})
+    axios
+    .post("http://localhost:8080/products", )
+    .then((res)=>{
+        console.log(res.data);
+        dispatch({type:ADDRESS_SUCCESS})
+    })
+    .catch((err)=>{
+        console.log(err.message)
+        dispatch(({type:ADDRESS_FAILURE,payload:err.message}))
+    })
+}
 
 
