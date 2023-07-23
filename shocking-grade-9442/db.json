@@ -1084,6 +1084,9 @@
   ],
   "users": [
     {
+<<<<<<< HEAD
+      "name": "vish",
+=======
       "addToCart": [
         {
           "id": 56,
@@ -1120,9 +1123,31 @@
     },
     {
       "name": "Vishal Giri",
+>>>>>>> main
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
-      "addToCart": [
+      "addToCart": [],
+      "orderPlaced": [
+        {
+          "id": 5,
+          "name": "Jewelry",
+          "price": 2099,
+          "about": "Unique",
+          "category": "Rings",
+          "brand": "John Hardy",
+          "rating": 5.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84376-e-14ky-em.jpeg"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 5.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
+        },
         {
           "id": 55,
           "name": "Watches",
@@ -1132,38 +1157,12 @@
           "brand": "Rolex",
           "info": "Oyster, 42 mm, yellow gold",
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m226658-0001.png?impolicy=v7&imwidth=1920"
-        },
-        {
-          "id": 3,
-          "name": "Jewelry",
-          "price": 9091,
-          "about": "Sylvie Ring",
-          "category": "Rings",
-          "brand": "Grrard",
-          "rating": 3.2,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
-        },
-        {
-          "id": 2,
-          "name": "Jewelry",
-          "price": 3599,
-          "about": "Nova Ring",
-          "category": "Rings",
-          "brand": "Cartier",
-          "rating": 4.1,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
-        },
-        {
-          "id": 3,
-          "name": "Jewelry",
-          "price": 9091,
-          "about": "Sylvie Ring",
-          "category": "Rings",
-          "brand": "Grrard",
-          "rating": 3.2,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
         }
       ],
+<<<<<<< HEAD
+      "address": [],
+      "id": 1
+=======
       "orderPlaced": [],
       "address": [
         {
@@ -1389,6 +1388,7 @@
       "orderPlaced": [],
 
       "id": 9
+>>>>>>> main
     }
   ]
 }

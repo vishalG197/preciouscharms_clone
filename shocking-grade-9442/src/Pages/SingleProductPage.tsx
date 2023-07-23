@@ -23,7 +23,7 @@ const SingleProductPage = () => {
   const navigate=useNavigate();
   const [product,setProduct]=useState<ProductObject>({id:0,name:"",price:0,about:"",category:"",brand:"",rating:0,avatar:""})
 useEffect(()=>{
-  axios.get(`http://localhost:8080/products/${id}`).then((res)=>{
+  axios.get(`https://monkeyapi-2-0.onrender.com/products/${id}`).then((res)=>{
     // console.log(res.data);
   setProduct(res.data)}).catch((err)=>{console.log(err)})
 },[])
@@ -45,7 +45,7 @@ console.log(isPrasent,"ISPresent")
     }else{ 
    const updatedUser={...ActiveUser,addToCart: [...ActiveUser.addToCart, product]}
    
-   let res= await axios.put(`http://localhost:8080/users/${userId}`, updatedUser);
+   let res= await axios.put(`https://monkeyapi-2-0.onrender.com/users/${userId}`, updatedUser);
    dispatch({type:LOGIN_SUCCESS,payload:res.data});
    toast({
     title: `Product added to cart.`,
@@ -59,11 +59,6 @@ console.log(isPrasent,"ISPresent")
   }
 
 };
-
-
-
-
-
   return (<> 
 
   

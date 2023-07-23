@@ -18,7 +18,7 @@ export const requestAction=()=>{
     // console.log(name)
     dispatch(requestAction())
     axios
-    .get(`http://localhost:8080/products`,paramsObj)
+    .get(`https://monkeyapi-2-0.onrender.com/products`,paramsObj)
     .then((res)=>{
       const totalPages = Math.ceil(res.headers['x-total-count'] / 12);
       // console.log(res.data)
@@ -39,7 +39,7 @@ export const requestAction=()=>{
   export const postProduct=()=>(dispatch:any)=>{
     dispatch({type:ADDRESS_REQUEST})
     axios
-    .post("http://localhost:8080/products", )
+    .post("https://monkeyapi-2-0.onrender.com/products", )
     .then((res)=>{
         console.log(res.data);
         dispatch({type:ADDRESS_SUCCESS})

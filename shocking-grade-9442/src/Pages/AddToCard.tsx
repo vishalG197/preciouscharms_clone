@@ -48,7 +48,7 @@ setTax (taxcut)
   //  console.log(userId,id)
     // dispatch(ActionToDelete(product));
     axios
-      .put(`http://localhost:8080/users/${userId}`, {...ActiveUser,
+      .put(`https://monkeyapi-2-0.onrender.com/users/${userId}`, {...ActiveUser,
         addToCart: cartItem.filter((item:ProductObject) => item.id !== id)
       })
       .then((response) => {
