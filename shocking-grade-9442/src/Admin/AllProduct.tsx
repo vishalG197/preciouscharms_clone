@@ -20,7 +20,7 @@ const App: React.FC = () => {
   const error = useSelector((state: any) => state.data.error);
 const totalP=useSelector((state: any) => state.data.totalP);
 
-
+console.log(data,"AllProducts")
 
 
 ///******************* */ totalPage******************* */

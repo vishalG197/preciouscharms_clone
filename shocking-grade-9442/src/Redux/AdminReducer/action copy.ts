@@ -9,7 +9,7 @@ import { FETCH_DATA_FAILURE, FETCH_DATA_SUCCESS, GET_USER_SUCCESS, USER_REQ } fr
 export const fetchData = (page: number) => {
   return async (dispatch: Dispatch) => {
     try {
-      const response = await axios.get(`http://localhost:8080/products?_page=${page}&_limit=20`);
+      const response = await axios.get(`https://monkeyapi-2-0.onrender.com/products?_page=${page}&_limit=20`);
       
   const totalaPages=Math.ceil(response.headers["x-total-count"]/20)
 
@@ -35,7 +35,7 @@ export const fetchData = (page: number) => {
  export const fetchUserData:any=(dispatch: Dispatch)=>{
   dispatch({type:USER_REQ})
 
-  axios.get(`http://localhost:8080/users`)
+  axios.get(`https://monkeyapi-2-0.onrender.com/users`)
 .then((res)=>{
 
   dispatch({type:GET_USER_SUCCESS,payload:res.data})

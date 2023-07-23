@@ -6,7 +6,7 @@ const url = "/users"
 export const getUsers =()=>{
    return async(dispatch:Dispatch<{type:string}|{type:string,payload:UserObject[]}>):Promise<void>=>{
       dispatch({type:USER_REQUEST});
-   axios.get(`http://localhost:8080/users`).
+   axios.get(`https://monkeyapi-2-0.onrender.com/users`).
    then((response)=>{ dispatch({type:USER_SUCCESS,payload:response.data}); }).catch(()=>{
     dispatch({type:USER_FAILURE});
 
@@ -17,7 +17,7 @@ export const getUsers =()=>{
 
 export const SignUp= (newUser:UserObject)=>(dispatch:Dispatch<{type:string}|{type:string,payload:UserObject[]}>)=>{
    dispatch({type:LOGIN_REQUEST});
-   axios.post(`http://localhost:8080/users`,newUser).
+   axios.post(`https://monkeyapi-2-0.onrender.com/users`,newUser).
    then((response)=>{ dispatch({type:SIGNUP_SUCCESS,payload:response.data})}).catch(()=>{
     dispatch({type:LOGIN_FAILURE});
 

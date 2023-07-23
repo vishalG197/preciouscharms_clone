@@ -20,7 +20,7 @@ export const reducer=(state=initalState,action: any)=>{
         case PRODUCT_FAILURE:
             return {...state,isLoading:false,isError:true,error:action.payload}
         case GET_PRODUCT_SUCCESS:
-            return {...state,isLoading:false,products:action.payload}
+            return {...state,isLoading:false,products:action.payload,isError:false}
             default:
                 return state;
     }

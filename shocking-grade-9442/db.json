@@ -1123,34 +1123,31 @@
   ],
   "users": [
     {
-      "addToCart": [
-        {
-          "id": 56,
-          "name": "Watches",
-          "price": 1275500,
-          "about": "Submariner Date",
-          "category": "Men's jewelry",
-          "brand": "Rolex",
-          "info": "Oyster, 41mm, Oystersteel and yellow gold",
-          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
-        }
-      ],
-      "id": 1,
-      "orderPlaced": []
-    },
-    {
-      "name": "ABC",
-      "email": "email@gmail.com",
-      "password": "123",
-      "id": 2,
-      "addToCart": [],
-      "orderPlaced": []
-    },
-    {
-      "name": "Vishal Giri",
+      "name": "vish",
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
-      "addToCart": [
+      "addToCart": [],
+      "orderPlaced": [
+        {
+          "id": 5,
+          "name": "Jewelry",
+          "price": 2099,
+          "about": "Unique",
+          "category": "Rings",
+          "brand": "John Hardy",
+          "rating": 5.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84376-e-14ky-em.jpeg"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 5.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
+        },
         {
           "id": 55,
           "name": "Watches",
@@ -1160,133 +1157,10 @@
           "brand": "Rolex",
           "info": "Oyster, 42 mm, yellow gold",
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m226658-0001.png?impolicy=v7&imwidth=1920"
-        },
-        {
-          "id": 3,
-          "name": "Jewelry",
-          "price": 9091,
-          "about": "Sylvie Ring",
-          "category": "Rings",
-          "brand": "Grrard",
-          "rating": 3.2,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
-        },
-        {
-          "id": 2,
-          "name": "Jewelry",
-          "price": 3599,
-          "about": "Nova Ring",
-          "category": "Rings",
-          "brand": "Cartier",
-          "rating": 4.1,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
-        },
-        {
-          "id": 3,
-          "name": "Jewelry",
-          "price": 9091,
-          "about": "Sylvie Ring",
-          "category": "Rings",
-          "brand": "Grrard",
-          "rating": 3.2,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
         }
       ],
-      "orderPlaced": [],
-      "address": [
-        {
-          "id": 6,
-          "name": "Jewelry",
-          "price": 5099,
-          "about": "Classica Ring",
-          "category": "Rings",
-          "brand": "Graff",
-          "rating": 4.4,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
-        },
-        {
-          "id": 56,
-          "name": "Watches",
-          "price": 1275500,
-          "about": "Submariner Date",
-          "category": "Men's jewelry",
-          "brand": "Rolex",
-          "info": "Oyster, 41mm, Oystersteel and yellow gold",
-          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
-        },
-        {
-          "name": "Pallava Kuar",
-          "mobile_number": "+919911695440",
-          "pincod": "142/1 deviala nagar",
-          "house_no": "420",
-          "area": "kamino ka shr",
-          "town": "Gurgaon,Haryana"
-        },
-        {
-          "name": "Lonka",
-          "mobile_number": "+919911695440",
-          "pincod": "142/1 deviala nagar",
-          "house_no": "142",
-          "area": "sec-9",
-          "town": "Gurgaon,Haryana"
-        },
-        {
-          "name": "Hemant Yadav",
-          "mobile_number": "+919911695440",
-          "pincod": "142/1 deviala nagar",
-          "house_no": "124",
-          "area": "sec-9",
-          "town": "gurgaon"
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "AS u wish",
-      "email": "vemail@gmail.com",
-      "password": "asuwish",
-      "addToCart": [],
-      "orderPlaced": [],
-      "id": 4
-    },
-    {
-      "addToCart": [
-        {
-          "id": 56,
-          "name": "Watches",
-          "price": 1275500,
-          "about": "Submariner Date",
-          "category": "Men's jewelry",
-          "brand": "Rolex",
-          "info": "Oyster, 41mm, Oystersteel and yellow gold",
-          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
-        }
-      ],
-      "id": 5
-    },
-    {
-      "name": "Vishal Vilas Giri",
-      "email": "vishalgiri197@gmail",
-      "password": "1234",
-      "addToCart": [],
-      "orderPlaced": [],
-      "id": 6
-    },
-    {
-      "name": "MOUMITA SARKAR",
-      "email": "moumita@mail.com",
-      "password": "1234",
-      "addToCart": [],
-      "orderPlaced": [],
-      "id": 7
-    },
-    {
-      "name": "Hemant Yadav",
-      "email": "yemail@gmail.com",
-      "password": "123",
-      "addToCart": [],
-      "orderPlaced": [],
-      "id": 8
+      "address": [],
+      "id": 1
     }
   ]
 }

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { initial } from "lodash";
-import React from "react";
+import React, { useEffect } from "react";
 import  { useState } from 'react';
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
 import { styled } from 'styled-components';
@@ -10,6 +10,8 @@ import { styled } from 'styled-components';
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { useToast } from "@chakra-ui/toast";
+import { response } from "express";
+import { LOGIN_SUCCESS } from "../Redux/AuthReducer/actionType";
 
 
 
@@ -25,11 +27,12 @@ const initalState = {
 
 export const  Address =()=>{
   const [areaData, setareaData] = useState(initalState);
+
   const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id);
   const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
   const navigate=useNavigate();
   const toast = useToast();
-
+const dispatch=useDispatch()
 
 const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
   const {value,name}=e.target;
@@ -51,9 +54,14 @@ const handleSubmit=(e:React.MouseEvent<HTMLButtonElement> )=>{
       ...ActiveUser,
       address: [...ActiveUser.address, areaData],
     };
-   axios.put(`http://localhost:8080/users/${userId}`, updatedUser);
+   axios.put(`https://monkeyapi-2-0.onrender.com/users/${userId}`, updatedUser)
+   .then((res)=>dispatch({type:LOGIN_SUCCESS,payload:res.data})
+   )
+   
+
+  //  console.log(response)
     // setLoggedInUser(updatedUser);
-    console.log("address ia added");
+   
     navigate("/payment")
     toast({
       title: 'Address Success',
@@ -70,6 +78,13 @@ const handleSubmit=(e:React.MouseEvent<HTMLButtonElement> )=>{
 }
 // console.log(areaData,"Area")
 console.log(ActiveUser,"userId")
+
+useEffect(()=>{
+  const ad=ActiveUser.address
+  // console.log(ad[ad.length-1])
+  setareaData(ad[ad.length-1])
+
+},[])
     return (
 
 <div>

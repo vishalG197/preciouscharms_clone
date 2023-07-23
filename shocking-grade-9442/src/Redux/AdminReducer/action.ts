@@ -13,8 +13,8 @@ import { RootState } from ".";
 export const fetchPage:any = () => {
     return async (dispatch: Dispatch) => {
       try {
-        const response = await axios.get(`http://localhost:8080/products`); // Replace with your API endpoint
-     
+        const response = await axios.get(`https://monkeyapi-2-0.onrender.com/products`); // Replace with your API endpoint
+    //  console.log(response.data)
         dispatch({
           type: GET_TOTAL_PAGE,
           payload: response.data
@@ -32,7 +32,7 @@ export const fetchPage:any = () => {
   export const fetchData:any = (page:number) => {
     return async (dispatch: Dispatch) => {
       try {
-        const response = await axios.get(`http://localhost:8080/products?_page=${page}&_limit=20`); // Replace with your API endpoint
+        const response = await axios.get(`https://monkeyapi-2-0.onrender.com/products?_page=${page}&_limit=20`); // Replace with your API endpoint
      
       
         dispatch({
@@ -55,7 +55,7 @@ export const fetchPage:any = () => {
   export const deleteData = (id: number):any => {
     return async (dispatch: Dispatch) => {
       try {
-        await axios.delete(`http://localhost:8080/products/${id}`);
+        await axios.delete(`https://monkeyapi-2-0.onrender.com/products/${id}`);
         dispatch({
           type: DELETE_DATA_SUCCESS,
           payload: id,
@@ -83,7 +83,7 @@ export const fetchPage:any = () => {
 type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
   export const postProduct:any=(newprod:productObj): AppThunk=>(dispatch: Dispatch)=>{
    
-    axios.post(`http://localhost:8080/products`,newprod)
+    axios.post(`https://monkeyapi-2-0.onrender.com/products`,newprod)
     .then((res)=>{
             console.log(res.data);
         dispatch({type:POST_PRODUCT_SUCCESS})
@@ -95,7 +95,7 @@ type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
  export const fetchUserData:any=(dispatch: Dispatch)=>{
   dispatch({type:USER_REQ})
 
-  axios.get(`http://localhost:8080/users`)
+  axios.get(`https://monkeyapi-2-0.onrender.com/users`)
 .then((res)=>{
 
   dispatch({type:GET_USER_SUCCESS,payload:res.data})
@@ -105,7 +105,7 @@ type AppThunk = ThunkAction<void, RootState, null, Action<string>>;
 
  export const SingleUserFetch:any=(id:number)=>(dispatch: Dispatch)=>{
   dispatch({type:SINGLE_USER_REQ})
-  axios.get(`http://localhost:8080/users/${id}`)
+  axios.get(`https://monkeyapi-2-0.onrender.com/users/${id}`)
   .then((res)=>{
 console.log(res.data);
 

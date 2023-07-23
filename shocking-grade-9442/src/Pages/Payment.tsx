@@ -4,13 +4,37 @@ import { useNavigate } from 'react-router-dom';
 import { styled } from 'styled-components';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import axios from 'axios';
+import { useDispatch, useSelector } from 'react-redux';
+import { ProductObject } from '../constrain';
+import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType';
 
 export const Payment = () => {
   const [paymentOption, setPaymentOption] = useState<string>('cash');
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch=useDispatch()
+  const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id)
+  const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
+  const cartItem =useSelector((store:any)=>store.authReducer.ActiveUser.addToCart);
   const navigte=useNavigate()
+  console.log(ActiveUser,"payment")
   const handleOpen = () => {
     setIsOpen(true);
+    const updatedOrder={...ActiveUser,
+      orderPlaced: [...ActiveUser.addToCart, ...ActiveUser.orderPlaced],
+      addToCart:[],
+      // address:[...ActiveUser.address]
+    }
+    axios
+    .put(`https://monkeyapi-2-0.onrender.com/users/${userId}`, updatedOrder)
+    .then((response) => {
+      console.log('Data updated successfully:', response.data);
+      dispatch({type:LOGIN_SUCCESS,payload:response.data});
+      
+    })
+    .catch((error) => {
+      console.error('Error updating data:', error);
+    });
   };
 
   const handleClose = () => {
@@ -60,7 +84,7 @@ export const Payment = () => {
         {paymentOption === 'cash' && (
           <div>
        <p>Please keep the cash ready for delivery.</p>
-       <button className='first' onClick={handleOpen}> Confirm Payment Option</button>
+       <button className='first' onClick={handleOpen}> Confirm Payment Option </button>
        </div>
         )
           
@@ -83,7 +107,7 @@ export const Payment = () => {
               <label >CVV</label>
               <input type="text" id="cvv" placeholder="123" />
             </div>
-            <button  className='first' onClick={handleOpen}> Confirm Payment Option</button>
+            <button  className='first' onClick={handleOpen}> Confirm Payment</button>
           </form>
         )}
       </div>
