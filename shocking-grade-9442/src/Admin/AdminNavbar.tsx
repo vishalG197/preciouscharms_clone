@@ -59,9 +59,9 @@ const Navbar: React.FC = () => {
         <CustomNavLink to="/a/AllProduct" onClick={closeMobileMenu}>
           ALL PRODUCTS
         </CustomNavLink>
-        <CustomNavLink to="/a/Edit/:id" onClick={closeMobileMenu}>
+        {/* <CustomNavLink to="/a/Edit/:id" onClick={closeMobileMenu}>
           EDIT PRODUCT
-        </CustomNavLink>
+        </CustomNavLink> */}
 
     
         <CustomNavLink to="/a/users" onClick={closeMobileMenu}>
