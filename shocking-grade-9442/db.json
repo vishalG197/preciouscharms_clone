@@ -1150,30 +1150,17 @@
       "name": "Vishal Giri",
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
-      "address": [],
       "addToCart": [
         {
-          "id": 56,
-          "name": "Watches",
-          "price": 1275500,
-          "about": "Submariner Date",
-          "category": "Men's jewelry",
-          "brand": "Rolex",
-          "info": "Oyster, 41mm, Oystersteel and yellow gold",
-          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
-        },
-        {
-          "id": 8,
+          "id": 6,
           "name": "Jewelry",
-          "price": 3000,
-          "about": "Savannah Ring",
+          "price": 5099,
+          "about": "Classica Ring",
           "category": "Rings",
-          "brand": "Mikimoto",
+          "brand": "Graff",
           "rating": 4.4,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/a/h/ahe042-e-14ky-rd2-front.jpeg"
-        }
-      ],
-      "orderPlaced": [
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
+        },
         {
           "id": 56,
           "name": "Watches",
@@ -1183,38 +1170,6 @@
           "brand": "Rolex",
           "info": "Oyster, 41mm, Oystersteel and yellow gold",
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
-        },
-        {
-
-          "id": 8,
-          "name": "Jewelry",
-          "price": 3000,
-          "about": "Savannah Ring",
-          "category": "Rings",
-          "brand": "Mikimoto",
-          "rating": 4.4,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/a/h/ahe042-e-14ky-rd2-front.jpeg"
-        }
-      ],
-
-          "id": 3,
-          "name": "Jewelry",
-          "price": 9091,
-          "about": "Sylvie Ring",
-          "category": "Rings",
-          "brand": "Grrard",
-          "rating": 3.2,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
-        },
-        {
-          "id": 3,
-          "name": "Jewelry",
-          "price": 9091,
-          "about": "Sylvie Ring",
-          "category": "Rings",
-          "brand": "Grrard",
-          "rating": 3.2,
-          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
         }
       ],
       "orderPlaced": [],
@@ -1254,9 +1209,16 @@
           "house_no": "142",
           "area": "sec-9",
           "town": "Gurgaon,Haryana"
+        },
+        {
+          "name": "house 7",
+          "mobile_number": "+919911695440",
+          "pincod": "142/1 deviala nagar",
+          "house_no": "142",
+          "area": "sec-9",
+          "town": "gurgaon"
         }
       ],
-
       "id": 3
     },
     {
@@ -1305,15 +1267,6 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 8
-    },
-    {
-      "name": "http",
-      "email": "http@email.com",
-      "password": "http",
-      "addToCart": [],
-      "orderPlaced": [],
-      "address": [],
-      "id": 9
     }
   ]
 }

@@ -3,12 +3,13 @@ import { initial } from "lodash";
 import React from "react";
 import  { useState } from 'react';
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { styled } from 'styled-components';
 
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
+import { useToast } from "@chakra-ui/toast";
 
 
 
@@ -26,6 +27,8 @@ export const  Address =()=>{
   const [areaData, setareaData] = useState(initalState);
   const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id);
   const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
+  const navigate=useNavigate();
+  const toast = useToast();
 
 
 const handleChange=(e:React.ChangeEvent<HTMLInputElement>)=>{
@@ -51,6 +54,14 @@ const handleSubmit=(e:React.MouseEvent<HTMLButtonElement> )=>{
    axios.put(`http://localhost:8080/users/${userId}`, updatedUser);
     // setLoggedInUser(updatedUser);
     console.log("address ia added");
+    navigate("/payment")
+    toast({
+      title: 'Address Success',
+      description: 'your address is added successful.',
+      status: 'success', 
+      duration: 2000,  
+      isClosable: true, 
+    });
   } catch (error) {
     console.error("Failed to add address to address", error);
   }
