@@ -69,9 +69,7 @@ const handleClick = () => {
         <CustomNavLink to="/a/AllProduct" onClick={closeMobileMenu}>
           ALL PRODUCTS
         </CustomNavLink>
-        <CustomNavLink to="/a/Edit/:id" onClick={closeMobileMenu}>
-          EDIT PAGE
-        </CustomNavLink>
+
 
     
         <CustomNavLink to="/a/users" onClick={closeMobileMenu}>

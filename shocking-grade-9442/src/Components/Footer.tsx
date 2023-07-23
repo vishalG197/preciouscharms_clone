@@ -27,7 +27,7 @@ const Footer = () => {
       <div className="link">
           <div className="first">
                 <ul>
-                  <li>Contact Us</li>
+                <Link to="/about">About Us</Link>
                   <li>Service</li>
                   <li>Return</li>
                   <li>Terms of Use</li>

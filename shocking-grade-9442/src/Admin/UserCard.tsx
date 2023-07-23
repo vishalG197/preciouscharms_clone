@@ -24,12 +24,12 @@ export default function UserCard({id,name,email}:userObj) {
                 </WrapItem>
               </Wrap>
 
-      <h4><b>User Name :</b>{name}</h4>
+      <h5><b>User Name :</b>{name}</h5>
       <p><b>Email :</b>{email}</p>
 
       <Button colorScheme='teal' size='xs' >
 
-<Link to={`/a/users/details/${id}`}>Deatils</Link>
+<Link to={`/a/users/details/${id}`}>Details</Link>
 
       </Button>
     </DIV>

@@ -71,10 +71,12 @@ const ProductPage = () => {
 
   useEffect(() => {
     dispatch(getProducts(paramsObj))
+
   }, [searchParams, page])
 
   // const totalPages = Math.ceil(products.length / 12);
   // console.log(totalPages, "total page");
+
 
 
   return (

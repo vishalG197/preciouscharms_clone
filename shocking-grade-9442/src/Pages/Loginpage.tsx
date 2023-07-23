@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootauthState } from '../constrain'
 import {  getUsers } from '../Redux/AuthReducer/action'
 import { Dispatch } from 'redux'
-import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType'
+import { ADMIN_SUCCESS, LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType'
 import { useToast } from '@chakra-ui/react'
 import Navbar from '../Components/Navbar'
 
@@ -35,6 +35,7 @@ setCredentials(newCredentials);
 
    const handleSubmit = ()=>{
 // console.log("credential",credentials)
+
 if(credentials.email==="admin123@gmail.com"|| credentials.password==="admin123"){
    navigate("/a/dashboard");
    setCredentials({email:"",password:""})
@@ -45,6 +46,7 @@ if(credentials.email==="admin123@gmail.com"|| credentials.password==="admin123")
       duration: 2000,  
       isClosable: true, 
     });
+
 
 }else if(credentials.email===""|| credentials.password===""){
    // alert("Please enter valid data");
@@ -97,26 +99,24 @@ setCredentials({email:"",password:""})
 
    }
   return (<> 
-   <div>
-   <Navbar/>
-   </div>
+   
     <Div>
-      
+     <div className='form'>
       <h1>PRECIOUS CHARMS</h1>
       <h2>JWELLARY SHOP</h2>
-<div>
-<h2>LOGIN PAGE</h2>
-<input type="email" name="email" placeholder='email'
-onChange={handleChange} 
-/>
-<br />
-<input type="password" name="password" placeholder='Password'  onChange={handleChange} />
-<br />
-<input type="submit" value="LOGIN" onClick={handleSubmit}/>
-<br />
-<br />
-<span><Link to="/signup">create an account</Link> </span>
-</div>
+
+      <h2>LOGIN PAGE</h2>
+      <input type="email" name="email" placeholder='email'
+      onChange={handleChange} 
+      />
+      <br />
+      <input type="password" name="password" placeholder='Password'  onChange={handleChange} />
+      <br />
+      <input type="submit" value="LOGIN" onClick={handleSubmit}/>
+      <br />
+      <br />
+      <span><Link to="/signup"><b>Create An Account</b> </Link> </span>
+      </div> 
 
     </Div>
     </>
@@ -139,6 +139,18 @@ padding-top:80px;
   border:1px solid black;
   color: black;
   text-align: center;
+
+.form{
+   width:40%;
+   margin:0 auto;
+   padding: 10px;
+    background-color: #ffffff8c;
+    border: 1px solid #d3d3d3;
+}
+input{
+   border: 1px solid #a1a1a1;
+}
+
   h1{
   
    margin-bottom:20px;
@@ -151,13 +163,7 @@ padding-top:80px;
    font-size:20px;
    font-weight:bold;
   }
-  div {
-   margin:auto;
-   /* margin-left:30%; */
-   position:static;
-   
-   width:500px;
-   height:300px;
+ 
    h2 {
       margin-left:10px;
    }
@@ -171,17 +177,17 @@ margin-bottom:20px;
   }
   input[type="email"],[type="password"]::placeholder {
    padding-left:20px;
-  color: #999999; /* Placeholder text color */
+  color: #2d2c2c; /* Placeholder text color */
   font-style: italic; /* Placeholder text style */
 }
    /* border:1px solid white; */
-  }
+
   input[type="submit"]{
    width: 80%;
   height: 40px;
   font-weight: bold;
-  background-color: #f6f8f6;
-  color: #090909;
+  background-color: #333533;
+  color: #dcd7d7;
   font-size: 16px;
   border: none;
   border-radius: 4px;
@@ -204,7 +210,17 @@ margin-bottom:20px;
   span:hover{
    background-color:white;
   }
-  :hover{
+  /* :hover{
    box-shadow: rgba(255, 253, 253, 0.966) 0px 54px 55px, rgba(250, 249, 249, 0.966) 0px -12px 30px, rgba(251, 250, 250, 0.943) 0px 4px 6px, rgba(253, 252, 252, 0.916) 0px 12px 13px, rgba(249, 248, 248, 0.961) 0px -3px 5px;
-   }
+   } */
+
+
+
+   @media screen and (min-device-width: 320px) and (max-device-width: 767px) { 
+    /* STYLES HERE */
+    .form{
+      width:100%;
+    }
+}
+
  `

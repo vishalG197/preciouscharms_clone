@@ -5,11 +5,6 @@ import logo from "../home-image/logo-white.png"
 import blackLogo from "../home-image/logo-black.png"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { Box } from '@chakra-ui/layout';
-import { Button } from '@chakra-ui/button';
-import { Avatar } from '@chakra-ui/avatar';
-import { LOGOUT } from '../Redux/AuthReducer/actionType';
 
 
 interface CustomNavLinkProps {
@@ -29,12 +24,9 @@ const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) 
   );
 };
 
-const Navbar: React.FC = () => {
+const Navbar2: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const dispatch:any =useDispatch()
-const isAuth =useSelector((store:any)=>store.authReducer.isAuth);
-const name =useSelector((store:any)=>store.authReducer.ActiveUser.name);
-// console.log("nav",isAuth)
+
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -59,10 +51,7 @@ const name =useSelector((store:any)=>store.authReducer.ActiveUser.name);
   return (
     <DIV>
     <nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
-      {/* <div className="navbar__logo">
-            <img src={logo} alt="" width="200px" />
-
-      </div> */}
+   
 
 
 <div className="mobileNav">
@@ -94,35 +83,19 @@ const name =useSelector((store:any)=>store.authReducer.ActiveUser.name);
 
         <Link to='/'>
           <div className="navbar__logo">
-            <img src={colorChange ? blackLogo : logo} alt=""  />
+            <img src={blackLogo} alt=""  />
           </div>
         </Link>
         
 
 
       
-        <CustomNavLink to="/about" onClick={closeMobileMenu}>
-          About Us
+        <CustomNavLink to="/contact" onClick={closeMobileMenu}>
+          Contact Us
         </CustomNavLink>
-
-{isAuth?(
-          <Box
-            display="inline-block"
-            position="relative"
-            _hover={{
-              '& button': { display: 'block' },
-            }}
-          >
-            <Avatar name={name} size='xs' src='https://bit.ly/dan-abramov' />
-            <Button display="none" position="absolute" top="100%" right="0" onClick={()=>{dispatch({type:LOGOUT})}}>
-              Logout
-            </Button>
-          </Box>
-        ) :<CustomNavLink to="/login" onClick={closeMobileMenu}>
+        <CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account
-        </CustomNavLink>}
-
-       
+        </CustomNavLink>
         <CustomNavLink to="/cart" onClick={closeMobileMenu}>
           Bag
         </CustomNavLink>
@@ -132,7 +105,7 @@ const name =useSelector((store:any)=>store.authReducer.ActiveUser.name);
   );
 };
 
-export default Navbar;
+export default Navbar2;
 
 
 
@@ -151,7 +124,9 @@ const DIV = styled.section`
   padding: 20px;
   width: 100%;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
+  background-color:#fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 .colorChange{
   background-color:#fff;
@@ -190,7 +165,7 @@ const DIV = styled.section`
 
 .navbar__item a {
   text-decoration: none;
-  color: #f3f2f2;
+  color: #211f1f;
 }
 
 

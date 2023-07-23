@@ -23,7 +23,8 @@ ActiveUser:{
    email:"",
    password:"",
    addToCart:[],
-   orderPlaced:[]
+   orderPlaced:[],
+   address:[]
 },
 
 }
@@ -54,9 +55,11 @@ case USER_SUCCESS:{
 case USER_FAILURE:{
    return {...state,isLoading:false,isError:true}
 }
+
 case LOGOUT:{
    return initialState;
 }
+
    default:return state;
 }
 }
