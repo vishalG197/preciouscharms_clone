@@ -1,9 +1,21 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { styled } from 'styled-components';
 
 export const Payment = () => {
   const [paymentOption, setPaymentOption] = useState<string>('cash');
+  const [isOpen, setIsOpen] = useState(false);
+  const navigte=useNavigate()
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+    navigte("/")
+
+  };
 
   const handlePaymentOptionChange = (option: string) => {
     setPaymentOption(option);
@@ -43,7 +55,7 @@ export const Payment = () => {
         {paymentOption === 'cash' && (
           <div>
        <p>Please keep the cash ready for delivery.</p>
-       <button className='first'> Confirm Payment Option</button>
+       <button className='first' onClick={handleOpen}> Confirm Payment Option</button>
        </div>
         )
           
@@ -66,11 +78,23 @@ export const Payment = () => {
               <label >CVV</label>
               <input type="text" id="cvv" placeholder="123" />
             </div>
-            <button  className='first'> Confirm Payment Option</button>
+            <button  className='first' onClick={handleOpen}> Confirm Payment Option</button>
           </form>
         )}
       </div>
     </div>
+    {isOpen && (
+        <div className="popup">
+           
+          <div className="popup-content">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/2048px-Eo_circle_green_checkmark.svg.png"/>
+           
+            <h2>Order Successful</h2>
+            <p>Continue shopping</p>
+            <button className="cbutton"onClick={handleClose}>Close</button>
+          </div>
+        </div>
+      )}
     </DIV>
   );
 }
@@ -119,8 +143,8 @@ h1 {
   border: none;
   border-radius: 5px;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+  
+ 
 }
 
 .payment-options button.active {
@@ -158,6 +182,38 @@ input {
   width: 200px;
   border-radius: 2%;
   margin-top: 20px;
+}
+.popup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.popup {
+  display: flex;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.cbutton {
+  margin-top: 10px;
+  background-color: #0c0c0c;
+  color: white;
+  width: 100%;
+}
+img{
+  width: 90px;
+  margin: auto;
 }
 
 
