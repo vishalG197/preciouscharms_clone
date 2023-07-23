@@ -120,11 +120,11 @@ const handlePagechange=(value:number)=>{
               <CardFooter>
                 <ButtonGroup spacing='2'>
                  
-                     <Link to={`/a/Edit/:id${item.id}`}><Button   style={{ marginLeft: "80px" }}>
+                     <Link to={`/a/Edit/:id${item.id}`}><Button   >
                     Edit
                   </Button></Link>
                  
-                  <Button onClick={() => handleDelete(item.id)}  style={{ marginLeft: "80px" }}>
+                  <Button onClick={() => handleDelete(item.id)} >
                     Delete
                   </Button>
                 </ButtonGroup>

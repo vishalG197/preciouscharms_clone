@@ -16,24 +16,29 @@ const Dashboard = () => {
   return (
 
     // /Dashboard Componet 
+    <div>
+
+    
 <div>
 
 
 <Navbar/>
+</div>
+
     <DIV style={{backgroundColor:"rgb(157, 159, 159)"}}>
       <div>
-        <div className='dashboard' style={{ paddingLeft: "100px", width: "100%" }}>
+        <div className='dashboard' style={{ paddingLeft: "30px", width: "100%" }}>
           <img src={img1} alt="error" />
           <img src={img2} alt="error" />
           <img src={img3} alt="error" />
           <img style={{ width: "350px" }} src={img4} alt="error" />
         </div>
-        <div className='dashboard1' style={{ paddingLeft: "50px", width: "100%" }}>
+        <div className='dashboard1' style={{ paddingLeft: "10px", width: "100%" }}>
           <img src={img5} alt="error" />
           <img src={img6} alt="error" />
           <img src={img7} alt="error" />
         </div>
-        <div className='dashboard2' style={{ paddingLeft: "50px", width: "100%",paddingTop:"100px" }}>
+        <div className='dashboard2' style={{ paddingLeft: "10px", width: "100%",paddingTop:"100px" }}>
           <img src={img8} alt="error" />
         </div>
         <div className='dashboard3' style={{ paddingLeft: "150px", width: "100%", }}> 
