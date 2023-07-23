@@ -92,10 +92,10 @@ const handlePagechange=(value:number)=>{
 
 
         {data.map((item: any) => (
-          <div key={item.id}>
+          <div key={item.id} >
             <Card maxW='sm' >
               <CardBody>
-                <Image style={{ width: "300px", height: "200px", paddingLeft: "80px" }}
+                <Image style={{ width: "300px", height: "200px", }}
                   src={item.avatar}
                   alt='Green double couch with wooden legs'
                   borderRadius='sm'
@@ -120,7 +120,7 @@ const handlePagechange=(value:number)=>{
               <CardFooter>
                 <ButtonGroup spacing='2'>
                  
-                     <Link to={`/a/Edit/:id${item.id}`}><Button   style={{ marginLeft: "80px" }}>
+                     <Link to={`/a/Edit/${item.id}`}><Button   style={{ marginLeft: "80px" }}>
                     Edit
                   </Button></Link>
                  

@@ -1119,6 +1119,17 @@
       "brand": "ALPINA",
       "info": "Alpiner Quartz Chronograph",
       "avatar": "https://cdn1.ethoswatches.com/media/catalog/product/cache/06b0325fe0d1ea074c67035fe5935845/a/l/alpina-alpiner-al-247gb4e6b.jpg"
+    },
+    {
+      "name": "Jewelry",
+      "price": 1111,
+      "about": "Rings ",
+      "category": "Brecelets",
+      "brand": "Cartier",
+      "rating": 2.5,
+      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/l/m/lmr1346wg_wg_1.jpg",
+      "info": "",
+      "id": 117
     }
   ],
   "users": [
@@ -1221,6 +1232,45 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 8
+    },
+    {
+      "name": "Lonka",
+      "email": "nagarajulonka1999@gmail.com",
+      "password": "123",
+      "addToCart": [
+        {
+          "id": 6,
+          "name": "Jewelry",
+          "price": 5099,
+          "about": "Classica Ring",
+          "category": "Rings",
+          "brand": "Graff",
+          "rating": 4.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
+        },
+        {
+          "id": 6,
+          "name": "Jewelry",
+          "price": 5099,
+          "about": "Classica Ring",
+          "category": "Rings",
+          "brand": "Graff",
+          "rating": 4.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
+        },
+        {
+          "id": 6,
+          "name": "Jewelry",
+          "price": 5099,
+          "about": "Classica Ring",
+          "category": "Rings",
+          "brand": "Graff",
+          "rating": 4.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
+        }
+      ],
+      "orderPlaced": [],
+      "id": 9
     }
   ]
 }
