@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
 import logo from "../image/logo-white.png"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
+import { Avatar } from '@chakra-ui/avatar';
+import { Button } from '@chakra-ui/button';
+import { LOGOUT } from '../Redux/AuthReducer/actionType';
+import { Box } from '@chakra-ui/layout';
+import { useDispatch } from 'react-redux';
 
 
 interface CustomNavLinkProps {
@@ -14,6 +19,7 @@ interface CustomNavLinkProps {
 
 const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) => {
   const location = useLocation();
+  
   const isActive = location.pathname === to;
 
   return (
@@ -25,7 +31,8 @@ const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) 
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const navigate =useNavigate();
+  const dispatch:any =useDispatch()
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -33,7 +40,10 @@ const Navbar: React.FC = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
-
+const handleClick = () => {
+  dispatch({type:LOGOUT})
+  navigate("/")
+};
   return (
     <DIV>
     <nav className="navbar">
@@ -67,9 +77,26 @@ const Navbar: React.FC = () => {
         <CustomNavLink to="/a/users" onClick={closeMobileMenu}>
           USER DETAILS
         </CustomNavLink>
-        <CustomNavLink to="/a/setting" onClick={closeMobileMenu}>
-          SETTING
-        </CustomNavLink>
+        {/* <CustomNavLink to="/" onClick={closeMobileMenu}> */}
+        
+          <Box
+            display="inline-block"
+            position="relative"
+            _hover={{
+              '& button': { display: 'block' },
+            }}
+          >
+            <Avatar name="A" size='xs' src='https://bit.ly/dan-abramov' />
+           
+            <Button display="none" position="absolute" top="100%" right="0" 
+         onClick={handleClick}
+          >
+          Logout  
+            </Button>
+            
+          </Box>
+     
+        {/* </CustomNavLink> */}
       </ul>
     </nav>
     </DIV>

@@ -1,5 +1,5 @@
 
-import { ADMIN_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+import { ADMIN_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
 
 import { ProductObject, UserObject } from "../../constrain";
 //  import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
@@ -54,19 +54,8 @@ case USER_SUCCESS:{
 case USER_FAILURE:{
    return {...state,isLoading:false,isError:true}
 }
-case DELETE_ITEM:{
-   let {ActiveUser}=state;
-   let {addToCart}=ActiveUser;
-
-   addToCart=addToCart.filter((item:ProductObject)=>item!==payload)
-   console.log(addToCart)
-   return {...state}
-}
-case ADD_ITEM:{
-   let {ActiveUser}=state;
-   let {addToCart}=ActiveUser;
-   addToCart=[...addToCart,payload];
-   return {...state}
+case LOGOUT:{
+   return initialState;
 }
    default:return state;
 }

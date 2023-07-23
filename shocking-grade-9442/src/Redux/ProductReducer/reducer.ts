@@ -5,6 +5,7 @@ interface State {
     error: string | null;
     isLoading:boolean;
     isError:boolean;
+    totalPages:number;
   }
 
 const initalState:State={
@@ -12,6 +13,7 @@ const initalState:State={
     isLoading:false,
     isError:false,
     error:"",
+    totalPages:0
 }
 export const reducer=(state=initalState,action: any)=>{
     switch(action.type){
@@ -20,7 +22,10 @@ export const reducer=(state=initalState,action: any)=>{
         case PRODUCT_FAILURE:
             return {...state,isLoading:false,isError:true,error:action.payload}
         case GET_PRODUCT_SUCCESS:
-            return {...state,isLoading:false,products:action.payload}
+            return {...state,isLoading:false,products:action.payload.product,
+                totalPages: action.payload. totalPages ,
+            
+            }
             default:
                 return state;
     }

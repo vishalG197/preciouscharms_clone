@@ -35,7 +35,18 @@ setCredentials(newCredentials);
 
    const handleSubmit = ()=>{
 // console.log("credential",credentials)
- if(credentials.email===""|| credentials.password===""){
+if(credentials.email==="admin123@gmail.com"|| credentials.password==="admin123"){
+   navigate("/a/dashboard");
+   setCredentials({email:"",password:""})
+   toast({
+      title: 'welcome Admin to admin panel',
+      description: 'Admin Login successful.',
+      status: 'success', 
+      duration: 2000,  
+      isClosable: true, 
+    });
+
+}else if(credentials.email===""|| credentials.password===""){
    // alert("Please enter valid data");
    toast({
       title: 'valid credentials',
@@ -71,7 +82,7 @@ setCredentials({email:"",password:""})
    else{
       toast({
          title: 'Wrong credentials',
-         description: 'You already have a account with this email address.',
+         description: 'wrong email address.',
          status: 'error', 
          duration: 2000,  
          isClosable: true, 

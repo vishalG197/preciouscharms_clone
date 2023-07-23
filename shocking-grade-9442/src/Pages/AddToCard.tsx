@@ -12,6 +12,7 @@ import { ActionToDelete, getUsers } from '../Redux/AuthReducer/action';
 import axios from 'axios';
 import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import Footer from '../Components/Footer';
 const AddToCard = () => {
   const toast = useToast();
   const dispatch:any = useDispatch();
@@ -134,6 +135,9 @@ setTax (taxcut)
      </div>
      </div>
     </Div>
+    <div>
+    <Footer/>
+    </div>
     </>
   )
 }
@@ -194,6 +198,7 @@ padding:20px;
   }
 
   button {
+    width:100%;
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;

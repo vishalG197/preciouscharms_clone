@@ -7,6 +7,7 @@ import { Button, useToast } from '@chakra-ui/react';
 import Navbar from '../Components/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType';
+import Footer from '../Components/Footer';
 
 const SingleProductPage = () => {
   const {id} =useParams();
@@ -77,6 +78,9 @@ console.log(isPrasent,"ISPresent")
 <Button bg="white" color="black" padding="30px" mr={5} w="200px">BUY NOW</Button>
      </div>
     </Div>
+    <div>
+    <Footer/>
+  </div>
     </>
   )
 }

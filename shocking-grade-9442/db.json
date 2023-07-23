@@ -1135,10 +1135,8 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
         }
       ],
-
       "id": 1,
       "orderPlaced": []
-
     },
     {
       "name": "ABC",
@@ -1164,14 +1162,24 @@
           "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
         },
         {
-          "id": 56,
-          "name": "Watches",
-          "price": 1275500,
-          "about": "Submariner Date",
-          "category": "Men's jewelry",
-          "brand": "Rolex",
-          "info": "Oyster, 41mm, Oystersteel and yellow gold",
-          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
+          "id": 6,
+          "name": "Jewelry",
+          "price": 5099,
+          "about": "Classica Ring",
+          "category": "Rings",
+          "brand": "Graff",
+          "rating": 4.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 3.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
         }
       ],
       "orderPlaced": [],
