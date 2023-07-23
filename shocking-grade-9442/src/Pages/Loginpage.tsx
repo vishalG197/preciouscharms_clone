@@ -37,7 +37,9 @@ setCredentials(newCredentials);
 // console.log("credential",credentials)
 
 if(credentials.email==="admin123@gmail.com"|| credentials.password==="admin123"){
+   dispatch({type:ADMIN_SUCCESS})
    navigate("/a/dashboard");
+   
    setCredentials({email:"",password:""})
    toast({
       title: 'welcome Admin to admin panel',
