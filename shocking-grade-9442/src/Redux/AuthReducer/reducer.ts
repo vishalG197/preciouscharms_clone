@@ -1,5 +1,9 @@
-import { UserObject } from "../../constrain";
+
 import { ADMIN_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+
+import { ProductObject, UserObject } from "../../constrain";
+//  import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+
 
 const initialState: {
    isAdminAuth: boolean;
@@ -7,17 +11,23 @@ const initialState: {
    isError: boolean;
    isAuth: boolean;
    Users: UserObject[];
-   ActiveUser: {};
+   ActiveUser: UserObject;
 } ={
 isAdminAuth:false,
 isLoading:false,
 isError:false,
 isAuth:false,
 Users:[],
-ActiveUser:{},
+ActiveUser:{
+   name:"",
+   email:"",
+   password:"",
+   addToCart:[],
+   orderPlaced:[]
+},
 
 }
-export function authReducer (state=initialState,{type,payload}:{type:string,payload:UserObject[] | UserObject}){
+export function authReducer (state=initialState,{type,payload}:{type:string,payload:any}){
 switch(type){
 
 case LOGIN_REQUEST :{
@@ -43,6 +53,20 @@ case USER_SUCCESS:{
 }
 case USER_FAILURE:{
    return {...state,isLoading:false,isError:true}
+}
+case DELETE_ITEM:{
+   let {ActiveUser}=state;
+   let {addToCart}=ActiveUser;
+
+   addToCart=addToCart.filter((item:ProductObject)=>item!==payload)
+   console.log(addToCart)
+   return {...state}
+}
+case ADD_ITEM:{
+   let {ActiveUser}=state;
+   let {addToCart}=ActiveUser;
+   addToCart=[...addToCart,payload];
+   return {...state}
 }
    default:return state;
 }

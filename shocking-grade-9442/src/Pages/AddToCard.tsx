@@ -1,25 +1,107 @@
 // import { Img } from '@chakra-ui/react';
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React,{useEffect,useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { styled } from 'styled-components';
 import { ProductObject } from '../constrain';
 import B4 from "../Images/B4.jpg"
+import { Box, Image, Text, Heading, Flex, IconButton, useToast, HStack, VStack, Spacer, Grid } from '@chakra-ui/react';
+import { FaTrash } from 'react-icons/fa';
+import Navbar from '../Components/Navbar';
+import { DELETE_ITEM, LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType';
+import { ActionToDelete, getUsers } from '../Redux/AuthReducer/action';
+import axios from 'axios';
+import { Navigate } from 'react-router';
+import { Link } from 'react-router-dom';
 const AddToCard = () => {
+  const toast = useToast();
+  const dispatch:any = useDispatch();
+  const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
+  const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id);
   const cartItem =useSelector((store:any)=>store.authReducer.ActiveUser.addToCart);
-  console.log(cartItem)
-  return (
+  const [total,setTotal]=useState<number>(0);
+  const [tax,setTax]=useState<number>(0);
+  const AllUser =useSelector((store:any)=>store.authReducer.Users)
+  //  console.log(cartItem)
+  useEffect(() => {
+  
+  dispatch(getUsers())
+  // getUsers(dispatch)
+  
+  },[])
+  // console.log(userId);
+  useEffect(()=>{
+    let sum=0;
+for(let i=0;i<cartItem.length;i++){
+sum+=cartItem[i].price;
+}
+setTotal(sum);
+let taxcut=sum/10;
+setTax (taxcut)
+  },[cartItem])
+  
+  const handleDelete = (id:number) => {
+  //  console.log(userId,id)
+    // dispatch(ActionToDelete(product));
+    axios
+      .put(`http://localhost:8080/users/${userId}`, {...ActiveUser,
+        addToCart: cartItem.filter((item:ProductObject) => item.id !== id)
+      })
+      .then((response) => {
+        dispatch({type:LOGIN_SUCCESS,payload:response.data});
+        // console.log('Data updated successfully:', response.data);
+        // setData(response.data.addToCart);
+      })
+      .catch((error) => {
+        console.error('Error updating data:', error);
+      });
+    toast({
+      title: ` product removed from bag.`,
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    });
+  };
+
+  // console.log(cartItem)
+  return (<>
+   <div>
+   <Navbar/>
+   </div>
+  
     <Div>
      <div className='List'>
 <div className="free">
 <h1>GET FREE SHIPPING ON EVERY ORDER, EVERY TIME</h1>
-<p>Non member get free shipping on the purchse above the rs.999</p>
+<p>Non member get free shipping on the purchse above the ₹.99999</p>
 </div>
 <div className='cart'>
-  <h1>YOUR CART(total)</h1>
+  <h1>YOUR CART({cartItem.length})</h1>
 </div>
 <div>
 {cartItem==undefined ||cartItem.length==0?<div className='emptycart'>YOUR BAG IS EMPTY</div>: cartItem?.map((el:ProductObject)=>{
-  return <>{el.name}</>
+  return <Box borderWidth="1px" borderRadius="lg" overflow="hidden" boxShadow="md" p={4}>
+  <div style={{display:"flex",flexDirection:"row", justifyContent:"space-between"}} >
+    <Box width="200px" p="10px" >
+   <Image src={el.avatar} alt={el.name}  boxSize="200px" objectFit="cover" mr={4} />
+    </Box>
+   
+<Box mt={4} width="200px" p="10px" >
+ <Heading as="h1" mt="10px" size="lg">{el.about}</Heading>
+ <Text fontSize="md" mt="10px">{el.name}</Text>
+ <Text fontSize="md" mt="10px">{el.brand}</Text>
+ <Text fontSize="md" mt="10px">₹{el.price}</Text>
+ <Text fontSize="md" mt="10px">{el.rating}★</Text>
+</Box>
+    </div>
+  <IconButton
+    icon={<FaTrash />}
+    colorScheme="red"
+    aria-label="Delete"
+    onClick={()=>handleDelete(el.id)}
+    mt={4}
+  />
+</Box>
+  
  })}
 </div>
 
@@ -32,24 +114,27 @@ const AddToCard = () => {
       <h1>DO YOU HAVE A PROMO CODE</h1>
       </div>
      <div id = "IK">
-      <div >SUBTOTAL</div><div>RS 455</div>
+      <div >SUBTOTAL</div><div>₹{total}</div>
      </div>
      <div id = "IK">
-      <div>ESTIMATED SHIPPING CHARGES</div><div>RS 0.00</div>
+      <div>ESTIMATED SHIPPING CHARGES</div><div>₹ 0.00</div>
      </div>
      <div id = "IK">
-      <div>TAX</div><div>RS 0.00</div>
+      <div>TAX</div><div>₹ {tax}</div>
      </div>
      <div id="IK">
-      <div>TOTAL</div><div>RS 0.00</div>
+      <div>TOTAL</div><div>₹ {total + tax}</div>
      </div>
      <div>
+      <Link to={"/address"}>
       <button>
         CHECKOUT
       </button>
+      </Link>
      </div>
      </div>
     </Div>
+    </>
   )
 }
 
@@ -76,6 +161,9 @@ const Div = styled.div`
     display:flex;
     flex-direction:row;
     justify-content:space-between;
+  }
+  .List {
+    width:80%;
   }
 .checkout{
   padding:25px;

@@ -9,6 +9,7 @@ import {  getUsers } from '../Redux/AuthReducer/action'
 import { Dispatch } from 'redux'
 import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType'
 import { useToast } from '@chakra-ui/react'
+import Navbar from '../Components/Navbar'
 
 const Loginpage = () => {
    const toast = useToast();
@@ -24,8 +25,8 @@ const Loginpage = () => {
    // getUsers(dispatch)
    
    },[])
-   const store =useSelector((store)=>store)
-   console.log(store)
+   // const store =useSelector((store)=>store)
+   // console.log(store)
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
 const {name,value} =e.target;
 let newCredentials ={...credentials,[name]:value}
@@ -33,7 +34,7 @@ setCredentials(newCredentials);
   };
 
    const handleSubmit = ()=>{
-console.log("credential",credentials)
+// console.log("credential",credentials)
  if(credentials.email===""|| credentials.password===""){
    // alert("Please enter valid data");
    toast({
@@ -84,8 +85,12 @@ setCredentials({email:"",password:""})
 
 
    }
-  return (
+  return (<> 
+   <div>
+   <Navbar/>
+   </div>
     <Div>
+      
       <h1>PRECIOUS CHARMS</h1>
       <h2>JWELLARY SHOP</h2>
 <div>
@@ -103,6 +108,7 @@ onChange={handleChange}
 </div>
 
     </Div>
+    </>
   )
 }
 
@@ -123,7 +129,7 @@ padding-top:80px;
   color: black;
   text-align: center;
   h1{
-   margin-top:20px;
+  
    margin-bottom:20px;
    font-size:30px;
    font-weight:bold;

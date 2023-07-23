@@ -54,14 +54,13 @@ export default function SideBarWatches() {
   return (
     <SidebarContainer>
 
-    <InputGroup>
-          <Input
-            type="text"
-            placeholder="Search"
-            value={search}
-            onChange={handleSearch}
-          />
-        </InputGroup>
+<input
+        style={{marginBottom:"15px",backgroundColor:"lightgray",padding:"3px 3px"}}
+        type="text"
+        placeholder="Search"
+        value={search}
+        onChange={handleSearch}
+      />
           <Section>
             <h3>Filter By Brands</h3>
             <CheckboxGroup>
@@ -153,22 +152,26 @@ export default function SideBarWatches() {
             <RadioGroup onChange={handleOrder}>
               <div className="radio">
               <RadioButton>
+              <RadioLabel>
                 <input  type="radio"
                 name="sort"
                 value={"asc"}
                 checked={order === "asc"}/>
+                Ascending</RadioLabel>
               </RadioButton>
-              <RadioLabel>Ascending</RadioLabel>
+              
               </div>
     
               <div className="radio">
                 <RadioButton>
+                <RadioLabel>
                 <input type="radio"
                 name="sort"
                 value={"desc"}
                 checked={order === "desc"} />
+                Descending</RadioLabel>
                 </RadioButton>
-              <RadioLabel>Descending</RadioLabel>
+              
               </div>
             </RadioGroup>
           </Section>
@@ -179,64 +182,74 @@ export default function SideBarWatches() {
     };
     
     const SidebarContainer = styled.div`
-      padding: 0 10px;
-      border-right: 1px solid gray;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    
-      .radio{
-        display: flex;
-        gap: 10px;
-      }
-    `;
-    
-    const Section = styled.div`
-      margin-bottom: 10px;
-    `;
-    
-    const CheckboxGroup = styled.div`
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    `;
-    
-    const CheckboxLabel = styled.label`
-      display: flex;
-      align-items: center;
-      gap: 2px;
-    `;
-    
-    const RadioGroup = styled.div`
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    `;
-    
-    const RadioLabel =styled.div`
+  /* padding: 0 10px;
+  border-right: 1px solid gray;
+ 
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; */
+
+  .radio{
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-    `;
-    
-    const RadioButton =styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    `;
-    
-    
-    const Button = styled.button`
-      background-color: #f44336;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      font-weight: bold;
-      cursor: pointer;
-    
-      &:hover {
-        background-color: #d32f2f;
-      }
-    `;
-    
+   
+  }
+`;
+
+const Section = styled.div`
+  margin-bottom: 10px;
+  h3{
+    font-weight:bold;
+    margin-bottom:5px
+  }
+
+`;
+
+const CheckboxGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const CheckboxLabel = styled.label`
+  display: flex;
+  align-items: center;
+  font-size:13px;
+  gap:5px
+`;
+
+const RadioGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const RadioLabel =styled.div`
+display: flex;
+flex-direction:row;
+gap:5px
+`;
+
+const RadioButton =styled.div`
+display: flex;
+flex-direction: column;
+
+`;
+
+
+const Button = styled.button`
+  background-color:black;
+  color: white;
+  border: none;
+  padding: 5px;
+  width: 170px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius:5px;
+  margin-top:10px;
+
+
+  &:hover {
+    background-color:white;
+    color:black;
+    border: 2px solid black;
+  }
+`;

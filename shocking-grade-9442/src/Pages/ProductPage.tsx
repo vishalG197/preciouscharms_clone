@@ -11,13 +11,17 @@ import banner from '../home-image/banner11.jpg';
 import SideBarWatches from '../Components/SideBarWatches';
 import { Link } from 'react-router-dom';
 import ProductCard from '../Components/ProductCard';
+import Navbar from '../Components/Navbar';
+import ProductImg from '../product-image/ProductImg.png'
 const ProductPage = () => {
   const dispatch=useDispatch();
  const{name}=useParams()
-//  console.log(name)
+//  console.log(name,"NAme")
 
   const [searchParams,setSearchParams]=useSearchParams()
-  console.log("order", searchParams.getAll("category"))
+  // console.log("order", searchParams.getAll("category"))
+
+  
   let paramsObj={
     params:{
      
@@ -36,8 +40,13 @@ const ProductPage = () => {
       isError:store.productReducer.isError
     }
   },shallowEqual);
-
+if(name=="Jewelry"||"Watches"){
   products=products.filter((ele:any)=>ele.name==name)
+}else{
+  products=products.filter((ele:any)=>ele.category==name)
+}
+  
+
   useEffect(()=>{
     dispatch(getProducts(paramsObj))
       },[searchParams])
@@ -46,7 +55,12 @@ const ProductPage = () => {
 
   return (
     <div>
-      <img src={banner} alt="" style={{height:"290px", width:"100%"}}/>
+      <Navbar/>
+
+
+
+      
+      <img src={ProductImg} alt="" style={{height:"400px", width:"100%"}}/>
       <DIV>
         {name=="Watches"?  <div className="sidebar">
         <SideBarWatches/>
@@ -73,24 +87,47 @@ const ProductPage = () => {
 
 const DIV=styled.div`
 display: flex;
+gap: 10px;
+background-color:#f9f9f9;
 .sidebar{
   margin-top: 30px;
   margin-bottom: 60px;
-  width: 200px;
+ 
+  width: 15%;
+  margin-left: 10px;
+
 }
 
 .product-list{
+  width: 85%;
   display: grid;
   grid-template-columns: repeat(4,1fr);
-grid-gap: 20px;
+grid-gap: 40px;
 margin: 10px;
 margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 60px; 
+
 }
 
-.product{
-  border: 1px solid black;
+@media screen and (min-device-width: 320px) and (max-device-width: 567px) { 
+
+  display: flex;
+  flex-direction: column;
+  .sidebar{
+ width: 100%;
+ }
+
+  .product-list{
+ 
+  grid-template-columns: repeat(2,1fr);
+
+  /* margin-left: 20%; */
 }
+}
+
+
+
+
 
 `
 

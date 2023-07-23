@@ -53,6 +53,9 @@ const Navbar: React.FC = () => {
         <CustomNavLink to="/a/dashboard" onClick={closeMobileMenu}>
           DASHBOARD
         </CustomNavLink>
+        <CustomNavLink to="/a/add-product" onClick={closeMobileMenu}>
+           ADD PRODUCT
+        </CustomNavLink>
         <CustomNavLink to="/a/AllProduct" onClick={closeMobileMenu}>
           ALL PRODUCTS
         </CustomNavLink>
@@ -60,9 +63,7 @@ const Navbar: React.FC = () => {
           EDIT PAGE
         </CustomNavLink>
 
-        <CustomNavLink to="/a/users/order/:id" onClick={closeMobileMenu}>
-         ORDER DETAILS
-        </CustomNavLink>
+    
         <CustomNavLink to="/a/users" onClick={closeMobileMenu}>
           USER DETAILS
         </CustomNavLink>
