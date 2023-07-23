@@ -1135,10 +1135,8 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
         }
       ],
-
       "id": 1,
       "orderPlaced": []
-
     },
     {
       "name": "ABC",
@@ -1172,6 +1170,26 @@
           "brand": "Rolex",
           "info": "Oyster, 41mm, Oystersteel and yellow gold",
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 3.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 3.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
         }
       ],
       "orderPlaced": [],
@@ -1223,6 +1241,15 @@
       "addToCart": [],
       "orderPlaced": [],
       "id": 8
+    },
+    {
+      "name": "http",
+      "email": "http@email.com",
+      "password": "http",
+      "addToCart": [],
+      "orderPlaced": [],
+      "address": [],
+      "id": 9
     }
   ]
 }
