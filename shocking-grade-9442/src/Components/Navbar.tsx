@@ -5,6 +5,11 @@ import logo from "../home-image/logo-white.png"
 import blackLogo from "../home-image/logo-black.png"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Box } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/button';
+import { Avatar } from '@chakra-ui/avatar';
+import { LOGOUT } from '../Redux/AuthReducer/actionType';
 
 
 interface CustomNavLinkProps {
@@ -26,7 +31,10 @@ const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) 
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const dispatch:any =useDispatch()
+const isAuth =useSelector((store:any)=>store.authReducer.isAuth);
+const name =useSelector((store:any)=>store.authReducer.ActiveUser.name);
+// console.log("nav",isAuth)
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -96,9 +104,25 @@ const Navbar: React.FC = () => {
         <CustomNavLink to="/about" onClick={closeMobileMenu}>
           About Us
         </CustomNavLink>
-        <CustomNavLink to="/login" onClick={closeMobileMenu}>
+
+{isAuth?(
+          <Box
+            display="inline-block"
+            position="relative"
+            _hover={{
+              '& button': { display: 'block' },
+            }}
+          >
+            <Avatar name={name} size='xs' src='https://bit.ly/dan-abramov' />
+            <Button display="none" position="absolute" top="100%" right="0" onClick={()=>{dispatch({type:LOGOUT})}}>
+              Logout
+            </Button>
+          </Box>
+        ) :<CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account
-        </CustomNavLink>
+        </CustomNavLink>}
+
+       
         <CustomNavLink to="/cart" onClick={closeMobileMenu}>
           Bag
         </CustomNavLink>

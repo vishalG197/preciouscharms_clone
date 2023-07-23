@@ -20,8 +20,9 @@ export const requestAction=()=>{
     axios
     .get(`http://localhost:8080/products`,paramsObj)
     .then((res)=>{
+      const totalPages = Math.ceil(res.headers['x-total-count'] / 12);
       // console.log(res.data)
-      dispatch(getSuccessAction(res.data))
+      dispatch(getSuccessAction({product:res.data,totalPages:totalPages}))
     })
     .catch((err)=>{
       dispatch(failureAction());
