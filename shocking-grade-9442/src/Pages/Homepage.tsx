@@ -162,11 +162,12 @@ const Homepage = () => {
           <p className="newHead-desc">Precious Charms is more than just Gilding</p>
       </div>
 
-          <p className='abtp'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quasi animi 
-            ipsum optio nostrum ab commodi pariatur minima laborum dignissimos 
-            impedit reiciendis veniam quo, sit vero sapiente sunt molestiae eos. Accusantium quasi animi 
-            ipsum optio nostrum ab commodi pariatur minima laborum dignissimos 
-            impedit reiciendis veniam quo, sit vero sapiente sunt molestiae eos</p>
+          <p className='abtp'><br/>
+    <p>Our company is an exclusive supplier of jewelry from the world's best brands. We take pride in offering our customers only the highest quality products created from precious metals and stones by the most experienced master jewelers</p>
+    {/* <br/> */}
+    <p>We are constantly expanding our range to meet the needs of our customers and offer them the latest and most fashionable trends in jewelry. We are confident that our collection of jewelry will allow everyone to express their individual style and create a unique image</p>
+    {/* <br/> */}
+    </p>
 
             <p className='abtp'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quasi animi 
             ipsum optio nostrum ab commodi pariatur minima laborum dignissimos 

@@ -80,7 +80,7 @@ const Navbar: React.FC = () => {
         <CustomNavLink to="/product/Watches" onClick={closeMobileMenu}>
           Watches
         </CustomNavLink>
-        <CustomNavLink to="/product" onClick={closeMobileMenu}>
+        <CustomNavLink to="/gift" onClick={closeMobileMenu}>
           Gifts
         </CustomNavLink>
 
@@ -93,8 +93,8 @@ const Navbar: React.FC = () => {
 
 
       
-        <CustomNavLink to="/contact" onClick={closeMobileMenu}>
-          Contact Us
+        <CustomNavLink to="/about" onClick={closeMobileMenu}>
+          About Us
         </CustomNavLink>
         <CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account

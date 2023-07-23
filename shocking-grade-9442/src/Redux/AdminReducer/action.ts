@@ -114,3 +114,16 @@ console.log(res.data);
  }
 
 
+
+
+//  <*****************************Edit****************************************>
+// export const updatedData=()=>(dispatch:any)=>{
+//   axios
+//   // .patch(`http://localhost:8080/products/${id}`,newData)
+//   // .then((res)=>{
+//     // dispatch({type:PATCH_PRODUCT_SUCCESS});
+//   // })
+//   // .catch((err)=>{
+//     // dispatch(failureAction());
+//   // })
+// }
