@@ -5,6 +5,11 @@ import logo from "../home-image/logo-white.png"
 import blackLogo from "../home-image/logo-black.png"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Box } from '@chakra-ui/layout';
+import { Avatar } from '@chakra-ui/avatar';
+import { Button } from '@chakra-ui/button';
+import { LOGOUT } from '../Redux/AuthReducer/actionType';
 
 
 interface CustomNavLinkProps {
@@ -16,7 +21,7 @@ interface CustomNavLinkProps {
 const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
-
+  
   return (
     <li className={`navbar__item ${isActive ? 'active' : ''}`} onClick={onClick}>
       <NavLink to={to}>{children}</NavLink>
@@ -26,7 +31,9 @@ const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) 
 
 const Navbar2: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const isAuth =useSelector((store:any)=>store.authReducer.isAuth);
+  const dispatch:any =useDispatch()
+  const name =useSelector((store:any)=>store.authReducer.ActiveUser.name);
   const handleMobileMenuToggle = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
@@ -93,9 +100,23 @@ const Navbar2: React.FC = () => {
         <CustomNavLink to="/contact" onClick={closeMobileMenu}>
           Contact Us
         </CustomNavLink>
-        <CustomNavLink to="/login" onClick={closeMobileMenu}>
+        {isAuth?(
+          <Box
+            display="inline-block"
+            position="relative"
+            _hover={{
+              '& button': { display: 'block' },
+            }}
+          >
+            <Avatar name={name} size='xs' src='https://bit.ly/dan-abramov' />
+            <Button display="none" position="absolute" top="100%" right="0" onClick={()=>{
+              dispatch({type:LOGOUT})}}>
+              Logout
+            </Button>
+          </Box>
+        ) :<CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account
-        </CustomNavLink>
+        </CustomNavLink>}
         <CustomNavLink to="/cart" onClick={closeMobileMenu}>
           Bag
         </CustomNavLink>

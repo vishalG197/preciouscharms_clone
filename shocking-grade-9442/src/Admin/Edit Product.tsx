@@ -51,7 +51,7 @@ const EditPage = () => {
   const handleUpdate = () => {
     const newData = { price: +price, name: name, avatar: avatar, category: category, brand: brand, rating: +rating };
     axios
-      .patch(`http://localhost:8080/products/${id}`, newData)
+      .patch(`https://monkeyapi-2-0.onrender.com/products/${id}`, newData)
       .then((res) => {
         console.log(res.data)
       })

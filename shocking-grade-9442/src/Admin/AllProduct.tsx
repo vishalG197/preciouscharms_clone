@@ -94,7 +94,7 @@ const handlePagechange=(value:number)=>{
 
         {data.map((item: any) => (
           <div key={item.id} >
-            <Card maxW='sm' >
+            <Card maxW='sm' maxHeight={"550px"} >
               <CardBody>
                 <Image style={{ width: "300px", height: "200px", }}
                   src={item.avatar}
@@ -122,11 +122,11 @@ const handlePagechange=(value:number)=>{
                 <ButtonGroup spacing='2'>
                  
 
-                     <Link to={`/a/Edit/${item.id}`}><Button   variant='solid' colorScheme='blue' style={{ marginLeft: "80px" }}>
+                     <Link to={`/a/Edit/${item.id}`}><Button   variant='solid' colorScheme='blue' >
                     Edit
                   </Button></Link>
                  
-                  <Button variant='solid' colorScheme='red' onClick={() => handleDelete(item.id)}  style={{ marginLeft: "80px" }}>
+                  <Button variant='solid' colorScheme='red' onClick={() => handleDelete(item.id)}  >
                     Delete
                   </Button>
                 </ButtonGroup>
