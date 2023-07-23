@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
           ALL PRODUCTS
         </CustomNavLink>
         <CustomNavLink to="/a/Edit/:id" onClick={closeMobileMenu}>
-          EDIT PAGE
+          EDIT PRODUCT
         </CustomNavLink>
 
     
