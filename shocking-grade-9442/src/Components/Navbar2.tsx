@@ -24,7 +24,7 @@ const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) 
   );
 };
 
-const Navbar: React.FC = () => {
+const Navbar2: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMobileMenuToggle = () => {
@@ -51,10 +51,7 @@ const Navbar: React.FC = () => {
   return (
     <DIV>
     <nav className={colorChange ? 'navbar colorChange' : 'navbar'}>
-      {/* <div className="navbar__logo">
-            <img src={logo} alt="" width="200px" />
-
-      </div> */}
+   
 
 
 <div className="mobileNav">
@@ -86,15 +83,15 @@ const Navbar: React.FC = () => {
 
         <Link to='/'>
           <div className="navbar__logo">
-            <img src={colorChange ? blackLogo : logo} alt=""  />
+            <img src={blackLogo} alt=""  />
           </div>
         </Link>
         
 
 
       
-        <CustomNavLink to="/about" onClick={closeMobileMenu}>
-          About Us
+        <CustomNavLink to="/contact" onClick={closeMobileMenu}>
+          Contact Us
         </CustomNavLink>
         <CustomNavLink to="/login" onClick={closeMobileMenu}>
           Account
@@ -108,7 +105,7 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Navbar2;
 
 
 
@@ -127,7 +124,9 @@ const DIV = styled.section`
   padding: 20px;
   width: 100%;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
+  background-color:#fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
 .colorChange{
   background-color:#fff;
@@ -166,7 +165,7 @@ const DIV = styled.section`
 
 .navbar__item a {
   text-decoration: none;
-  color: #f3f2f2;
+  color: #211f1f;
 }
 
 

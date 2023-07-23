@@ -1,7 +1,7 @@
 import React, { useState,useEffect, Dispatch } from 'react';
 import { styled } from 'styled-components';
 import B1 from "../Images/B2.jpg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { RootauthState, UserObject } from '../constrain';
 import {useDispatch,useSelector} from "react-redux"
 import { getUsers, SignUp } from '../Redux/AuthReducer/action';
@@ -12,10 +12,10 @@ const Signup = () => {
   const toast = useToast();
  const [user,setUser] = useState<UserObject>({ name:"",
 email: "",password: "",addToCart:[],
-orderPlaced:[]
+orderPlaced:[],address:[]
 
 });
-
+const navigate=useNavigate();
 const dispatch: Dispatch<any> =useDispatch();
 const AllUser =useSelector((store:any)=>store.authReducer.Users)
 // console.log(AllUser)
@@ -62,7 +62,7 @@ let userPrasent = AllUser.find((el:UserObject)=>{
       });
       setUser({ name:"",
     email: "",password: "",addToCart:[],
-    orderPlaced:[]
+    orderPlaced:[],address:[]
     
     })
      }else{
@@ -70,7 +70,7 @@ let userPrasent = AllUser.find((el:UserObject)=>{
       // alert("your registration is successful")
       setUser({ name:"",
     email: "",password: "",addToCart:[],
-    orderPlaced:[]
+    orderPlaced:[],address:[]
     
     })
       toast({
@@ -80,15 +80,13 @@ let userPrasent = AllUser.find((el:UserObject)=>{
         duration: 2000,  
         isClosable: true, 
       });
-      
+      navigate("/login");
      }
     }
     
   }
   return (<>  
-  <div>
-    <Navbar/>
-  </div> 
+ 
     <Div>
       <h1>PRECIOUS CHARMS</h1>
       <h2>JEWELRY SHOP</h2>

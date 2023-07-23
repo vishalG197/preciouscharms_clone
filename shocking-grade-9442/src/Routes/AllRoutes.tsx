@@ -19,6 +19,7 @@ import { SingleUser } from '../Admin/SingleUser'
 
 import { Payment } from '../Pages/Payment'
 import { Address } from '../Pages/Address'
+import PrivateRoutes from './PrivateRoutes'
 
 import { AddProduct } from '../Admin/AddProduct'
 
@@ -34,20 +35,71 @@ const AllRoutes = () => {
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/product/:name" element={<ProductPage/>}/>
       <Route path='/contact' element={<ContactUs/>}/>
-      <Route path="/product/:name/:id" element={<SingleProductPage/>}/>
-      <Route path="/cart" element={<AddToCard/>}/>
-      <Route path="/a/dashboard" element={<Dashboard/>}/>
-      <Route path="/a/AllProduct" element={<AllProduct/>}/>
-      <Route path="/a/Edit/:id" element={<EditPage/>}/>
-      <Route path="/a/users" element={<UserDetails/>}/>
-      <Route path="/a/add-product" element={<AddProduct/>}/>
+      <Route path="/product/:name/:id" element={
+      <PrivateRoutes>
+ <SingleProductPage/>
+      </PrivateRoutes>
+     
+      }/>
+      <Route path="/cart" element={
+       <PrivateRoutes>
+      <AddToCard/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/dashboard" element={
+       <PrivateRoutes>
+      <Dashboard/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/AllProduct" element={
+      <PrivateRoutes>
+      <AllProduct/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/Edit/:id" element={
+      <PrivateRoutes>
+      <EditPage/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/users" element={
+      <PrivateRoutes>
+      <UserDetails/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/add-product" element={
+      <PrivateRoutes>
+      <AddProduct/>
+      </PrivateRoutes>
+      }/>
     
-      <Route path="/a/setting" element={<Setting/>}/>
-      <Route path="/payment" element={<Payment/>}/>
-      <Route path="/address" element={<Address/>}/>
+      <Route path="/a/setting" element={
+      <PrivateRoutes>
+      <Setting/>
+      </PrivateRoutes>
+      }/>
+
+      <Route path="/payment" element={
+      <PrivateRoutes>
+ <Payment/>
+      </PrivateRoutes>
+     
+      
+      }/>
+      <Route path="/address" element={
+      <PrivateRoutes>
+      <Address/>
+      </PrivateRoutes>
+      }/>
+
+      
       <Route path="/about" element={<About/>}/>
 
-      <Route path="/a/users/details/:id" element={<SingleUser/>}/>
+
+      <Route path="/a/users/details/:id" element={
+      <PrivateRoutes>
+      <SingleUser/>
+      </PrivateRoutes>
+      }/>
 
       <Route path="*" element={<h1>Page not found</h1>}/>
     </Routes>

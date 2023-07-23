@@ -1,13 +1,19 @@
+
+import { ADMIN_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+
 import { ProductObject, UserObject } from "../../constrain";
-import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+//  import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+
 
 const initialState: {
+   isAdminAuth: boolean;
    isLoading: boolean;
    isError: boolean;
    isAuth: boolean;
    Users: UserObject[];
    ActiveUser: UserObject;
 } ={
+isAdminAuth:false,
 isLoading:false,
 isError:false,
 isAuth:false,
@@ -17,7 +23,8 @@ ActiveUser:{
    email:"",
    password:"",
    addToCart:[],
-   orderPlaced:[]
+   orderPlaced:[],
+   address:[]
 },
 
 }
@@ -29,6 +36,9 @@ case LOGIN_REQUEST :{
 }
 case LOGIN_SUCCESS :{
    return {...state,isLoading:false,isAuth:true,ActiveUser:payload}
+}
+case ADMIN_SUCCESS :{
+return {...state,isAdminAuth:true}
 }
 case SIGNUP_SUCCESS :{
 return {...state, isLoading:false}
@@ -44,20 +54,6 @@ case USER_SUCCESS:{
 }
 case USER_FAILURE:{
    return {...state,isLoading:false,isError:true}
-}
-case DELETE_ITEM:{
-   let {ActiveUser}=state;
-   let {addToCart}=ActiveUser;
-
-   addToCart=addToCart.filter((item:ProductObject)=>item!==payload)
-   console.log(addToCart)
-   return {...state}
-}
-case ADD_ITEM:{
-   let {ActiveUser}=state;
-   let {addToCart}=ActiveUser;
-   addToCart=[...addToCart,payload];
-   return {...state}
 }
    default:return state;
 }

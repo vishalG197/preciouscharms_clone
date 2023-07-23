@@ -29,7 +29,7 @@ export default function UserCard({id,name,email}:userObj) {
 
       <Button colorScheme='teal' size='xs' >
 
-<Link to={`/a/users/details/${id}`}>Deatils</Link>
+<Link to={`/a/users/details/${id}`}>Details</Link>
 
       </Button>
     </DIV>

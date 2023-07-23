@@ -17,7 +17,7 @@
       "about": "Sylvie Ring",
       "category": "Rings",
       "brand": "Grrard",
-      "rating": 3.2,
+      "rating": 5.2,
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
     },
     {
@@ -1163,6 +1163,49 @@
       "password": "vish",
       "addToCart": [
         {
+          "id": 55,
+          "name": "Watches",
+          "price": 2379500,
+          "about": "Yacht-Master 42",
+          "category": "Men's jewelry",
+          "brand": "Rolex",
+          "info": "Oyster, 42 mm, yellow gold",
+          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m226658-0001.png?impolicy=v7&imwidth=1920"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 3.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
+        },
+        {
+          "id": 2,
+          "name": "Jewelry",
+          "price": 3599,
+          "about": "Nova Ring",
+          "category": "Rings",
+          "brand": "Cartier",
+          "rating": 4.1,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Jewelry",
+          "price": 9091,
+          "about": "Sylvie Ring",
+          "category": "Rings",
+          "brand": "Grrard",
+          "rating": 3.2,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
+        }
+      ],
+      "orderPlaced": [],
+      "address": [
+        {
           "id": 6,
           "name": "Jewelry",
           "price": 5099,
@@ -1181,9 +1224,32 @@
           "brand": "Rolex",
           "info": "Oyster, 41mm, Oystersteel and yellow gold",
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126613lb-0002.png?impolicy=v7&imwidth=1920"
+        },
+        {
+          "name": "Pallava Kuar",
+          "mobile_number": "+919911695440",
+          "pincod": "142/1 deviala nagar",
+          "house_no": "420",
+          "area": "kamino ka shr",
+          "town": "Gurgaon,Haryana"
+        },
+        {
+          "name": "Lonka",
+          "mobile_number": "+919911695440",
+          "pincod": "142/1 deviala nagar",
+          "house_no": "142",
+          "area": "sec-9",
+          "town": "Gurgaon,Haryana"
+        },
+        {
+          "name": "Hemant Yadav",
+          "mobile_number": "+919911695440",
+          "pincod": "142/1 deviala nagar",
+          "house_no": "124",
+          "area": "sec-9",
+          "town": "gurgaon"
         }
       ],
-      "orderPlaced": [],
       "id": 3
     },
     {
