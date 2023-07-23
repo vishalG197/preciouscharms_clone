@@ -1,26 +1,6 @@
 {
   "products": [
     {
-      "id": 2,
-      "name": "Jewelry",
-      "price": 3599,
-      "about": "Nova Ring",
-      "category": "Rings",
-      "brand": "Cartier",
-      "rating": 4.1,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Jewelry",
-      "price": 9091,
-      "about": "Sylvie Ring",
-      "category": "Rings",
-      "brand": "Grrard",
-      "rating": 5.2,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/s/6/s61-e-14ky-rd2.jpeg"
-    },
-    {
       "id": 4,
       "name": "Jewelry",
       "price": 6099,
@@ -29,36 +9,6 @@
       "brand": "David Yurman",
       "rating": 6.4,
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/e/r/ersl0318-ov_yg_1.jpg"
-    },
-    {
-      "id": 5,
-      "name": "Jewelry",
-      "price": 2099,
-      "about": "Unique",
-      "category": "Rings",
-      "brand": "John Hardy",
-      "rating": 5.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84376-e-14ky-em.jpeg"
-    },
-    {
-      "id": 6,
-      "name": "Jewelry",
-      "price": 5099,
-      "about": "Classica Ring",
-      "category": "Rings",
-      "brand": "Graff",
-      "rating": 4.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/8/4/84300-e-w-rd_1_3.jpg"
-    },
-    {
-      "id": 8,
-      "name": "Jewelry",
-      "price": 3000,
-      "about": "Savannah Ring",
-      "category": "Rings",
-      "brand": "Mikimoto",
-      "rating": 4.4,
-      "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/a/h/ahe042-e-14ky-rd2-front.jpeg"
     },
     {
       "id": 9,
@@ -83,11 +33,11 @@
     {
       "id": 11,
       "name": "Jewelry",
-      "price": 4599,
+      "price": 222,
       "about": "3 ct. tw. Classic Tennis Bracelet",
       "category": "Brecelets",
       "brand": "Cartier",
-      "rating": 4.1,
+      "rating": 2.5,
       "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/7a5296e988b05b584de113b891e60a2f/l/m/lmb1080_wg_1.jpg"
     },
     {

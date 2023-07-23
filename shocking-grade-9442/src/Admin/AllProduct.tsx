@@ -39,6 +39,7 @@ dispatch(fetchPage())
   const handleDelete = (id: number): void => {
     // Dispatch the deleteData action with the item ID to delete the data
     dispatch(deleteData(id));
+    // alert("")
   };
 
   if (error) {
@@ -87,7 +88,7 @@ const handlePagechange=(value:number)=>{
 
 
 
-    <div style={{width:"90%",margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"50px" ,}}>
+    <div style={{width:"100%",margin:"0 auto",display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"20px",paddingTop:"50px" ,marginRight:"12x0px"}}>
 
 
 
@@ -121,12 +122,11 @@ const handlePagechange=(value:number)=>{
                 <ButtonGroup spacing='2'>
                  
 
-                     <Link to={`/a/Edit/:id${item.id}`}><Button   >
-
+                     <Link to={`/a/Edit/${item.id}`}><Button   variant='solid' colorScheme='blue' style={{ marginLeft: "80px" }}>
                     Edit
                   </Button></Link>
                  
-                  <Button onClick={() => handleDelete(item.id)} >
+                  <Button variant='solid' colorScheme='red' onClick={() => handleDelete(item.id)}  style={{ marginLeft: "80px" }}>
                     Delete
                   </Button>
                 </ButtonGroup>
