@@ -1154,7 +1154,18 @@
       "email": "email@gmail.com",
       "password": "123",
       "id": 2,
-      "addToCart": [],
+      "addToCart": [
+        {
+          "id": 23,
+          "name": "Jewelry",
+          "price": 2099,
+          "about": "3 ct. tw. Certified Round 4-Prong Studs in 14K Gold",
+          "category": "Earrning",
+          "brand": "John Hardy",
+          "rating": 5.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/6053f97871d98e1641665999266ec4c4/r/2/r200y18r100_wg_1_1_1__1.jpeg"
+        }
+      ],
       "orderPlaced": []
     },
     {
@@ -1279,7 +1290,28 @@
       "name": "Vishal Vilas Giri",
       "email": "vishalgiri197@gmail",
       "password": "1234",
-      "addToCart": [],
+      "addToCart": [
+        {
+          "id": 2,
+          "name": "Jewelry",
+          "price": 3599,
+          "about": "Nova Ring",
+          "category": "Rings",
+          "brand": "Cartier",
+          "rating": 4.1,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/3/1/31-cg11106erw-e.00-w_1_fmdubojhl4wbaqd5.jpg"
+        },
+        {
+          "id": 57,
+          "name": "Watches",
+          "price": 839000,
+          "about": "Submariner Date",
+          "category": "Men's jewelry",
+          "brand": "Rolex",
+          "info": "Oyster, 41mm, Oystersteel ",
+          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m126610ln-0001.png?impolicy=v7&imwidth=1920"
+        }
+      ],
       "orderPlaced": [],
       "id": 6
     },
@@ -1300,6 +1332,54 @@
       "id": 8
     },
     {
+
+      "name": "Rishi Das",
+      "email": "rishi@mail.com",
+      "password": "123",
+      "addToCart": [
+        {
+          "id": 55,
+          "name": "Watches",
+          "price": 2379500,
+          "about": "Yacht-Master 42",
+          "category": "Men's jewelry",
+          "brand": "Rolex",
+          "info": "Oyster, 42 mm, yellow gold",
+          "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m226658-0001.png?impolicy=v7&imwidth=1920"
+        },
+        {
+          "id": 13,
+          "name": "Jewelry",
+          "price": 6099,
+          "about": "3 3/4 ct. tw. Round Kite Set Tennis Bracelet",
+          "category": "Brecelets",
+          "brand": "David Yurman",
+          "rating": 6.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/7/0/70637-10_yg_1_1.jpg"
+        },
+        {
+          "id": 4,
+          "name": "Jewelry",
+          "price": 6099,
+          "about": "Deanna Ring",
+          "category": "Rings",
+          "brand": "David Yurman",
+          "rating": 6.4,
+          "avatar": "https://www.cleanorigin.com/media/catalog/product/cache/02fb1a9963ef97a70391d5c2f7947df3/e/r/ersl0318-ov_yg_1.jpg"
+        }
+      ],
+      "orderPlaced": [],
+      "address": [
+        {
+          "name": "rishi 3",
+          "mobile_number": "6575757",
+          "pincod": "676",
+          "house_no": " jhmhk",
+          "area": "jh kjjh",
+          "town": "kolkata"
+        }
+      ],
+
       "name": "Lonka",
       "email": "nagarajulonka1999@gmail.com",
       "password": "123",
@@ -1336,6 +1416,7 @@
         }
       ],
       "orderPlaced": [],
+
       "id": 9
     }
   ]
