@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, {useEffect,useState}from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { ProductObject } from '../constrain';
 import { styled } from 'styled-components';
 import { Button, useToast } from '@chakra-ui/react';
@@ -16,6 +16,7 @@ const SingleProductPage = () => {
   const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
   const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id);
   const cartItem =useSelector((store:any)=>store.authReducer.ActiveUser.addToCart);
+  const navigate=useNavigate();
   const [product,setProduct]=useState<ProductObject>({id:0,name:"",price:0,about:"",category:"",brand:"",rating:0,avatar:""})
 useEffect(()=>{
   axios.get(`http://localhost:8080/products/${id}`).then((res)=>{
@@ -58,6 +59,7 @@ console.log(isPrasent,"ISPresent")
 
 
 
+
   return (<> 
 
   
@@ -77,7 +79,8 @@ console.log(isPrasent,"ISPresent")
         <p>₹{product.price}</p>
         <p>{product.rating}★</p>
         <Button bg="black" color="white" padding="30px" mr={6} w="200px" onClick={()=>handleAddToCart(product)}>ADD TO BAG</Button>
-        <Button bg="white" color="black" padding="30px" mr={5} w="200px">BUY NOW</Button>
+        <Button bg="white" color="black" padding="30px" mr={5} w="200px" onClick={()=>{handleAddToCart(product)
+          navigate("/cart") }}>BUY NOW</Button>
      </div>
     </Div>
     </>
