@@ -78,9 +78,7 @@ setCredentials({email:"",password:""})
 
    }
   return (<> 
-   <div>
-   <Navbar/>
-   </div>
+   
     <Div>
       
       <h1>PRECIOUS CHARMS</h1>

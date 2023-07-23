@@ -3,6 +3,7 @@ import Navbar from './AdminNavbar'
 import styled from "styled-components"
 import { useDispatch } from 'react-redux';
 import { postProduct } from '../Redux/AdminReducer/action';
+import { Center, Heading } from '@chakra-ui/react';
 
 
 export const AddProduct = () => {
@@ -64,6 +65,15 @@ const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
 
             <form className='formclass' onSubmit={handleSubmit}>
 
+            <Center  h='50px' >
+                    <Heading as='h4' size='md'>
+                            Add Products
+                </Heading>
+            </Center>
+
+
+               
+                <br />
                 <select name="name"  value={productData.name} onChange={handleChange}>
                     <option value="">Select Product Name</option>
                     <option value="Jewelry">Jewellery</option>

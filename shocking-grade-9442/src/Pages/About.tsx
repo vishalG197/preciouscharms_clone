@@ -1,8 +1,14 @@
 import React from 'react'
 import { styled } from 'styled-components'
+import Navbar from '../Components/Navbar'
+import Footer from '../Components/Footer'
 
 export default function About() {
   return (
+
+    <div>
+<Navbar/>
+   
     <DIV>
     
     <div  className="background-image" style={{ backgroundImage: `url("https://cutewallpaper.org/21/jewelry-wallpaper/3106872-black-and-white-close-up-design-diamond-.jpg")`,
@@ -43,6 +49,10 @@ export default function About() {
     </div>
     
     </DIV>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<Footer/>
+    </div>
   )
 }
 const DIV=styled.div`

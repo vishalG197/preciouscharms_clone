@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
 import { styled } from 'styled-components';
+import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
 
 export const Payment = () => {
   const [paymentOption, setPaymentOption] = useState<string>('cash');
@@ -10,6 +12,9 @@ export const Payment = () => {
   };
 
   return (
+    <div>
+
+ <Navbar/>
     <DIV  className="background-image" style={{ backgroundImage: `url("https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg")`,
     backgroundRepeat:"no-repeat",
     backgroundSize:"cover",
@@ -72,6 +77,8 @@ export const Payment = () => {
       </div>
     </div>
     </DIV>
+<Footer/>
+    </div>
   );
 }
 

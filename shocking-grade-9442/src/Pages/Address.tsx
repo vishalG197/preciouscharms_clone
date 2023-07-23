@@ -3,12 +3,20 @@ import  { useState } from 'react';
 import { Link } from "react-router-dom";
 
 import { styled } from 'styled-components';
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+
 
 
 export const  Address =()=>{
 
 
     return (
+
+<div>
+<Navbar/>
+
+
         <DIV>
      
         <div  className="background-image" style={{ backgroundImage: `url("https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg")`,
@@ -52,6 +60,8 @@ export const  Address =()=>{
            </div>
          </div>
          </DIV>
+<Footer/>
+         </div>
     )
 }
 

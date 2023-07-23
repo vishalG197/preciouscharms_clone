@@ -86,9 +86,7 @@ let userPrasent = AllUser.find((el:UserObject)=>{
     
   }
   return (<>  
-  <div>
-    <Navbar/>
-  </div> 
+ 
     <Div>
       <h1>PRECIOUS CHARMS</h1>
       <h2>JEWELRY SHOP</h2>
