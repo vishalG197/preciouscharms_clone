@@ -23,7 +23,8 @@ ActiveUser:{
    email:"",
    password:"",
    addToCart:[],
-   orderPlaced:[]
+   orderPlaced:[],
+   address:[]
 },
 
 }
@@ -53,20 +54,6 @@ case USER_SUCCESS:{
 }
 case USER_FAILURE:{
    return {...state,isLoading:false,isError:true}
-}
-case DELETE_ITEM:{
-   let {ActiveUser}=state;
-   let {addToCart}=ActiveUser;
-
-   addToCart=addToCart.filter((item:ProductObject)=>item!==payload)
-   console.log(addToCart)
-   return {...state}
-}
-case ADD_ITEM:{
-   let {ActiveUser}=state;
-   let {addToCart}=ActiveUser;
-   addToCart=[...addToCart,payload];
-   return {...state}
 }
    default:return state;
 }

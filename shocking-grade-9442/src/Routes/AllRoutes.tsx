@@ -46,13 +46,37 @@ const AllRoutes = () => {
       <AddToCard/>
       </PrivateRoutes>
       }/>
-      <Route path="/a/dashboard" element={<Dashboard/>}/>
-      <Route path="/a/AllProduct" element={<AllProduct/>}/>
-      <Route path="/a/Edit/:id" element={<EditPage/>}/>
-      <Route path="/a/users" element={<UserDetails/>}/>
-      <Route path="/a/add-product" element={<AddProduct/>}/>
+      <Route path="/a/dashboard" element={
+       <PrivateRoutes>
+      <Dashboard/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/AllProduct" element={
+      <PrivateRoutes>
+      <AllProduct/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/Edit/:id" element={
+      <PrivateRoutes>
+      <EditPage/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/users" element={
+      <PrivateRoutes>
+      <UserDetails/>
+      </PrivateRoutes>
+      }/>
+      <Route path="/a/add-product" element={
+      <PrivateRoutes>
+      <AddProduct/>
+      </PrivateRoutes>
+      }/>
     
-      <Route path="/a/setting" element={<Setting/>}/>
+      <Route path="/a/setting" element={
+      <PrivateRoutes>
+      <Setting/>
+      </PrivateRoutes>
+      }/>
 
       <Route path="/payment" element={
       <PrivateRoutes>
@@ -71,7 +95,11 @@ const AllRoutes = () => {
       <Route path="/about" element={<About/>}/>
 
 
-      <Route path="/a/users/details/:id" element={<SingleUser/>}/>
+      <Route path="/a/users/details/:id" element={
+      <PrivateRoutes>
+      <SingleUser/>
+      </PrivateRoutes>
+      }/>
 
       <Route path="*" element={<h1>Page not found</h1>}/>
     </Routes>

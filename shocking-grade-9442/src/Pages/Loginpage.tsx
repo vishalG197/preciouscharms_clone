@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RootauthState } from '../constrain'
 import {  getUsers } from '../Redux/AuthReducer/action'
 import { Dispatch } from 'redux'
-import { LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType'
+import { ADMIN_SUCCESS, LOGIN_SUCCESS } from '../Redux/AuthReducer/actionType'
 import { useToast } from '@chakra-ui/react'
 import Navbar from '../Components/Navbar'
 
@@ -35,7 +35,10 @@ setCredentials(newCredentials);
 
    const handleSubmit = ()=>{
 // console.log("credential",credentials)
- if(credentials.email===""|| credentials.password===""){
+if(credentials.email==="admin123@gmail.com"&& credentials.password==="admin123"){
+   dispatch({type:ADMIN_SUCCESS});
+   navigate("/a/dashboard")
+}else if(credentials.email===""|| credentials.password===""){
    // alert("Please enter valid data");
    toast({
       title: 'valid credentials',

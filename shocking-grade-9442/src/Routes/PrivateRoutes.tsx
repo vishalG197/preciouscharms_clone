@@ -4,7 +4,7 @@ import { Navigate, useLocation } from 'react-router';
 
 const PrivateRoutes = ({children}:any) => {
   const AdminAuth =useSelector((store:any)=>{
-    return store.authReducer.isAuth;
+    return store.authReducer.isAdminAuth;
   })
   const isAuth = useSelector((store:any)=>{
     return store.authReducer.isAuth;

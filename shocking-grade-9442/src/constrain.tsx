@@ -15,7 +15,7 @@ export type ProductObject = {
 export type UserObject ={
 name:string;
 email:string;
-
+address:any;
 password:string;
 id?:number;
 addToCart:ProductObject[];
