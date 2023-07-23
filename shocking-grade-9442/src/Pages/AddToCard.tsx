@@ -12,6 +12,7 @@ import { ActionToDelete, getUsers } from '../Redux/AuthReducer/action';
 import axios from 'axios';
 import { Navigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import Navbar2 from '../Components/Navbar2';
 const AddToCard = () => {
   const toast = useToast();
   const dispatch:any = useDispatch();
@@ -65,7 +66,7 @@ setTax (taxcut)
   // console.log(cartItem)
   return (<>
    <div>
-   <Navbar/>
+   <Navbar2/>
    </div>
   
     <Div>

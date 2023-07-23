@@ -6,6 +6,12 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 import { styled } from 'styled-components';
+
+import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
+
+
+
 const initalState = {
   name: "",
   mobile_number: "",
@@ -14,6 +20,7 @@ const initalState = {
   area: "",
   town: "",
 };
+
 
 export const  Address =()=>{
   const [areaData, setareaData] = useState(initalState);
@@ -53,6 +60,11 @@ const handleSubmit=(e:React.MouseEvent<HTMLButtonElement> )=>{
 // console.log(areaData,"Area")
 console.log(ActiveUser,"userId")
     return (
+
+<div>
+<Navbar/>
+
+
         <DIV>
      
         <div  className="background-image" style={{ backgroundImage: `url("https://thegoldmarket.co.uk/wp-content/uploads/2017/01/jewellery-background.jpg")`,
@@ -96,6 +108,8 @@ console.log(ActiveUser,"userId")
            </div>
          </div>
          </DIV>
+<Footer/>
+         </div>
     )
 }
 
