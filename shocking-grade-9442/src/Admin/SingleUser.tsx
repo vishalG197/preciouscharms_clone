@@ -23,9 +23,10 @@ export const SingleUser = () => {
     },[])
    
   
-    const { name, email, password ,addToCart,orderPlaced} = single;
+    const { name, email, password ,addToCart,orderPlaced,address} = single;
    
 
+ console.log(address);
  
 
     return (
@@ -48,6 +49,13 @@ export const SingleUser = () => {
 
 
         <Container maxW={"90%"} style={{ margin: "0 auto" }}>
+
+
+
+
+
+
+
           <br />
           <Card>
             <CardBody style={{display:"flex"}}>
@@ -64,6 +72,53 @@ export const SingleUser = () => {
             </CardBody>
           </Card>
 <br />
+
+
+
+
+
+{/*****************  address *******************/}
+
+
+ <HStack spacing='24px' >
+
+ <Card width={"100%"} style={{backgroundColor:"#d2f8d7"}}>
+  <CardBody>
+              <Heading as='h4' size='md'>
+                    Address Details
+          </Heading>
+
+          {
+                            address && address.length>0?
+
+                            address.map((el:any)=>(
+                              <div>
+                              
+                        
+                              <p><b>Name :</b>{el.name}</p>
+                              <p><b>Mobile No :</b>{el.mobile_number}</p>
+                              <p><b>Pincode :</b>{el.pincod}</p>
+                              <p><b>House No :</b>{el.house_no}</p>
+                              <p><b>Area :</b>{el.area}</p>
+
+                              <p><b>Town/City :</b>{el.town}</p>
+                              </div>
+                            ))
+                            
+                           
+                            :
+                            <p>No Address is added yet</p>
+                          } 
+
+  </CardBody>
+</Card>
+
+</HStack>
+
+
+{/*****************  address-end *******************/}
+<br />
+
         <HStack spacing='24px'>
              <Card width={"50%"} style={{backgroundColor:"#f0f7f8",border:"1px solid #cccccc7a"}}>
            
@@ -146,24 +201,6 @@ export const SingleUser = () => {
             </HStack>
 
 
-{/*****************  address *******************/}
-<br />
-
- <HStack spacing='24px' >
-
- <Card width={"100%"} style={{backgroundColor:"#d2f8d7"}}>
-  <CardBody>
-              <Heading as='h4' size='md'>
-                    Address Details
-              </Heading>
-
-  </CardBody>
-</Card>
-
-</HStack>
-
-
-{/*****************  address-end *******************/}
 
 
 

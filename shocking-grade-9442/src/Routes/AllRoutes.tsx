@@ -8,7 +8,7 @@ import SingleProductPage from '../Pages/SingleProductPage'
 import AddToCard from '../Pages/AddToCard'
 import Dashboard from '../Admin/Dashboard'
 import AllProduct from '../Admin/AllProduct'
-import EditPage from '../Admin/EditPage'
+import EditPage from '../Admin/Edit Product'
 import UserDetails from '../Admin/UserDetails'
 import OrderDetails from '../Admin/OrderDetails'
 import CartDetail from '../Admin/CartDetail'
@@ -24,6 +24,7 @@ import PrivateRoutes from './PrivateRoutes'
 import { AddProduct } from '../Admin/AddProduct'
 
 import About from '../Pages/About'
+import Gift from '../Pages/Gift'
 
 
 
@@ -100,6 +101,7 @@ const AllRoutes = () => {
       <SingleUser/>
       </PrivateRoutes>
       }/>
+      <Route path="/gift" element={<Gift/>}/>
 
       <Route path="*" element={<h1>Page not found</h1>}/>
     </Routes>

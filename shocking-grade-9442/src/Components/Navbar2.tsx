@@ -77,7 +77,7 @@ const Navbar2: React.FC = () => {
         <CustomNavLink to="/product/Watches" onClick={closeMobileMenu}>
           Watches
         </CustomNavLink>
-        <CustomNavLink to="/product" onClick={closeMobileMenu}>
+        <CustomNavLink to="/gift" onClick={closeMobileMenu}>
           Gifts
         </CustomNavLink>
 
