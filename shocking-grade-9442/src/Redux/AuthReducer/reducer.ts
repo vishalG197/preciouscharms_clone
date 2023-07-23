@@ -1,13 +1,19 @@
+
+import { ADMIN_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+
 import { ProductObject, UserObject } from "../../constrain";
-import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+//  import { ADD_ITEM, DELETE_ITEM, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, SIGNUP_SUCCESS, USER_FAILURE, USER_REQUEST, USER_SUCCESS } from "./actionType";
+
 
 const initialState: {
+   isAdminAuth: boolean;
    isLoading: boolean;
    isError: boolean;
    isAuth: boolean;
    Users: UserObject[];
    ActiveUser: UserObject;
 } ={
+isAdminAuth:false,
 isLoading:false,
 isError:false,
 isAuth:false,
@@ -29,6 +35,9 @@ case LOGIN_REQUEST :{
 }
 case LOGIN_SUCCESS :{
    return {...state,isLoading:false,isAuth:true,ActiveUser:payload}
+}
+case ADMIN_SUCCESS :{
+return {...state,isAdminAuth:true}
 }
 case SIGNUP_SUCCESS :{
 return {...state, isLoading:false}

@@ -2,7 +2,7 @@ import React, { useState,useEffect} from 'react'
 import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
 
-import {Link} from "react-router-dom"
+import {Link, useLocation, useNavigate} from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { RootauthState } from '../constrain'
 import {  getUsers } from '../Redux/AuthReducer/action'
@@ -15,8 +15,10 @@ const Loginpage = () => {
    const toast = useToast();
    const [credentials,setCredentials] = useState({email:"",password:""});
    const dispatch: Dispatch<any> =useDispatch();
-   const AllUser =useSelector((store:any)=>store.authReducer.Users)
-   
+   const AllUser =useSelector((store:any)=>store.authReducer.Users);
+   const navigate = useNavigate()
+   const location = useLocation();
+  console.log(location);
    useEffect(() => {
    
    dispatch(getUsers())
@@ -58,6 +60,12 @@ toast({
    duration: 2000,  
    isClosable: true, 
  });
+ 
+ if(location.state == null){
+   navigate("/")
+ }else{
+   navigate(location.state,{replace:true});
+ }
 setCredentials({email:"",password:""})
    }
    else{
