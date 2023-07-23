@@ -1,46 +1,72 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# PRECIOUS CHARMS
 
-## Available Scripts
 
-In the project directory, you can run:
+Precious Charms is an e-commerce website specializing in jewelry, watches, and accessories. Users can easily browse a wide range of products, utilizing filters by category and brand, as well as sorting options based on price. The platform offers a seamless shopping experience, allowing users to add items to their cart and make purchases effortlessly. The website also includes an Admin section, providing administrative privileges such as adding, editing, and deleting products, as well as accessing user details. Built using React, TypeScript, and Chakra UI, Precious Charms promises a user-friendly interface with a focus on functionality and aesthetics.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Deployed Link
+[Netlify Deployed Link:  PRECIOUS CHARMS](https://hilarious-moonbeam-a71ec5.netlify.app/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
+<div>
+  <img src="https://img.shields.io/badge/React-text?style=for-the-badge&logo=React&color=204456" />
+   <img src="https://img.shields.io/badge/redux-text?style=for-the-badge&logo=redux&color=204456" />
+   <img src="https://img.shields.io/badge/typescript-text?style=for-the-badge&logo=typescript&color=204456" />
+   <img src="https://img.shields.io/badge/chakraui-text?style=for-the-badge&logo=chakraui&color=204456" />
+ <img src="https://img.shields.io/badge/HTML5-text?style=for-the-badge&logo=HTML5&color=2b3b35" />
+  <img src="https://img.shields.io/badge/javascript-text?style=for-the-badge&logo=javascript&color=204456" />
+</div>
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+User Features :
+- User Registration and Login
+- Product Browsing and Filtering
+- Sorting by Price
+- Adding to Cart, Checkout,Payment, Order Placing
+- Pagination in Product Section
 
-### `npm run eject`
+Admin Features :
+- Admin  Login and Logout
+- Product Management: Admins can add new products to the website, providing details such as name, description, price, and images.
+- Existing product details can be edited or updated as needed
+- Admin can view the User details including thier cart ,order details
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Clone the project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+  git clone https://github.com/vishalG197/shocking-grade-9442.git
+```
 
-## Learn More
+Go to the project directory
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  cd my-projectshocking-grade-9442
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install dependencies
+
+```bash
+  npm install 
+
+```
+
+Start the server
+
+```bash
+  npm run server
+```
+
+
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
