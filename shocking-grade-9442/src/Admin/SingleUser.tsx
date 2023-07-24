@@ -26,8 +26,8 @@ export const SingleUser = () => {
     let { name, email, password ,addToCart,orderPlaced,address} = single;
    
 
- console.log();
- address=address[address.length-1]
+//  console.log(add);
+ let add=address[address.length-1]
  
 
     return (
@@ -90,19 +90,19 @@ export const SingleUser = () => {
           </Heading>
 
           {
-                            address ?
+                            address &&address.length>0?
 
                             (
                               <div>
                               
                         
-                              <p><b>Name :</b>{address.name}</p>
-                              <p><b>Mobile No :</b>{address.mobile_number}</p>
-                              <p><b>Pincode :</b>{address.pincod}</p>
-                              <p><b>House No :</b>{address.house_no}</p>
-                              <p><b>Area :</b>{address.area}</p>
+                              <p><b>Name :</b>{add.name}</p>
+                              <p><b>Mobile No :</b>{add.mobile_number}</p>
+                              <p><b>Pincode :</b>{add.pincod}</p>
+                              <p><b>House No :</b>{add.house_no}</p>
+                              <p><b>Area :</b>{add.area}</p>
 
-                              <p><b>Town/City :</b>{address.town}</p>
+                              <p><b>Town/City :</b>{add.town}</p>
                               </div>
                             )
                             
