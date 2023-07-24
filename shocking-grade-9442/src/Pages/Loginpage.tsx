@@ -18,7 +18,7 @@ const Loginpage = () => {
    const AllUser =useSelector((store:any)=>store.authReducer.Users);
    const navigate = useNavigate()
    const location = useLocation();
-  console.log(location);
+  console.log(AllUser,"log");
    useEffect(() => {
    
    dispatch(getUsers())
@@ -61,9 +61,10 @@ if(credentials.email==="admin123@gmail.com"|| credentials.password==="admin123")
     });
  }
 else {
-   if (Array.isArray(AllUser)) {
-   let isprasent = AllUser.find((el)=>{return el.email===credentials
+   if (AllUser) {
+   let isprasent = AllUser.find((el:any)=>{return el.email===credentials
    .email && el.password===credentials.password});
+   console.log(isprasent,"prasent")
    if(isprasent){
    //   dispatch(Login({...isprasent}))
 dispatch({type:LOGIN_SUCCESS,payload:{...isprasent}});
@@ -86,7 +87,7 @@ setCredentials({email:"",password:""})
    else{
       toast({
          title: 'Wrong credentials',
-         description: 'wrong email address.',
+         description: 'wrong email address or Password.',
          status: 'error', 
          duration: 2000,  
          isClosable: true, 

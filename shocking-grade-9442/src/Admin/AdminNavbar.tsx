@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { MdMenu, MdClose } from 'react-icons/md';
-import logo from "../image/logo-white.png"
+// import logo from "../image/logo-white.png"
 import styled from "styled-components"
 import { Link } from 'react-router-dom';
 import { Avatar } from '@chakra-ui/avatar';
@@ -9,7 +9,7 @@ import { Button } from '@chakra-ui/button';
 import { LOGOUT } from '../Redux/AuthReducer/actionType';
 import { Box } from '@chakra-ui/layout';
 import { useDispatch } from 'react-redux';
-
+import logo from "../home-image/logo-white.png"
 
 interface CustomNavLinkProps {
   to: string;
@@ -60,6 +60,12 @@ const handleClick = () => {
       </div>
 
       <ul className={`navbar__menu ${isMobileMenuOpen ? 'active' : ''}`}>
+      {/* <CustomNavLink to="/a/dashboard" onClick={closeMobileMenu}> */}
+     <div className='navbar__logo'>
+     <img src={logo} alt=""  />
+     </div>
+         
+            {/* </CustomNavLink>    */}
         <CustomNavLink to="/a/dashboard" onClick={closeMobileMenu}>
           DASHBOARD
         </CustomNavLink>
@@ -112,7 +118,7 @@ const DIV = styled.section`
 }
 
  .navbar__logo img{
-  width:150px
+  width:100px
  }
  
 

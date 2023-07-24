@@ -19,7 +19,7 @@ export default function About() {
  }}>
     <div className='write'>
     <h1>About</h1>
-    <p>Gem Garden is More Than Just Gilding</p>
+    <p>PRECIOUS CHARMS is More Than Just Jwellary</p>
   
     <br/>
     <p>Our company is an exclusive supplier of jewelry from the world's best brands. We take pride in offering our customers only the highest quality products created from precious metals and stones by the most experienced master jewelers</p>
