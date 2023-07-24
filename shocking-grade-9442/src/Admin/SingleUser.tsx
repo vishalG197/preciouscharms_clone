@@ -26,7 +26,6 @@ export const SingleUser = () => {
     let { name, email, password ,addToCart,orderPlaced,address} = single;
    
 
- console.log(address);
  let add=address[address.length-1]
  
 
@@ -90,7 +89,9 @@ export const SingleUser = () => {
           </Heading>
 
           {
+
                             add ?
+
 
                             (
                               <div>
