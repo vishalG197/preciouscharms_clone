@@ -28,6 +28,7 @@ const initalState = {
 export const  Address =()=>{
   const [areaData, setareaData] = useState(initalState);
 
+  console.log("Address")
   const userId =useSelector((store:any)=>store.authReducer.ActiveUser.id);
   const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
   const navigate=useNavigate();
@@ -79,12 +80,16 @@ const handleSubmit=(e:React.MouseEvent<HTMLButtonElement> )=>{
 // console.log(areaData,"Area")
 console.log(ActiveUser,"userId")
 
-useEffect(()=>{
-  const ad=ActiveUser.address
-  // console.log(ad[ad.length-1])
-  setareaData(ad[ad.length-1])
+// useEffect(()=>{
+//   if(ActiveUser.address){
+//     const ad=ActiveUser.address
+//     console.log(ad[ad.length-1])
+//     setareaData(ad[ad.length-1])
+//   }
+  
 
-},[])
+// },[])
+console.log(areaData,"areaData")
     return (
 
 <div>
