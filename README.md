@@ -1,14 +1,18 @@
 
 # PRECIOUS CHARMS
 
+
 [![logo.jpg](https://i.postimg.cc/9fKdqJgy/logo.jpg)](https://postimg.cc/nsKjyYJL)
+
 
 
 Precious Charms is an e-commerce website specializing in jewelry, watches, and accessories. Users can easily browse a wide range of products, utilizing filters by category and brand and sorting options based on price. The platform offers a seamless shopping experience, allowing users to add items to their cart and make purchases effortlessly. The website also includes an Admin section, providing administrative privileges such as adding, editing, and deleting products and accessing user details. Built using React, TypeScript, and Chakra UI, Precious Charms promises a user-friendly interface focusing on functionality and aesthetics.
 
 
 ## Deployed Link
+
 [Netlify Deployed Link:  PRECIOUS CHARMS](https://precious-charms.vercel.app/)
+
 
 ## API Link
 [Server Link:  PRECIOUS CHARMS](https://monkeyapi-2-0.onrender.com/)
