@@ -3,13 +3,13 @@ import Navbar from './AdminNavbar'
 import styled from "styled-components"
 import { useDispatch } from 'react-redux';
 import { postProduct } from '../Redux/AdminReducer/action';
-import { Center, Heading } from '@chakra-ui/react';
+import { Center, Heading, useToast } from '@chakra-ui/react';
 
 
 export const AddProduct = () => {
 
     const dispatch = useDispatch();
-
+const toast =useToast();
 interface productObj{
     name: string
     price: string
@@ -52,6 +52,13 @@ console.log(productData);
 const handleSubmit=(e:React.FormEvent<HTMLFormElement>)=>{
     e.preventDefault()
     dispatch(postProduct(productData));
+    toast({
+        title: 'Adding Success',
+        description: 'Product Added successfully',
+        status: 'success', 
+        duration: 2000,  
+        isClosable: true, 
+      });
    setProductData(initialState)
    
   }

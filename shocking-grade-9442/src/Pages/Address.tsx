@@ -80,15 +80,17 @@ const handleSubmit=(e:React.MouseEvent<HTMLButtonElement> )=>{
 // console.log(areaData,"Area")
 console.log(ActiveUser,"userId")
 
-// useEffect(()=>{
-//   if(ActiveUser.address){
-//     const ad=ActiveUser.address
-//     console.log(ad[ad.length-1])
-//     setareaData(ad[ad.length-1])
-//   }
-  
 
-// },[])
+useEffect(()=>{
+  const ad=ActiveUser.address
+  // console.log(ad[ad.length-1])
+  if(ActiveUser.address.length!==0){
+    setareaData(ad[ad.length-1])
+  }
+ 
+
+
+},[])
 console.log(areaData,"areaData")
     return (
 

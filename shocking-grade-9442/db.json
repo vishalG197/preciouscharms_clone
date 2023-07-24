@@ -1084,9 +1084,8 @@
   ],
   "users": [
     {
-<<<<<<< HEAD
-      "name": "vish",
-=======
+
+
       "addToCart": [
         {
           "id": 56,
@@ -1123,7 +1122,7 @@
     },
     {
       "name": "Vishal Giri",
->>>>>>> main
+
       "email": "vishalgiri197@gmail.com",
       "password": "vish",
       "addToCart": [],
@@ -1159,10 +1158,7 @@
           "avatar": "https://content.rolex.com/v7/dam/2023-06/upright-c/m226658-0001.png?impolicy=v7&imwidth=1920"
         }
       ],
-<<<<<<< HEAD
-      "address": [],
-      "id": 1
-=======
+
       "orderPlaced": [],
       "address": [
         {
@@ -1388,7 +1384,7 @@
       "orderPlaced": [],
 
       "id": 9
->>>>>>> main
+
     }
   ]
 }

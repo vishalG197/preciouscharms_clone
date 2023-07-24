@@ -19,10 +19,12 @@ import { useParams } from 'react-router';
 import axios from 'axios';
 import { useToast } from '@chakra-ui/react'
 import {EditIcon } from '@chakra-ui/icons'
-
+import { useNavigate } from 'react-router-dom';
 const EditPage = () => {
   let { id } = useParams();
-  let itemId = Number(id)
+  const toast=useToast();
+  let itemId = Number(id);
+  const navigate =useNavigate();
   const data = useSelector((state: any) => state.data.data);
   const [Display, setDisplay] = useState([])
   const [avatar, setavatar] = useState("")
@@ -54,7 +56,15 @@ const EditPage = () => {
       .patch(`https://monkeyapi-2-0.onrender.com/products/${id}`, newData)
       .then((res) => {
         console.log(res.data)
+        toast({
+          title: 'Save Success',
+          description: 'Product Changed successfully',
+          status: 'success', 
+          duration: 2000,  
+          isClosable: true, 
+        });
       })
+      navigate("/a/AllProduct")
     console.log(newData, "NewData")
   }
 
