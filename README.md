@@ -1,8 +1,7 @@
 
 # PRECIOUS CHARMS
 
-![2](https://github.com/vishalG197/shocking-grade-9442/assets/119415070/a58b3d11-8d79-48f1-9ccb-14f491fae506)
-
+![logo](https://postimg.cc/nsKjyYJL)
 
 Precious Charms is an e-commerce website specializing in jewelry, watches, and accessories. Users can easily browse a wide range of products, utilizing filters by category and brand and sorting options based on price. The platform offers a seamless shopping experience, allowing users to add items to their cart and make purchases effortlessly. The website also includes an Admin section, providing administrative privileges such as adding, editing, and deleting products and accessing user details. Built using React, TypeScript, and Chakra UI, Precious Charms promises a user-friendly interface focusing on functionality and aesthetics.
 
