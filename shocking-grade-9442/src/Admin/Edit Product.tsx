@@ -93,7 +93,7 @@ const EditPage = () => {
                   About: {about}
                 </Text>
                 <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
-                  Price:  ${price}
+                  Price:  ₹{price}
                 </Text>
                 <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
                   Rating :{rating}

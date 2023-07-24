@@ -110,7 +110,7 @@ const handlePagechange=(value:number)=>{
                     About: {item.about}
                   </Text>
                   <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
-                    Price:  ${item.price}
+                    Price:  ₹{item.price}
                   </Text>
                   <Text color='blue.600' fontSize='sm' style={{ textAlign: "center" }}>
                     Rating :{item.rating}

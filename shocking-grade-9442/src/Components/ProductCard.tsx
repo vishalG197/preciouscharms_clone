@@ -15,7 +15,7 @@ export default function ProductCard({id,price,about,brand,avatar,name}:any) {
           {/* <h4> {about}</h4> */}
           <Heading as='h3' size='sm'>{about}</Heading>
           <p>{brand}</p>
-          <p> ${price}</p>
+          <p> ₹{price}</p>
           {/* <Button colorScheme='teal' variant='outline'>Add To Cart</Button> */}
           
         </Div>

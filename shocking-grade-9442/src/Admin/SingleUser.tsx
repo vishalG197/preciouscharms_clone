@@ -23,10 +23,11 @@ export const SingleUser = () => {
     },[])
    
   
-    const { name, email, password ,addToCart,orderPlaced,address} = single;
+    let { name, email, password ,addToCart,orderPlaced,address} = single;
    
 
- console.log(address);
+ console.log();
+ address=address[address.length-1]
  
 
     return (
@@ -89,21 +90,21 @@ export const SingleUser = () => {
           </Heading>
 
           {
-                            address && address.length>0?
+                            address ?
 
-                            address.map((el:any)=>(
+                            (
                               <div>
                               
                         
-                              <p><b>Name :</b>{el.name}</p>
-                              <p><b>Mobile No :</b>{el.mobile_number}</p>
-                              <p><b>Pincode :</b>{el.pincod}</p>
-                              <p><b>House No :</b>{el.house_no}</p>
-                              <p><b>Area :</b>{el.area}</p>
+                              <p><b>Name :</b>{address.name}</p>
+                              <p><b>Mobile No :</b>{address.mobile_number}</p>
+                              <p><b>Pincode :</b>{address.pincod}</p>
+                              <p><b>House No :</b>{address.house_no}</p>
+                              <p><b>Area :</b>{address.area}</p>
 
-                              <p><b>Town/City :</b>{el.town}</p>
+                              <p><b>Town/City :</b>{address.town}</p>
                               </div>
-                            ))
+                            )
                             
                            
                             :
@@ -138,7 +139,7 @@ export const SingleUser = () => {
                                         </div>
                                         <div>
                                         <b>{el.name}</b> 
-                                           <p><b>Price:</b> {el.price}</p>
+                                           <p><b>Price:</b> ₹{el.price}</p>
                                             <p><b>Category:</b> {el.category}</p>
                                              <p><b>About:</b> {el.about}</p>
                                                 {
