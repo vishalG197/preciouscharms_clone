@@ -24,9 +24,11 @@ export default function ProductCard({id,price,about,brand,avatar,name}:any) {
 
 const Div=styled.div`
   background-color: #ffffff;
-  height:350px;
+
+  height:315px;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* border: 2px solid red; */
   padding-left: 15px;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
 `

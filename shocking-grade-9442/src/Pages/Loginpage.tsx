@@ -1,7 +1,6 @@
 import React, { useState,useEffect} from 'react'
 import { styled } from 'styled-components'
 import B1 from "../Images/B2.jpg"
-
 import {Link, useLocation, useNavigate} from "react-router-dom"
 import { useDispatch, useSelector } from 'react-redux'
 import { RootauthState } from '../constrain'
@@ -15,16 +14,22 @@ const Loginpage = () => {
    const toast = useToast();
    const [credentials,setCredentials] = useState({email:"",password:""});
    const dispatch: Dispatch<any> =useDispatch();
-   const AllUser =useSelector((store:any)=>store.authReducer.Users);
+   
    const navigate = useNavigate()
    const location = useLocation();
-  console.log(AllUser,"log");
+
+   let  AllUser =useSelector((store:any)=>store.authReducer.Users);
+
+//   console.log(AllUser,"log");
+
    useEffect(() => {
    
    dispatch(getUsers())
+   
    // getUsers(dispatch)
    
-   },[])
+   }, [dispatch, AllUser])
+   console.log(AllUser,"log");
    // const store =useSelector((store)=>store)
    // console.log(store)
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -71,7 +76,7 @@ dispatch({type:LOGIN_SUCCESS,payload:{...isprasent}});
 // alert("Login successfull")
 toast({
    title: 'Login Success',
-   description: ' successfully loged In.',
+   description: ' successfully logged In.',
    status: 'success', 
    duration: 2000,  
    isClosable: true, 

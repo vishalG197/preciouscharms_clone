@@ -1,0 +1,209 @@
+.productsection{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    background-color:#f9f9f9;
+    /* background-color: green; */
+}
+
+/* .sidebar{
+  margin-top: 30px;
+  margin-bottom: 60px;
+  width: 15%;
+  margin-left: 10px;
+  width:15%;
+} */
+
+.productlist{
+ width:80%;
+  height:auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+grid-gap: 40px;
+margin: 10px;
+margin-top: 30px;
+  margin-bottom: 60px; 
+
+}
+/* ====================================================== */
+.orderby{
+  /* border:1px solid black; */
+ 
+}
+
+.orderby button{
+   width:50%;
+   height:50px;
+    border:1px solid grey;
+}
+.orderby button{
+  font-size: 20px;
+}
+.orderby>div:hover{
+  background-color: rgb(106, 100, 100);
+  color:white;
+}
+.panel{
+  width:90%;
+  height:60%;
+  border:1px solid grey;
+  background-Color:grey;
+  position:absolute;
+  border-radius: 20px;
+  bottom:22%;
+  left:50%;
+transform:translateX(-50%);
+}
+/* =================================================== */
+@media screen and (min-device-width: 320px) and (max-device-width: 639px) { 
+  .ProductBanner{
+    width:100%;
+    /* height:450px;
+    object-fit: cover; */
+  }
+    .productsection{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color:#f9f9f9;
+        justify-content: space-between;
+        /* background-color: green; */
+    }
+    /* .sidebar{
+      display:none;
+      } */
+   
+    .productlist{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:5px;
+    margin:auto;
+    padding-bottom: 15px;
+    /* background-color: aqua; */
+    }
+    .orderby{
+      display:block;
+    }
+  }
+  
+  @media screen and (min-device-width: 640px) and (max-device-width: 799px) { 
+    .ProductBanner{
+      width:100%;
+      height:450px;
+     
+    }
+   
+    .productsection{
+        display: flex;
+        /* flex-direction: column; */
+        gap: 10px;
+        background-color:#f9f9f9;
+        justify-content: space-between;
+        /* background-color: green; */
+    }
+     
+    /* .sidebar{
+      display:none;
+      } */
+   
+   
+    
+    .productlist{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:8px;
+    margin:auto;
+    padding-bottom: 15px;
+    /* background-color: aqua; */
+    }
+
+    .orderby{
+      display:block;
+    }
+  }
+
+@media screen and (min-width:800px) and (max-width:1185px) {
+  .ProductBanner{
+    width:100%;
+    height:450px;
+   
+  }
+    .productsection{
+        display: flex;
+        /* flex-direction: column; */
+        gap: 10px;
+        background-color:#f9f9f9;
+        justify-content: space-between;
+        /* background-color: green; */
+    }
+    /* .sidebar{
+      display:none;
+      } */
+   
+    .productlist{
+    width: 95%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:8px;
+    margin:auto;
+    padding-bottom: 15px;
+    /* background-color: aqua; */
+    }
+    .orderby{
+      display:block;
+    }
+}
+  
+  @media screen and (min-device-width: 1185px) and (max-width:1200px) {
+    .productsection{
+      display: flex;
+      justify-content: space-between;
+      background-color:#f9f9f9;
+      /* background-color: green; */
+  }
+    .ProductBanner{
+      width:100%;
+      height:450px;
+     
+    }
+     /* .sidebar{
+      width:15%;
+      } */
+   
+    .productlist{
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin:auto;
+    padding-bottom: 15px; 
+    /* background-color: aqua; */
+    }
+
+    }
+
+    @media screen and (min-width:1201px) {
+      .ProductBanner{
+        width:100%;
+        height:70%;
+       
+      }
+    
+      /* .sidebar{
+      width:15%;
+      } */
+      
+      .productlist{
+      width: 80%;
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      margin: 10px;
+      margin-top: 30px;
+      margin-bottom: 60px; 
+      /* background-color: aqua; */
+      }
+      .orderby{
+        display:none;
+      }
+    }

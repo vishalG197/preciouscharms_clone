@@ -17,11 +17,48 @@ export const Payment = () => {
   const ActiveUser=useSelector((store:any)=>store.authReducer.ActiveUser);
   const cartItem =useSelector((store:any)=>store.authReducer.ActiveUser.addToCart);
   const navigte=useNavigate()
-  console.log(ActiveUser,"payment")
+  // console.log(ActiveUser,"payment")
+  // const handleOpen = () => {
+  //   setIsOpen(true);
+  //   const updatedOrder={...ActiveUser,
+  //     orderPlaced: [...ActiveUser.addToCart, ...ActiveUser.orderPlaced],
+  //     addToCart:[],
+  //     // address:[...ActiveUser.address]
+  //   }
+  //   axios
+  //   .put(`https://monkeyapi-2-0.onrender.com/users/${userId}`, updatedOrder)
+  //   .then((response) => {
+  //     console.log('Data updated successfully:', response.data);
+  //     dispatch({type:LOGIN_SUCCESS, payload:response.data});
+      
+  //   })
+  //   .catch((error) => {
+  //     console.error('Error updating data:', error);
+  //   });
+  // };
+//  interface
+  function formatDate(date: Date): any {
+    const options: Intl.DateTimeFormatOptions = { day: 'numeric', month: 'short', year: 'numeric' };
+    
+    return new Intl.DateTimeFormat('en-IN', options).format(date);
+  }
+  
+  
+
+  
+  const currentDate = new Date();
+  const formattedDate = formatDate(currentDate);
+  
+  console.log(formattedDate,"Date");
+  // console.log(ActiveUser,"payment")
   const handleOpen = () => {
     setIsOpen(true);
     const updatedOrder={...ActiveUser,
-      orderPlaced: [...ActiveUser.addToCart, ...ActiveUser.orderPlaced],
+      orderPlaced: [...ActiveUser.addToCart.map((item:any) => ({
+        orderDate: formattedDate,
+        ...item
+     
+      })), ...ActiveUser.orderPlaced,],
       addToCart:[],
       // address:[...ActiveUser.address]
     }
@@ -37,10 +74,10 @@ export const Payment = () => {
     });
   };
 
+  
   const handleClose = () => {
     setIsOpen(false);
     navigte("/")
-
   };
 
   const handlePaymentOptionChange = (option: string) => {
@@ -58,33 +95,36 @@ export const Payment = () => {
      border:"1px solid black",
  }}>
     <div className="container">
-      <h1>Payment Details</h1>
+      <h1><i>Payment Details</i></h1>
       
       <div className="payment-options">
         <button
+        id='cash'
           className={paymentOption === 'cash' ? 'active' : ''}
           onClick={() => handlePaymentOptionChange('cash')}
         >
-          Cash on Delivery
+        <i>  Cash on Delivery </i>
         </button>
         <button
+        id='net-banking'
           className={paymentOption === 'netbanking' ? 'active' : ''}
           onClick={() => handlePaymentOptionChange('netbanking')}
         >
-          Net Banking
+         <i> Net Banking</i>
         </button>
         <button
+        id='debit'
           className={paymentOption === 'card' ? 'active' : ''}
           onClick={() => handlePaymentOptionChange('card')}
         >
-          Debit or Credit Card
+         <i> Debit or Credit Card</i>
         </button>
         </div>
       <div className="payment-content">
         {paymentOption === 'cash' && (
           <div>
        <p>Please keep the cash ready for delivery.</p>
-       <button className='first' onClick={handleOpen}> Confirm Payment Option </button>
+       <button className='first' onClick={handleOpen}> <i>Confirm Payment Option </i></button>
        </div>
         )
           
@@ -94,8 +134,11 @@ export const Payment = () => {
         {paymentOption === 'netbanking' && <p>Please select your bank for net banking.</p>}
         {paymentOption === 'card' && <p>Please enter your card details below.</p>}
         {paymentOption === 'card' && (
+          <>
           <form>
-            <div className="form-group">
+            <div className="form-group"
+            
+            >
               <label >Card Number</label>
               <input type="text" id="cardNumber" placeholder="#### #### #### ####" />
             </div>
@@ -107,8 +150,10 @@ export const Payment = () => {
               <label >CVV</label>
               <input type="text" id="cvv" placeholder="123" />
             </div>
-            <button  className='first' onClick={handleOpen}> Confirm Payment</button>
+      
           </form>
+           <button  className='first' onClick={handleOpen} ><i> Confirm Payment </i></button>
+           </>
         )}
       </div>
     </div>
@@ -192,6 +237,31 @@ h1 {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  width:100%
+}
+.form-group :hover{
+-webkit-transform: scale(1.11);
+    -ms-transform: scale(1.11);
+    transform: scale(1.11);
+    transition: 1s ease;
+}
+#debit:hover{
+  -webkit-transform: scale(1.11);
+    -ms-transform: scale(1.11);
+    transform: scale(1.11);
+    transition: 1s ease;
+}
+#cash:hover{
+  -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+}
+#net-banking:hover{
+  -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
 }
 
 label {
@@ -213,6 +283,14 @@ input {
   width: 200px;
   border-radius: 2%;
   margin-top: 20px;
+  
+  font-size:20px;
+}
+.first:hover{
+  -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
 }
 .popup-container {
   display: flex;
