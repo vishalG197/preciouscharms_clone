@@ -124,8 +124,23 @@ graph TD
 ## 🎨 UI Components
 
 <div align="center">
-  <img src="src/home-image/bannerv1.jpg" alt="Homepage" width="400"/>
-  <img src="src/product-image/ProductImg.png" alt="Product Page" width="400"/>
+ ## LANDING PAGE
+[![Home.jpg](https://i.postimg.cc/hPz2yQTD/Home.jpg)](https://postimg.cc/XpWKXJsm)
+
+## PRODUCT PAGE
+[![Products.jpg](https://i.postimg.cc/QtpZ2YRb/Products.jpg)](https://postimg.cc/r0FHWjy0)
+
+## SINGLE PRODUCT PAGE
+[![Single-Product.jpg](https://i.postimg.cc/gJK5vgrt/Single-Product.jpg)](https://postimg.cc/k6BfCFQW)
+
+## ADD TO CART PAGE
+[![Cart.jpg](https://i.postimg.cc/44L2s7cc/Cart.jpg)](https://postimg.cc/7bznNLmP)
+
+## ADMIN PRODUCT PAGE
+[![Admin-Product.jpg](https://i.postimg.cc/Bv4Bx4Ds/Admin-Product.jpg)](https://postimg.cc/sMHWzFw0)
+
+## USER DETAILS PAGE
+[![User-Details.jpg](https://i.postimg.cc/2ys43Dms/User-Details.jpg)](https://postimg.cc/p5B913mC)
 </div>
 
 ## 🔄 Data Flow
@@ -144,25 +159,9 @@ sequenceDiagram
     Backend-->>Frontend: API Response
     Frontend-->>User: Display Products
 ```
-## Screenshots
 
-## LANDING PAGE
-[![Home.jpg](https://i.postimg.cc/hPz2yQTD/Home.jpg)](https://postimg.cc/XpWKXJsm)
 
-## PRODUCT PAGE
-[![Products.jpg](https://i.postimg.cc/QtpZ2YRb/Products.jpg)](https://postimg.cc/r0FHWjy0)
 
-## SINGLE PRODUCT PAGE
-[![Single-Product.jpg](https://i.postimg.cc/gJK5vgrt/Single-Product.jpg)](https://postimg.cc/k6BfCFQW)
-
-## ADD TO CART PAGE
-[![Cart.jpg](https://i.postimg.cc/44L2s7cc/Cart.jpg)](https://postimg.cc/7bznNLmP)
-
-## ADMIN PRODUCT PAGE
-[![Admin-Product.jpg](https://i.postimg.cc/Bv4Bx4Ds/Admin-Product.jpg)](https://postimg.cc/sMHWzFw0)
-
-## USER DETAILS PAGE
-[![User-Details.jpg](https://i.postimg.cc/2ys43Dms/User-Details.jpg)](https://postimg.cc/p5B913mC)
 
 ## 🤝 Contributing
 
