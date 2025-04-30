@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 import { getProducts } from '../Redux/ProductReducer/action';
 import { styled } from 'styled-components';
-import { Button } from '@chakra-ui/button';
+import { Button, Skeleton, SkeletonCircle, SkeletonText, Box, useToast } from '@chakra-ui/react';
 import { SideBarJewelry } from '../Components/SideBarJewelry';
 import { useParams, useSearchParams } from 'react-router-dom';
 import { MdProductionQuantityLimits } from 'react-icons/md';
@@ -16,20 +16,23 @@ import ProductImg from '../product-image/ProductImg.png'
 import Footer from '../Components/Footer';
 import Pagination from '../Components/Pegination';
 import Panel from "../Components/Panel";
+import { motion } from 'framer-motion';
+
 const ProductPage = () => {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
+  const toast = useToast();
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const width  = window.innerWidth || document.documentElement.clientWidth || 
+  const width = window.innerWidth || document.documentElement.clientWidth || 
   document.body.clientWidth;
   const height = window.innerHeight|| document.documentElement.clientHeight|| 
   document.body.clientHeight;
   
-  // console.log(width, height,"hey");
-  const [toggle,setToggle]=useState(false);
-  const { name } = useParams()
-  const [searchParams, setSearchParams] = useSearchParams()
-  // console.log(products)
+  const [toggle, setToggle] = useState(false);
+  const { name } = useParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
   let paramsObj = {};
   if (name == "Jewelry" || "Watches") {
     paramsObj = {
@@ -46,12 +49,10 @@ const ProductPage = () => {
     };
   } else {
     paramsObj = {
-
       params: {
         _limit: 12,
         _page: page,
         category: name,
-        // category: searchParams.getAll("category"),
         brand: searchParams.getAll("brand"),
         _sort: searchParams.get("order") && "price",
         _order: searchParams.get("order"),
@@ -60,8 +61,6 @@ const ProductPage = () => {
     };
   }
 
-  let store = useSelector((store: any) => store.productReducer)
-  console.log(store, "data from products")
   let { products, isError, isLoading, totalPages } = useSelector((store: any) => {
     return {
       products: store.productReducer.products,
@@ -70,58 +69,119 @@ const ProductPage = () => {
       totalPages: store.productReducer.totalPages
     }
   }, shallowEqual);
-  console.log(products)
-  // if (name == "Jewelry" || "Watches") {
-  //   products = products.filter((ele: any) => ele.name == name)
-  // } else {
-  //   products = products.filter((ele: any) => ele.category == name)
-  // }
-  // console.log(products)
 
   useEffect(() => {
+    setIsTransitioning(true);
     dispatch(getProducts(paramsObj))
+      .then(() => {
+        setIsTransitioning(false);
+      })
+      .catch(() => {
+        toast({
+          title: "Error loading products",
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+        });
+        setIsTransitioning(false);
+      });
+  }, [searchParams, page]);
 
-  }, [searchParams, page])
-
-  // const totalPages = Math.ceil(products.length / 12);
-  // console.log(totalPages, "total page");
+  const LoadingSkeleton = () => (
+    <Box padding="6" boxShadow="lg" bg="white" borderRadius="md">
+      <SkeletonCircle size="10" />
+      <SkeletonText mt="4" noOfLines={4} spacing="4" />
+      <Skeleton height="200px" mt="4" />
+    </Box>
+  );
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <Navbar />
 
-      <img src={ProductImg} alt="" style={{width:"100%",height:"400px",objectFit:"fill" }} />
+      <motion.img 
+        src={ProductImg} 
+        alt=""
+        style={{width:"100%",height:"400px",objectFit:"cover"}}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      />
       
-       <div className={Styles.productsection}>
- {name == "Watches" ? 
- <div ><SideBarWatches /></div>
- : <div ><SideBarJewelry /></div>}
+      <div className={Styles.productsection}>
+        {name == "Watches" ? 
+          <motion.div 
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <SideBarWatches />
+          </motion.div>
+          : 
+          <motion.div 
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <SideBarJewelry />
+          </motion.div>
+        }
       
- 
-        <div className={Styles.productlist}>
-          {isError && <h1>Error Occurs</h1>}
-          {isLoading && <h1>Loading...</h1>}
-          {products.length > 0 &&
-            products.map((ele: any) => (<ProductCard key={ele.id} {...ele} />
-            ))}
+        <motion.div 
+          className={Styles.productlist}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          {isError && (
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+            >
+              <h1>Error loading products. Please try again.</h1>
+            </motion.div>
+          )}
+          
+          {isLoading ? (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
+              {[...Array(12)].map((_, index) => (
+                <LoadingSkeleton key={index} />
+              ))}
+            </div>
+          ) : (
+            products.length > 0 && products.map((ele: any) => (
+              <motion.div
+                key={ele.id}
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <ProductCard {...ele} />
+              </motion.div>
+            ))
+          )}
+        </motion.div>
+      </div>
 
-        </div>
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
+      </motion.div>
 
-
-        </div>
-
-      <Pagination currentPage={page} totalPages={totalPages} onPageChange={setPage} />
-      {/* ==========================   Sort && filter   ========================================= */}
-     
- 
-   {/* ========================== */} 
       <div>
         <Footer />
       </div>
-     
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
 
-
-export default ProductPage
+export default ProductPage;

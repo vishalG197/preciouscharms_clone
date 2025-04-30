@@ -13,129 +13,177 @@ import { Link, useLocation, useSearchParams } from 'react-router-dom';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { NavLink } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 
 interface CustomNavLinkProps {
   to: string;
   onClick?: () => void;
   children: React.ReactNode;
 }
+
 const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, onClick, children }) => {
   const location = useLocation();
   const isActive = location.pathname === to;
 
   return (
-    <li className={`navbar__item ${isActive ? 'active' : ''}`} onClick={onClick}>
+    <motion.li 
+      className={`navbar__item ${isActive ? 'active' : ''}`} 
+      onClick={onClick}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
       <NavLink to={to}>{children}</NavLink>
-    </li>
+    </motion.li>
   );
 };
 
 const Homepage = () => {
- 
+  const bgColor = useColorModeValue('white', 'gray.800');
+  const textColor = useColorModeValue('gray.800', 'white');
 
   return (
     <DIV>
       <Navbar />
-      <div className="banner">
-        <img src={banner} alt="" />
-      </div>
+      
+      <motion.div 
+        className="banner"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img src={banner} alt="Banner" />
+      </motion.div>
 
-      {/************************   new-collection-section-start  ********************* */}
-      <div className="collectSection">
+      <motion.div 
+        className="collectSection"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         <div className="newHead">
-          <p className="newHead-Capt">New Collection</p>
-          <p className="newHead-desc">
+          <motion.p 
+            className="newHead-Capt"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
+            New Collection
+          </motion.p>
+          <motion.p 
+            className="newHead-desc"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
             Check out the New Collection of famous Brand
-          </p>
+          </motion.p>
         </div>
-        <div className="newCollection">
-          <div>
-            <img src={best1} alt="" />
-            <h4>Messika</h4>
-            <p>Diamond Collection</p>
-          </div>
-          <div>
-            <img src={best2} alt="" />
-            <h4>Messika</h4>
-            <p>Diamond Collection</p>
-          </div>
-          <div>
-            <img src={best3} alt="" />
-            <h4>Messika</h4>
-            <p>Diamond Collection</p>
-          </div>
-          <div>
-            <img src={best4} alt="" />
-            <h4>Messika</h4>
-            <p>Diamond Collection</p>
-          </div>
-        </div>
-      </div>
-      {/************************   new-collection-section-start-end  ********************* */}
+        <motion.div 
+          className="newCollection"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          {[best1, best2, best3, best4].map((img, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05, boxShadow: '0 10px 20px rgba(0,0,0,0.1)' }}
+              transition={{ duration: 0.3 }}
+            >
+              <img src={img} alt={`Collection ${index + 1}`} />
+              <h4>Messika</h4>
+              <p>Diamond Collection</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.div>
 
-      {/************************   category-section-start  ********************* */}
-
-      <div className="categorySec">
+      <motion.div 
+        className="categorySec"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         <div className="newHead">
-          <p className="newHead-Capt">Categories</p>
-          <p className="newHead-desc">
-            Discover Our Collection of Jewelleryby Categories
-          </p>
+          <motion.p 
+            className="newHead-Capt"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+          >
+            Categories
+          </motion.p>
+          <motion.p 
+            className="newHead-desc"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            Discover Our Collection of Jewellery by Categories
+          </motion.p>
         </div>
 
-        <div className="catMainSec">
+        <motion.div 
+          className="catMainSec"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
           <div className="catText">
             <div className="allcat">
               <ul>
-                <li>
-                  <CustomNavLink to="/product/Jewelry?category=Rings">
-                    Rings
-                  </CustomNavLink>
-                </li>
-                <li>
-                  <CustomNavLink to="/product/Jewelry?category=Brecelets">
-                    Brecelets
-                  </CustomNavLink>
-                </li>
-                <li>
-                  <CustomNavLink to="/product/Jewelry?category=Earrning">
-                    Earrings
-                  </CustomNavLink>
-                </li>
-                <li>
-                  <CustomNavLink to="/product/Jewelry?category=Necklaces+%26+Pendants">
-                    Necklaces & Pendants
-                  </CustomNavLink>
-                </li>
-
-                <li>
-                  <Link to="/product/Watches">Watches</Link>
-                </li>
-                <li>
-                  <Link to="/product/Jewelry?category=Men's jewelry">
-                    Men's Jewellery
-                  </Link>
-                </li>
+                {[
+                  { to: "/product/Jewelry?category=Rings", text: "Rings" },
+                  { to: "/product/Jewelry?category=Brecelets", text: "Brecelets" },
+                  { to: "/product/Jewelry?category=Earrning", text: "Earrings" },
+                  { to: "/product/Jewelry?category=Necklaces+%26+Pendants", text: "Necklaces & Pendants" },
+                  { to: "/product/Watches", text: "Watches" },
+                  { to: "/product/Jewelry?category=Men's jewelry", text: "Men's Jewellery" }
+                ].map((item, index) => (
+                  <motion.li
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Link to={item.to}>{item.text}</Link>
+                  </motion.li>
+                ))}
               </ul>
 
-              <p className="shoText" style={{ color: "#262525" }}>
+              <motion.p 
+                className="shoText" 
+                style={{ color: textColor }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 A L L &nbsp;&nbsp; C A T E G O R I E S
-              </p>
+              </motion.p>
             </div>
           </div>
-          <div className="catImg">
-            <img src={categoryimg} alt="" />
-          </div>
-        </div>
-      </div>
-      {/************************   category-section-end  ********************* */}
+          <motion.div 
+            className="catImg"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img src={categoryimg} alt="Categories" />
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
-      {/************************   gift-section-start  ********************* */}
-      <div className="giftSec">
-        <img src={gift} alt="" />
-
-        <div className="gifttext">
+      <motion.div 
+        className="giftSec"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+      >
+        <img src={gift} alt="Gifts" />
+        <motion.div 
+          className="gifttext"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
           <p className="giftCapt">Gifts</p>
           <p className="giftdesc">
             Looking for the perfect Gift? Lorem ipsum dolor sit, amet
@@ -145,81 +193,99 @@ const Homepage = () => {
             blanditiis qui natus dolores similique voluptates! Quos adipisci
             porro sit!
           </p>
-
-          <p className="shoText" style={{ color: "#dfdfdf" }}>
+          <motion.p 
+            className="shoText" 
+            style={{ color: "#dfdfdf" }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
             S H O P &nbsp;&nbsp; G I F T S
-          </p>
-        </div>
-      </div>
+          </motion.p>
+        </motion.div>
+      </motion.div>
 
-      {/************************  gift-section-end  ********************* */}
-
-      {/************************  about-section-start  ********************* */}
-
-      <div className="about">
+      <motion.div 
+        className="about"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+      >
         <div className="abtMSec">
-          <div className="abtText">
+          <motion.div 
+            className="abtText"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
             <div className="abthead">
               <p className="newHead-Capt">About</p>
               <p className="newHead-desc">
                 Precious Charms is more than just Gilding
               </p>
             </div>
-
-          
             <div className='abtp'>
-  <p>Our company is an exclusive supplier of jewelry from the world's
+              <p>Our company is an exclusive supplier of jewelry from the world's
                 best brands. We take pride in offering our customers only the
                 highest quality products created from precious metals and stones
                 by the most experienced master jewelers</p>
-  <p>We are constantly expanding our range to meet the needs of our
+              <p>We are constantly expanding our range to meet the needs of our
                 customers and offer them the latest and most fashionable trends
                 in jewelry. We are confident that our collection of jewelry will
                 allow everyone to express their individual style and create a
                 unique image</p>
-</div>
-
-            <p className="abtp">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Accusantium quasi animi ipsum optio nostrum ab commodi pariatur
-              minima laborum dignissimos impedit reiciendis veniam quo, sit vero
-              sapiente sunt molestiae eos.
-            </p>
-          </div>
-          <div className="abtImg">
-            <img src={abtImg} alt="" />
-          </div>
+            </div>
+          </motion.div>
+          <motion.div 
+            className="abtImg"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img src={abtImg} alt="About Us" />
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
-      {/************************  about-section-end  ********************* */}
-
-      {/********************* * arrange-meeting-section ***************/}
-
-      <div className="arrange">
+      <motion.div 
+        className="arrange"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+      >
         <div className="arrangeSec">
-          <div className="arrimg">
-            <img src={meetImg} alt="" />
-          </div>
-          <div className="arrText">
+          <motion.div 
+            className="arrimg"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          >
+            <img src={meetImg} alt="Arrange Meeting" />
+          </motion.div>
+          <motion.div 
+            className="arrText"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+          >
             <div className="abthead">
               <p className="newHead-Capt">Arrange a Meeting</p>
               <p className="newHead-Capt">with Personal Consultant</p>
-
               <p className="newHead-desc">
                 Find a Boutique Near Your or Visit Our Flagship store
               </p>
               <br />
               <br />
               <br />
-              <p className="shoText" style={{ color: "#2d2c2c" }}>
+              <motion.p 
+                className="shoText" 
+                style={{ color: "#2d2c2c" }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
                 L E A R N &nbsp;&nbsp; M O R E
-              </p>
+              </motion.p>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
-      {/********************* * arrange-meeting-section-end ***************/}
+      </motion.div>
 
       <Footer />
     </DIV>
@@ -230,227 +296,201 @@ export default Homepage;
 
 const DIV = styled.section`
   @import url('https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap');
-background-color:#f8f8f8;
+  background-color: #f8f8f8;
+
   .banner img {
     width: 100%;
+    transition: transform 0.3s ease;
   }
-.collectSection{
-  padding: 100px 0;
-}
- 
 
-  .newCollection{
+  .collectSection {
+    padding: 100px 0;
+  }
+
+  .newCollection {
     width: 90%;
     margin: 0 auto;
- display:grid ;
- grid-template-columns: repeat(4,1fr);
- gap: 20px;
-}
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
 
- 
+  .newCollection div {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
-  .newCollection div img {
+  .newCollection div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .newCollection img {
     width: 100%;
-  }
-
-  .newHead {
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px 0px 25px 10px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
   }
 
   .newHead-Capt {
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 34px;
-    font-weight: 600;
-    color: #0a0a0a;
-    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2d2c2c;
   }
 
   .newHead-desc {
-    font-family: Arial,sans-serif;
-    margin: 6px 0;
-    color: #6a6a6a;
-  }
-  .newCollection div h4{
-    color:#1a1919;
-    margin:15px 0 0 0;
-    font-weight: 500;
-  }
-  .newCollection div p{
-    font-size: 14px;
-    color: #565555;
-    margin: 0;
-  }
-  .giftSec{
-    position:relative;
     text-align: center;
-  color: white;
+    color: #666;
+    margin-bottom: 30px;
   }
 
-  .giftSec img{
+  .categorySec {
+    padding: 50px 0;
+  }
+
+  .catMainSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .catText {
+    padding: 20px;
+  }
+
+  .allcat ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .allcat li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .allcat li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  .allcat a {
+    text-decoration: none;
+    color: #2d2c2c;
+    font-size: 1.1rem;
+  }
+
+  .shoText {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .giftSec {
+    position: relative;
+    margin: 50px 0;
+  }
+
+  .giftSec img {
     width: 100%;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
   }
-  .gifttext{
+
+  .gifttext {
     position: absolute;
-   width: 40%;
-  bottom: 39%;
-  right: 16px;
-  font-family: 'Pathway Gothic One', sans-serif;
-  text-align: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
   }
-  .giftCapt{
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 34px;
-    font-weight: 600;
+
+  .giftCapt {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
   }
-.giftdesc{
-  font-family: Arial,sans-serif;
-    color: #c1c1c1;
-  
-    line-height: 22px;
 
-}
+  .giftdesc {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
 
- .categorySec{
- padding: 50px 0;
-  background-color:#fff;
- }
- .catMainSec{
-  width: 90%;
-  margin: 0 auto;
-  display: flex;
- }
+  .about {
+    padding: 50px 0;
+  }
 
- .catText{
-  width: 50%;
- }
+  .abtMSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
 
- .catImg {
-  width: 50%;
-}
-.catImg img{
- 
-  width: 100%;
-    height: 500px;
+  .abtText {
+    padding: 20px;
+  }
+
+  .abtp p {
+    margin: 20px 0;
+    line-height: 1.6;
+  }
+
+  .abtImg img {
+    width: 100%;
+    height: 400px;
     object-fit: cover;
-}
+    border-radius: 10px;
+  }
 
-.allcat ul{
-  list-style-type: none;
-}
+  .arrange {
+    padding: 50px 0;
+  }
 
-.allcat ul li{
-  list-style-type: none;
-    padding: 15px 5px;
-    font-size: 19px;
-}
-.allcat ul li a{
-  text-decoration: none;
-    color: #4e4e4e;
-    font-weight: 500;
-}
-   
+  .arrangeSec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    padding: 20px;
+  }
 
-/************** * about ***********************/
-.about{
-  padding: 50px;
-  background-color:#fff;
-}
-.abtMSec{
-  width:90%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-.abtText{
-text-align: justify;
-padding-top: 60px;
-width:50%;
-}
-.abtp{
-font-size: 18px;
-color:#282828;
-}
-.abtImg{
-  width:50%
-}
-/********************* meeting  **********/
-.arrange{
-  background-color:#fff;
-  padding: 30px;
-}
-
-.arrangeSec{
-  background-color:#fff;
-  display: flex;
-  width: 90%;
-  margin: 0 auto;
-  justify-content: space-around;
-}
-.arrimg{
-  width:50%;
-}
-
-.arrimg img{
-  width:100%;
-}
-
-@media screen and (min-device-width: 310px) and (max-device-width: 480px) { 
- .catMainSec,.abtMSec,.arrangeSec {
-   
-    display: flex;
-    flex-direction: column;
-   
-}
-
-.newCollection{
- display:grid ;
- grid-template-columns: repeat(2,1fr);
- gap: 20px;
-}
-.abtImg img{
-  width:100%;
-}
- .giftdesc
- {
-  display: none;
- }
- .newCollection div {
+  .arrimg img {
     width: 100%;
-}
- .collectSection {
-    padding: 70px 0;
-}
+    height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
 
- .newHead-Capt {
-    font-family: 'Pathway Gothic One',sans-serif;
-    font-size: 23px;
-    font-weight: 600;
-    color: #0a0a0a;
-    margin: 0;
-}
+  .arrText {
+    padding: 20px;
+  }
 
- .abtText {
-    padding-top: 30px;
-    width: 100%;
-}
- .abtp {
-    font-size: 14px;
+  @media (max-width: 768px) {
+    .catMainSec,
+    .abtMSec,
+    .arrangeSec {
+      grid-template-columns: 1fr;
     }
-  .abtImg {
-    width: 100%;
-}
-.arrimg {
-    width: 100%;
-}
-.catImg {
-    width: 100%;
-}
 
-}
+    .newCollection {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
 
-
-`
+    .gifttext {
+      width: 90%;
+    }
+  }
+`;
