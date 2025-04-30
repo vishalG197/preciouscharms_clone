@@ -1,6 +1,7 @@
 # 💎 Precious Charms - Your Gateway to Elegance
 
 <div align="center">
+  
   <img src="src/home-image/bannerv1.jpg" alt="Precious Charms Banner" width="800"/>
   
   [![React](https://img.shields.io/badge/React-18.2.0-blue.svg?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -75,8 +76,12 @@ npm run server
 ## 🔐 Admin Access
 
 <div align="center">
-  <img src="src/AdminImges/dashboard.png" alt="Admin Dashboard" width="600"/>
-</div>
+  
+## ADMIN PRODUCT PAGE
+[![Admin-Product.jpg](https://i.postimg.cc/Bv4Bx4Ds/Admin-Product.jpg)](https://postimg.cc/sMHWzFw0)
+
+## USER DETAILS PAGE
+[![User-Details.jpg](https://i.postimg.cc/2ys43Dms/User-Details.jpg)](https://postimg.cc/p5B913mC)</div>
 
 ### Admin Credentials
 ```yaml
@@ -124,6 +129,7 @@ graph TD
 ## 🎨 UI Components
 
 <div align="center">
+  
  ## LANDING PAGE
 [![Home.jpg](https://i.postimg.cc/hPz2yQTD/Home.jpg)](https://postimg.cc/XpWKXJsm)
 
@@ -136,11 +142,7 @@ graph TD
 ## ADD TO CART PAGE
 [![Cart.jpg](https://i.postimg.cc/44L2s7cc/Cart.jpg)](https://postimg.cc/7bznNLmP)
 
-## ADMIN PRODUCT PAGE
-[![Admin-Product.jpg](https://i.postimg.cc/Bv4Bx4Ds/Admin-Product.jpg)](https://postimg.cc/sMHWzFw0)
 
-## USER DETAILS PAGE
-[![User-Details.jpg](https://i.postimg.cc/2ys43Dms/User-Details.jpg)](https://postimg.cc/p5B913mC)
 </div>
 
 ## 🔄 Data Flow
