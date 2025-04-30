@@ -2,8 +2,8 @@
 
 <div align="center">
   
-  <img src="src/home-image/bannerv1.jpg" alt="Precious Charms Banner" width="800"/>
-  
+[![logo.jpg](https://i.postimg.cc/9fKdqJgy/logo.jpg)](https://postimg.cc/nsKjyYJL)  
+
   [![React](https://img.shields.io/badge/React-18.2.0-blue.svg?style=for-the-badge&logo=react)](https://reactjs.org/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
   [![Chakra UI](https://img.shields.io/badge/Chakra%20UI-2.8.0-319795.svg?style=for-the-badge&logo=chakraui)](https://chakra-ui.com/)
