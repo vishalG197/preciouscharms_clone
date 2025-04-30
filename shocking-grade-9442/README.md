@@ -8,6 +8,7 @@
   [![TypeScript](https://img.shields.io/badge/TypeScript-4.9.5-blue.svg?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
   [![Chakra UI](https://img.shields.io/badge/Chakra%20UI-2.8.0-319795.svg?style=for-the-badge&logo=chakraui)](https://chakra-ui.com/)
   [![Redux](https://img.shields.io/badge/Redux-4.2.1-764ABC.svg?style=for-the-badge&logo=redux)](https://redux.js.org/)
+  
 </div>
 
 ## ✨ Overview
